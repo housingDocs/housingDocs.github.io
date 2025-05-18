@@ -28,6 +28,7 @@ body {
     justify-content: center;
     text-align: center;
     margin-top: 8.5px;
+    user-select: none;
 }
 
 .logo span {
@@ -93,6 +94,11 @@ body {
     margin-bottom: 6px;
 }
 
+.sidebar-nav-header span {
+    position: relative;
+    top: 5px;
+}
+
 .sidebar-nav-point {
     width: fit-content;
     font-size: 16px;
@@ -101,6 +107,8 @@ body {
     border-radius: 4px;
     overflow: hidden;
     transition: 0.1s;
+    position: relative;
+    left: 26px;
 }
 
 .sidebar-nav-point:hover {
