@@ -10,12 +10,12 @@ body {
 
 * {
     box-sizing: border-box;
+    line-height: 1.4;
 }
 
 .top {
     width: 100%;
     height: 7.5%;
-    background-color: #6341e0;
     color: white;
     padding: 8px 220px;
 }
@@ -60,25 +60,9 @@ body {
 }
 
 .sidebar-content {
-    background-color: #170e2f;
     width: 100%;
     height: 100%;
     padding: 40px 8px;
-}
-
-.page {
-    width: 72%;
-    height: 100%;
-    float: left;
-    background-color: #170e2f;
-    padding: 40px;
-}
-
-.page-title {
-    color: white;
-    width: 100%;
-    font-size: 48px;
-    font-weight: 500;
 }
 
 .sidebar-nav-group {
@@ -114,4 +98,54 @@ body {
 .sidebar-nav-point:hover {
     background-color: #463085;
     cursor: pointer;
+}
+
+.page {
+    width: 72%;
+    height: 100%;
+    float: left;
+    padding: 40px;
+}
+
+.page-title {
+    color: white;
+    width: 100%;
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.page-subtitle {
+    color: white;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 44px;
+}
+
+.page-content-header {
+    color: white;
+    width: 100%;
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.page-content-text {
+    color: white;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.page-content-code {
+    color: white;
+    width: 100%;
+    border: 2px solid #463085;
+    border-radius: 8px;
+    background-color: #170b28;
+    font-family: monospace;
+    font-size: 16px;
+    padding: 16px;
 }
