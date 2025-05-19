@@ -1,23 +1,6 @@
-
 function log(string) {
     console.log(`TOKENIZER > ${string}`)
 }
-
-/*function removeAll(string, charList) {
-    for (const char of charList) {
-        string = string.replace(char, ' ')
-    }
-}
-
-function replaceList(string, obj) {
-    for (const key in obj) {
-        for (const char of obj[key]) {
-            console.log(char)
-            string = string.replaceAll(char, `<span class="${key}">${char}</span>`)
-        }
-    }
-    return string
-}*/
 
 function scan(string) {
     let newString = ''
@@ -99,18 +82,3 @@ for (const codeField of codeFields) {
     console.log(inner)
     codeField.innerHTML = inner
 } 
-
-/*for (const codeField of codeFields) {
-    let inner = codeField.innerHTML
-    let innerPunctuationLess = removeAll(inner, ['(', ')', '[', ']'])
-    console.log(codeField, inner)
-
-    inner = replaceList(inner, {
-        "token-keyword": ['as', 'from', 'in', 'of', 'for', 'import'],
-        "token-datatype": ['String'],
-        "token-punctuation": ['(', ')']
-    })
-
-    codeField.innerHTML = inner
-
-}*/
