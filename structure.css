@@ -142,10 +142,58 @@ body {
 .page-content-code {
     color: white;
     width: 100%;
+    position: relative;
     border: 2px solid #463085;
     border-radius: 8px;
     background-color: #170b28;
     font-family: monospace;
     font-size: 16px;
-    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.page-content-code-icon {
+    margin: 8px 16px;
+    color: #af99ff;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.page-content-code-copy-button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: #af99ff;
+    transition: 0.2s;
+}
+
+.page-content-code-copy-button:hover {
+    color: #463085;
+}
+
+.page-content-code-copy-button-hover {
+    display: none;
+    background-color: white;
+    border-radius: 4px;
+    font-weight: 600;
+    padding: 8px;
+}
+
+.page-content-code-copy-button:hover .page-content-code-copy-button-hover {
+    display: block;
+    position: absolute;
+    left: -50%;
+    top: -130%;
+}
+
+.page-content-code hr {
+    border: 0;
+    border-top: 2px solid #463085;
+}
+
+.page-content-code pre {
+    margin: 16px;
 }
