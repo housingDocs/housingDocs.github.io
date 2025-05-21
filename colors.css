@@ -22,14 +22,36 @@
     background-color: #170e2f;
 }
 
-.token-punctuation {
-    color: gray;
+.syntax-comment-block, .syntax-comment-line {
+  color: gray;
+  font-style: italic;
 }
 
-.token-keyword {
-    color: rgb(255, 84, 155);
+.syntax-string-quoted-double {
+  color: #fff023;
 }
 
-.token-datatype {
-    color: rgb(116, 233, 61);
+.syntax-constant-numeric, .syntax-constant-numeric-float {
+  color: #48e0ff;
+}
+
+.syntax-constant-language-boolean {
+  color: #21a0d2;
+}
+
+.syntax-keyword-control {
+  color: #ff2e66;
+  font-weight: bold;
+}
+
+.syntax-keyword-operator, .syntax-keyword-operator-logical, .syntax-keyword-operator-comparison {
+  color: #ff7e28;
+}
+
+.syntax-support-function {
+  color: #5ed9ff;
+}
+
+.syntax-variable-other {
+  color: #9CDCFE;
 }
