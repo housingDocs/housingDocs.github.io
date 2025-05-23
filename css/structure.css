@@ -23,6 +23,7 @@ a, a:visited {
     height: 7.5%;
     color: white;
     padding: 8px 220px;
+    position: relative;
 }
 
 .logo {
@@ -41,6 +42,21 @@ a, a:visited {
     font-size: 30px;
     position: relative;
     top: 3px;
+}
+
+.discord {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 12px;
+    right: 350px;
+    cursor: pointer;
+}
+
+.discord img {
+    width: 48px;
+    height: auto;
 }
 
 .main {
@@ -115,6 +131,10 @@ a, a:visited {
     height: 100%;
     float: left;
     padding: 40px;
+}
+
+.page a, .page a:visited {
+    color: rgb(130, 111, 255);
 }
 
 .page-title {
@@ -210,4 +230,22 @@ a, a:visited {
 
 .page-content-code pre:focus {
     outline: none;
+}
+
+.page-content-list {
+    margin-bottom: 16px;
+}
+
+.page-content-list-point {
+    color: white;
+    font-size: 18px;
+}
+
+.page-content-list-point pre {
+    font-family: "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    margin: 0;
+}
+
+.page-content-list-number {
+    color: #af99ff;
 }
