@@ -90,6 +90,7 @@ a, a:visited {
 
 .sidebar-nav-point {
     width: fit-content;
+    user-select: none;
     font-size: 16px;
     padding: 5px;
     margin: 1px 0;
