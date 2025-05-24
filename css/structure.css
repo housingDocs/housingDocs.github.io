@@ -135,7 +135,7 @@ button {
     float: left;
     padding: 40px;
     overflow: auto;
-    scrollbar-width: normal;
+    scrollbar-width: auto;
     scrollbar-color: #af99ff #463085; 
 }
 
