@@ -19,7 +19,8 @@ const nav = {
         icon: "ad_group",
         iconColor: "#F52222",
         points: [
-            { name: "Contribute", link: "/html/other/Contribute.html" }
+            { name: "Contribute", link: "/html/other/Contribute.html" },
+            { name: "Article Editor", link: "/html/other/Article_Editor.html"}
         ]
     }
 }
@@ -70,19 +71,3 @@ document.querySelectorAll('.page-content-list').forEach((list) => {
         i++
     })
 })
-
-
-/*<div class="sidebar-nav-group">
-    <div class="sidebar-nav-header">
-        <span class="material-symbols-outlined green">
-            deployed_code
-        </span>
-        HTSL
-    </div>
-    <a href="/html/htsl/Introduction.html"><div class="sidebar-nav-point">
-        HTSL Introduction
-    </div></a>
-    <a href="/html/htsl/Code_Block_Editor.html"><div class="sidebar-nav-point">
-        Code Block Editor
-    </div></a>
-</div>*/
