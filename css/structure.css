@@ -13,6 +13,13 @@ a, a:visited {
   text-decoration: none;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
 * {
     box-sizing: border-box;
     line-height: 1.4;
@@ -50,7 +57,7 @@ a, a:visited {
     border: none;
     position: absolute;
     top: 12px;
-    right: 350px;
+    right: 25%;
     cursor: pointer;
 }
 
@@ -166,6 +173,14 @@ a, a:visited {
     margin-bottom: 44px;
 }
 
+.page-content-superheader {
+    color: white;
+    width: 100%;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
 .page-content-header {
     color: white;
     width: 100%;
@@ -194,6 +209,11 @@ a, a:visited {
     margin-bottom: 16px;
 }
 
+.page-content-code button {
+    position: absolute;
+    color: #af99ff;
+}
+
 .page-content-code-icon {
     margin: 8px 16px;
     color: #af99ff;
@@ -202,14 +222,8 @@ a, a:visited {
 }
 
 .page-content-code-copy-button {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    position: absolute;
     top: 8px;
     right: 8px;
-    color: #af99ff;
     transition: 0.2s;
 }
 
@@ -239,10 +253,26 @@ a, a:visited {
 
 .page-content-code pre {
     margin: 16px;
+    text-wrap: auto;
 }
 
 .page-content-code pre:focus {
     outline: none;
+}
+
+.page-content-code-markdown-create, .page-content-code-markdown-copy-html {
+    font-weight: 800;
+    font-size: 16px;
+    text-transform: uppercase;
+    top: 8px;
+}
+
+.page-content-code-markdown-create {
+    left: 25%;
+}
+
+.page-content-code-markdown-copy-html {
+    left: 65%;
 }
 
 .page-content-list {

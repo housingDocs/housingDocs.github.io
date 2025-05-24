@@ -20,6 +20,7 @@ const nav = {
         iconColor: "#F52222",
         points: [
             { name: "Contribute", link: "/html/other/Contribute.html" },
+            { name: "Article Markdown", link: "/html/other/Article_Markdown.html"},
             { name: "Article Editor", link: "/html/other/Article_Editor.html"}
         ]
     }
@@ -70,4 +71,10 @@ document.querySelectorAll('.page-content-list').forEach((list) => {
         point.innerHTML = `<pre>  <span class="page-content-list-number">${i}.</span>  ${point.innerHTML}</pre>`
         i++
     })
+})
+
+let i = 1
+document.querySelectorAll('.page-content-superheader').forEach((superHeader) => {
+    superHeader.innerHTML = `<span class="page-content-list-number">${i}.</span>  ${superHeader.innerHTML}`
+    i++
 })

@@ -16,12 +16,10 @@ function escapeHtml(text) {
   return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-// Tokenizer with sticky regexes for performance and correctness
 function tokenizeHTSL(code) {
   const tokens = [];
   let pos = 0;
 
-  // Define your token regexes with 'y' flag for sticky matching
   const tokenPatterns = [
     { type: 'syntax-comment-block', regex: /\/\*[\s\S]*?\*\//y },
     { type: 'syntax-comment-line', regex: /\/\/.*(?:\n|$)/y },
@@ -61,6 +59,36 @@ function tokenizeHTSL(code) {
   return tokens;
 }
 
+function tokenizeMarkdown(code) {
+  const tokens = []
+  let pos = 0
+  const tokenPatterns = [
+    { type: 'syntax-markdown', regex: /&lt;[^&<>]+&gt;/g }
+  ]
+
+  while (pos < code.length) {
+    let matched = false;
+    for (const { type, regex } of tokenPatterns) {
+      regex.lastIndex = pos;
+      const m = regex.exec(code);
+      if (m && m.index === pos) {
+        tokens.push({ text: m[0], type });
+        pos += m[0].length;
+        matched = true;
+        break;
+      }
+    }
+    if (!matched) {
+      // No token matched, consume one char as plain text
+      tokens.push({ text: code[pos], type: 'plain' });
+      pos++;
+    }
+  }
+
+  return tokens
+
+}
+
 function syntaxHighlightHTSL(code) {
   const escaped = escapeHtml(code);
   const tokens = tokenizeHTSL(escaped);
@@ -69,7 +97,14 @@ function syntaxHighlightHTSL(code) {
   ).join('');
 }
 
-// Cursor helpers (from your code)
+function syntaxHighlightMarkdown(code) {
+  const escaped = escapeHtml(code);
+  const tokens = tokenizeMarkdown(escaped);
+  return tokens.map(t =>
+    t.type === 'plain' ? t.text : `<span class="${t.type}">${t.text}</span>`
+  ).join('');
+}
+
 function getCaretCharacterOffsetWithin(element) {
   const sel = window.getSelection();
   let caretOffset = 0;
@@ -118,7 +153,6 @@ function setCursorAtOffset(el, offset) {
   }
 }
 
-// Editor setup
 function handleEditor(editor) {
   editor.innerHTML = `
     <div class="page-content-code-icon">HTSL</div>
@@ -144,24 +178,46 @@ function handleEditor(editor) {
   });
 }
 
-log('Start tokenization');
-
-const codeFields = document.querySelectorAll('.page-content-code');
-
-for (const codeField of codeFields) {
-  if (codeField.classList.contains('code-editor')) {
-    handleEditor(codeField);
-    continue;
-  }
-  const text = codeField.querySelector('pre').textContent;
-  codeField.innerHTML = `
+function handleMarkdownEditor(editor) {
+  editor.innerHTML = `
     <div class="page-content-code-icon">HTSL</div>
+    <button class="page-content-code-markdown-create">
+      Create Article
+    </button>
+    <button class="page-content-code-markdown-copy-html">
+      Copy HTML
+    </button>
     <button class="page-content-code-copy-button">
       <span class="material-symbols-outlined">content_copy</span>
       <div class="page-content-code-copy-button-hover">Copy</div>
     </button>
     <hr>
-    <pre>${syntaxHighlightHTSL(text)}</pre>
+    <pre contenteditable="true" spellcheck="false"></pre>`
+}
+
+log('Start tokenization');
+
+const codeFields = document.querySelectorAll('.page-content-code');
+
+for (const codeField of codeFields) {
+  const isMarkdown = codeField.classList.contains('markdown')
+  if (codeField.classList.contains('code-editor')) {
+    if (isMarkdown) {
+      handleMarkdownEditor(codeField)
+      continue
+    }
+    handleEditor(codeField);
+    continue;
+  }
+  const text = codeField.querySelector('pre').textContent;
+  codeField.innerHTML = `
+    <div class="page-content-code-icon">${isMarkdown ? "MARKDOWN" : "HTSL"}</div>
+    <button class="page-content-code-copy-button">
+      <span class="material-symbols-outlined">content_copy</span>
+      <div class="page-content-code-copy-button-hover">Copy</div>
+    </button>
+    <hr>
+    <pre>${isMarkdown ? syntaxHighlightMarkdown(text) : syntaxHighlightHTSL(text)}</pre>
   `;
   codeField.querySelector('.page-content-code-copy-button').onclick = () => copyToClipboard(text);
 }
