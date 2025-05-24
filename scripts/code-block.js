@@ -16,6 +16,10 @@ function escapeHtml(text) {
   return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
+function unEscapeHtml(text) {
+  return text.replaceAll('&lt;', '<').replaceAll('&gt;', '>')
+}
+
 function tokenizeHTSL(code) {
   const tokens = [];
   let pos = 0;
@@ -153,6 +157,29 @@ function setCursorAtOffset(el, offset) {
   }
 }
 
+function markdownToHTML(markdown) {
+  const map = [
+    { markdown: 'title', class: 'page-title' },
+    { markdown: 'subtitle', class: 'page-subtitle' },
+    { markdown: 'superheader', class: 'page-content-superheader' },
+    { markdown: 'header', class: 'page-content-header'},
+    { markdown: 'text', class: 'page-content-text' },
+    { markdown: 'list', class: 'page-content-list' },
+    { markdown: 'point', class: 'page-content-list-point' },
+  ]
+
+  for (const el of map) {
+    markdown = markdown.replaceAll(`<${el.markdown}>`, `<div class="${el.class}">`)
+    markdown = markdown.replaceAll(`</${el.markdown}>`, '</div>')
+  }
+
+  markdown = markdown.replace(/<link\s+ref="([^"]+)">([\s\S]*?)<\/link>/g, '<a href="$1">$2</a>')
+
+  markdown = markdown.replaceAll('<code>', '<div class="page-content-code"><pre>').replaceAll('</code>', '</pre></div>')
+
+  return markdown
+}
+
 function handleEditor(editor) {
   editor.innerHTML = `
     <div class="page-content-code-icon">HTSL</div>
@@ -179,8 +206,28 @@ function handleEditor(editor) {
 }
 
 function handleMarkdownEditor(editor) {
+  function onInput() {
+    const caretOffset = getCaretCharacterOffsetWithin(pre)
+    console.log(savedMarkdown)
+    const text = pre.textContent
+
+    pre.innerHTML = syntaxHighlightMarkdown(text)
+
+    setCursorAtOffset(pre, caretOffset);
+    
+    copyMarkdownButton.onclick = () => copyToClipboard(text)
+    copyHTMLButton.onclick = () => copyToClipboard(markdownToHTML(text))
+    createArticleButton.onclick = () => {
+      preview.innerHTML = markdownToHTML(text)
+      fixMarkdownPreview(preview)
+    }
+
+    localStorage.setItem('markdown_editor', escapeHtml(text))
+  }
+  const savedMarkdown = unEscapeHtml(localStorage.getItem('markdown_editor') || "")
+
   editor.innerHTML = `
-    <div class="page-content-code-icon">HTSL</div>
+    <div class="page-content-code-icon">MARKDOWN</div>
     <button class="page-content-code-markdown-create">
       Create Article
     </button>
@@ -192,7 +239,52 @@ function handleMarkdownEditor(editor) {
       <div class="page-content-code-copy-button-hover">Copy</div>
     </button>
     <hr>
-    <pre contenteditable="true" spellcheck="false"></pre>`
+    <pre contenteditable="true" spellcheck="false">${syntaxHighlightMarkdown(savedMarkdown)}</pre>`
+
+    const pre = editor.querySelector('pre')
+    const parent = editor.parentNode
+    parent.insertAdjacentHTML('beforeend', `<div class="article-preview" style="width:100%;"></div>`)
+    const preview = parent.querySelector('.article-preview')
+
+    const copyMarkdownButton = editor.querySelector('.page-content-code-copy-button')
+    const copyHTMLButton = editor.querySelector('.page-content-code-markdown-copy-html')
+    const createArticleButton = editor.querySelector('.page-content-code-markdown-create')
+
+    onInput()
+
+    pre.addEventListener('input', () => {
+      
+      onInput()
+
+    })
+}
+
+function fixMarkdownPreview(preview) {
+  preview.querySelectorAll('.page-content-code').forEach(codeField => {
+    codeField.innerHTML = `
+      <div class="page-content-code-icon">HTSL</div>
+      <button class="page-content-code-copy-button">
+        <span class="material-symbols-outlined">content_copy</span>
+        <div class="page-content-code-copy-button-hover">Copy</div>
+      </button>
+      <hr>
+      <pre>${syntaxHighlightHTSL(codeField.querySelector('pre').textContent)}</pre>
+    `
+  })
+  preview.querySelectorAll('.page-content-list').forEach((list) => {
+    log('list')
+    let i = 1
+    list.querySelectorAll('.page-content-list-point').forEach((point) => {
+        point.innerHTML = `<pre>  <span class="page-content-list-number">${i}.</span>  ${point.innerHTML}</pre>`
+        i++
+    })
+  })
+
+  let i = 1
+  preview.querySelectorAll('.page-content-superheader').forEach((superHeader) => {
+      superHeader.innerHTML = `<span class="page-content-list-number">${i}.</span>  ${superHeader.innerHTML}`
+      i++
+  })
 }
 
 log('Start tokenization');
@@ -221,3 +313,4 @@ for (const codeField of codeFields) {
   `;
   codeField.querySelector('.page-content-code-copy-button').onclick = () => copyToClipboard(text);
 }
+
