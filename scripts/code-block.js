@@ -176,9 +176,9 @@ function markdownToHTML(markdown) {
   }
 
   markdown = markdown.replace(/<link\s+ref="([^"]+)">([\s\S]*?)<\/link>/g, '<a href="$1">$2</a>')
-  markdown = markdown.replace(/<collumn\s+width="([^"]+)"\s*>/g, '<div class="page-content-table-collumn" style="width: $1;">');
+  markdown = markdown.replace(/<column\s+width="([^"]+)"\s*>/g, '<div class="page-content-table-column" style="width: $1;">');
 
-  markdown = markdown.replaceAll('<code>', '<div class="page-content-code"><pre>').replaceAll('</code>', '</pre></div>').replaceAll('</collumn>', '</div>')
+  markdown = markdown.replaceAll('<code>', '<div class="page-content-code"><pre>').replaceAll('</code>', '</pre></div>').replaceAll('</column>', '</div>')
 
   return markdown
 }
@@ -299,10 +299,10 @@ function fixMarkdownPreview(preview) {
   })
   document.querySelectorAll('.page-content-table').forEach((table) => {
     const firstRow = table.firstElementChild
-    table.querySelectorAll('.page-content-table-collumn').forEach((collumn) => {
-        console.log(collumn.parentNode, firstRow)
-        const hasTitle = firstRow == collumn.parentNode
-        const rows = collumn.textContent.split('|')
+    table.querySelectorAll('.page-content-table-column').forEach((column) => {
+        console.log(column.parentNode, firstRow)
+        const hasTitle = firstRow == column.parentNode
+        const rows = column.textContent.split('|')
         const title = hasTitle ? rows.shift() : ''
 
         let newHTML = hasTitle ? `<div class="page-content-table-title">${title}</div>` : ''
@@ -310,7 +310,7 @@ function fixMarkdownPreview(preview) {
         for (const row of rows) {
             newHTML += `<div class="page-content-table-cell">${row}</div>`
         }
-        collumn.innerHTML = newHTML
+        column.innerHTML = newHTML
     })
   })
 }

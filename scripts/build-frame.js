@@ -92,10 +92,10 @@ document.querySelectorAll('.page-content-superheader').forEach((superHeader) => 
 // Create Tables
 document.querySelectorAll('.page-content-table').forEach((table) => {
     const firstRow = table.firstElementChild
-    table.querySelectorAll('.page-content-table-collumn').forEach((collumn) => {
-        console.log(collumn.parentNode, firstRow)
-        const hasTitle = firstRow == collumn.parentNode
-        const rows = collumn.textContent.split('|')
+    table.querySelectorAll('.page-content-table-column').forEach((column) => {
+        console.log(column.parentNode, firstRow)
+        const hasTitle = firstRow == column.parentNode
+        const rows = column.textContent.split('|')
         const title = hasTitle ? rows.shift() : ''
 
         let newHTML = hasTitle ? `<div class="page-content-table-title">${title}</div>` : ''
@@ -103,6 +103,6 @@ document.querySelectorAll('.page-content-table').forEach((table) => {
         for (const row of rows) {
             newHTML += `<div class="page-content-table-cell">${row}</div>`
         }
-        collumn.innerHTML = newHTML
+        column.innerHTML = newHTML
     })
 })
