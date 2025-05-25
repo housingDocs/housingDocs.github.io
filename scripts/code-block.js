@@ -17,7 +17,7 @@ function escapeHtml(text) {
 }
 
 function unEscapeHtml(text) {
-  return text.replaceAll('&lt;', '<').replaceAll('&gt;', '>')
+  return text.replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&amp;', '&')
 }
 
 function tokenizeHTSL(code) {
