@@ -7,6 +7,13 @@ const nav = {
             { name: "Docs Introduction", link: "/html/home/Introduction.html"},
         ]
     },
+    "General Housing": {
+        icon: "hardware",
+        iconColor: "#f5e942",
+        points: [
+            { name: "Data Values", link: "/html/general/Data_Values.html"}
+        ]
+    },
     HTSL: {
         icon: "code",
         iconColor: "#67C520",
@@ -26,6 +33,7 @@ const nav = {
     }
 }
 
+// Create Navbar
 const sidebars = document.querySelectorAll('.sidebar-content')
 
 let navHTML = ''
@@ -65,6 +73,7 @@ document.querySelector('.top').innerHTML =
     <img src="../../assets/discord.png">
 </div></a>`
 
+// Order Lists
 document.querySelectorAll('.page-content-list').forEach((list) => {
     let i = 1
     list.querySelectorAll('.page-content-list-point').forEach((point) => {
@@ -73,8 +82,27 @@ document.querySelectorAll('.page-content-list').forEach((list) => {
     })
 })
 
+// Order Superheaders
 let i = 1
 document.querySelectorAll('.page-content-superheader').forEach((superHeader) => {
     superHeader.innerHTML = `<span class="page-content-list-number">${i}.</span>  ${superHeader.innerHTML}`
     i++
+})
+
+// Create Tables
+document.querySelectorAll('.page-content-table').forEach((table) => {
+    const firstRow = table.firstElementChild
+    table.querySelectorAll('.page-content-table-collumn').forEach((collumn) => {
+        console.log(collumn.parentNode, firstRow)
+        const hasTitle = firstRow == collumn.parentNode
+        const rows = collumn.textContent.split('|')
+        const title = hasTitle ? rows.shift() : ''
+
+        let newHTML = hasTitle ? `<div class="page-content-table-title">${title}</div>` : ''
+
+        for (const row of rows) {
+            newHTML += `<div class="page-content-table-cell">${row}</div>`
+        }
+        collumn.innerHTML = newHTML
+    })
 })

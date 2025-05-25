@@ -45,6 +45,9 @@
 &lt;superheader&gt;Title, Subtitle, Headers&lt;/superheader&gt;
 &lt;header&gt;All elements can be found on this page&lt;/header&gt;
 </pre></div>
+
+
+
                 <div class="page-content-superheader">Text Blocks</div>
                 <div class="page-content-header">Just normal text</div>
                 <div class="page-content-text">Beneath a sky painted in fading gold, whispers of forgotten stories danced through the tall grass, weaving memories into the breeze. Shadows stretched like fingers across the earth, and somewhere in the distance, a bell rang for no one, echoing through the stillness like a question never answered.</div>
@@ -79,6 +82,84 @@ chat "Kills > 10"
 chat "Kills aren't > 10"
 }&lt;/code&gt;
                 </pre></div>
+
+
+
+                <div class="page-content-superheader">Tables</div>
+                <div class="page-content-header">Table Structure</div>
+                <div class="page-content-text">A Markdown Table consists of <b>Rows</b> and <b>Collumns</b>. A table can contain multiple rows, which contain independent collumns. Each <b>Cell</b> is separated by a Pipe Symbol "|". The first cell in a collumn, which is in the first row is the <b>Title Cell</b>.</div>
+                <div class="page-content-table">
+                <div class="page-content-table-row">
+
+                <div class="page-content-table-collumn" style="width: 50%;">
+                Title Cell of Collumn 1 | Some Value | Another Value
+                </div>
+
+                <div class="page-content-table-collumn" style="width: 50%;">
+                Title Cell of Collumn 2 | Value spreads over entire row
+                </div>
+
+                </div>
+
+                <div class="page-content-table-row">
+
+                <div class="page-content-table-collumn" style="width: 25%;">
+                New Row this time
+                </div>
+
+                <div class="page-content-table-collumn" style="width: 50%;">
+                And the Collumns have changed in width
+                </div>
+
+                <div class="page-content-table-collumn" style="width: 25%;">
+                Yet another Value
+                </div>
+
+                </div>
+                </div>
+
+                <div class="page-content-header">Tables in Markdown</div>
+                <div class="page-content-text">To create a Table in Markdown, use the <b>&lt;table&gt;</b> element. Then insert as many rows as you want using the <b>&lt;row&gt;</b> element. Collumns also need a set collumn <b>width</b> which has to have a Percent Value.<br><br>
+                For example a collumn with a width of 50% in markdown is:<br></div>
+                <div class="page-content-code markdown"><pre>
+&lt;table&gt;
+    &lt;row&gt;
+        &lt;collumn width="50px"&gt;
+            Some content here
+        &lt;/collumn&gt;
+    &lt;/row&gt;
+&lt;/table&gt;</pre></div>
+                <div class="page-content-header">Example Markdown</div>
+                <div class="page-content-text">Here is the Table from above in Markdown (The spaces are optional)</div>
+                <div class="page-content-code markdown"><pre>
+&lt;table&gt;
+    &lt;row&gt;
+        &lt;collumn width="50%"&gt;
+            Title Cell of Collumn 1 | Some Value | Another Value
+        &lt;/collumn&gt;
+
+        &lt;collumn width="50%"&gt;
+            Title Cell of Collumn 2 | Value spreads over entire row
+        &lt;/collumn&gt;
+    &lt;/row&gt;
+
+    &lt;row&gt;
+        &lt;collumn width="25%"&gt;
+            New Row this time
+        &lt;/collumn&gt;
+
+        &lt;collumn width="50%"&gt;
+            And the Collumns have changed in width
+        &lt;/collumn&gt;
+
+        &lt;collumn width="25%"&gt;
+            Yet another Value
+        &lt;/collumn&gt;
+    &lt;/row&gt;
+&lt;/table&gt;</pre></div>
+
+
+
                 <div class="page-content-superheader">Other Elements</div>
                 <div class="page-content-header">An <a href="https://google.com">external Link</a> (in this case in a header)</div>
                 <div class="page-content-code markdown"><pre>
@@ -86,11 +167,9 @@ chat "Kills aren't > 10"
                 <div class="page-content-header">Linking to another <a href="/html/home/Introduction.html">Article</a></div>
                 <div class="page-content-text">When linking to another article link only the "location" (eg. the location of <a href="/html/home/Introduction.html">https://cookieCrood.github.io/html/home/Introduction.html</a> is "/html/home/Introduction.html")</div>
                 <div class="page-content-code markdown"><pre>
-&lt;header&gt;Linking to another &lt;link ref"/html/home/Introduction.html"&gt;Article&lt;/link&gt;&lt;/header&gt;
-                </pre></div>
+&lt;header&gt;Linking to another &lt;link ref"/html/home/Introduction.html"&gt;Article&lt;/link&gt;&lt;/header&gt;</pre></div>
                 <div class="page-content-superheader">HTML Elements</div>
-                <div class="page-content-text">In addition to custom hDocs elements, the default HTML elements can be used too.
-
+                <div class="page-content-text">In addition to custom hDocs elements, the default HTML elements can be used too.<br><br>
                 List of common HTML text styling elements:</div>
                 <div class="page-content-list">
                 <div class="page-content-list-point">&lt;b&gt;<b> Bold </b>&lt;/b&gt;</div>

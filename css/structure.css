@@ -292,3 +292,44 @@ button {
 .page-content-list-number {
     color: #af99ff;
 }
+
+.page-content-table {
+    color: white;
+    font-size: 18px;
+    border: 2px solid #463085;
+    background-color: #170b28;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.page-content-table-row {
+    width: 100%;
+    display: flex;
+}
+
+.page-content-table-collumn:not(:last-child) {
+    border-right: 2px solid #463085;
+}
+
+.page-content-table-title {
+    text-align: center;
+    color: #af99ff;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 16px 0;
+}
+
+.page-content-table-cell {
+    border-top: 2px solid #463085;
+    padding: 16px;
+    font-weight: 500;
+    flex: auto;
+    display: flex;
+    align-items: center;
+}
+
+.page-content-table-break {
+    width: 100%;
+    height: 1px;
+    float: left;
+}

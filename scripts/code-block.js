@@ -166,6 +166,8 @@ function markdownToHTML(markdown) {
     { markdown: 'text', class: 'page-content-text' },
     { markdown: 'list', class: 'page-content-list' },
     { markdown: 'point', class: 'page-content-list-point' },
+    { markdown: 'table', class: 'page-content-table' },
+    { markdown: 'row', class: 'page-content-table-row' }
   ]
 
   for (const el of map) {
@@ -174,8 +176,9 @@ function markdownToHTML(markdown) {
   }
 
   markdown = markdown.replace(/<link\s+ref="([^"]+)">([\s\S]*?)<\/link>/g, '<a href="$1">$2</a>')
+  markdown = markdown.replace(/<collumn\s+width="([^"]+)"\s*>/g, '<div class="page-content-table-collumn" style="width: $1;">');
 
-  markdown = markdown.replaceAll('<code>', '<div class="page-content-code"><pre>').replaceAll('</code>', '</pre></div>')
+  markdown = markdown.replaceAll('<code>', '<div class="page-content-code"><pre>').replaceAll('</code>', '</pre></div>').replaceAll('</collumn>', '</div>')
 
   return markdown
 }
@@ -208,7 +211,6 @@ function handleEditor(editor) {
 function handleMarkdownEditor(editor) {
   function onInput() {
     const caretOffset = getCaretCharacterOffsetWithin(pre)
-    console.log(savedMarkdown)
     const text = pre.textContent
 
     pre.innerHTML = syntaxHighlightMarkdown(text)
@@ -257,6 +259,17 @@ function handleMarkdownEditor(editor) {
       onInput()
 
     })
+    pre.addEventListener('keydown', function (e) {
+
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+        e.preventDefault()
+
+        const text = pre.textContent
+
+        preview.innerHTML = markdownToHTML(text)
+        fixMarkdownPreview(preview)
+      }
+    });
 }
 
 function fixMarkdownPreview(preview) {
@@ -272,7 +285,6 @@ function fixMarkdownPreview(preview) {
     `
   })
   preview.querySelectorAll('.page-content-list').forEach((list) => {
-    log('list')
     let i = 1
     list.querySelectorAll('.page-content-list-point').forEach((point) => {
         point.innerHTML = `<pre>  <span class="page-content-list-number">${i}.</span>  ${point.innerHTML}</pre>`
@@ -284,6 +296,22 @@ function fixMarkdownPreview(preview) {
   preview.querySelectorAll('.page-content-superheader').forEach((superHeader) => {
       superHeader.innerHTML = `<span class="page-content-list-number">${i}.</span>  ${superHeader.innerHTML}`
       i++
+  })
+  document.querySelectorAll('.page-content-table').forEach((table) => {
+    const firstRow = table.firstElementChild
+    table.querySelectorAll('.page-content-table-collumn').forEach((collumn) => {
+        console.log(collumn.parentNode, firstRow)
+        const hasTitle = firstRow == collumn.parentNode
+        const rows = collumn.textContent.split('|')
+        const title = hasTitle ? rows.shift() : ''
+
+        let newHTML = hasTitle ? `<div class="page-content-table-title">${title}</div>` : ''
+
+        for (const row of rows) {
+            newHTML += `<div class="page-content-table-cell">${row}</div>`
+        }
+        collumn.innerHTML = newHTML
+    })
   })
 }
 
