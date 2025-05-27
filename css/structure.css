@@ -377,3 +377,13 @@ button {
     height: 1px;
     float: left;
 }
+
+.markdown-monospace {
+    background-color: #1e1e2e;
+    color: #cba6f7;
+    font-family: monospace;
+    padding: 2px 4px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin: 0;
+}

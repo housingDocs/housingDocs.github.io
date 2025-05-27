@@ -167,12 +167,21 @@ function markdownToHTML(markdown) {
     { markdown: 'list', class: 'page-content-list' },
     { markdown: 'point', class: 'page-content-list-point' },
     { markdown: 'table', class: 'page-content-table' },
-    { markdown: 'row', class: 'page-content-table-row' }
+    { markdown: 'row', class: 'page-content-table-row' },
+  ]
+
+  const spanMap = [
+    { markdown: 'm', class: 'markdown-monospace'}
   ]
 
   for (const el of map) {
     markdown = markdown.replaceAll(`<${el.markdown}>`, `<div class="${el.class}">`)
     markdown = markdown.replaceAll(`</${el.markdown}>`, '</div>')
+  }
+
+  for (const el of spanMap) {
+    markdown = markdown.replaceAll(`<${el.markdown}>`, `<span class="${el.class}">`)
+    markdown = markdown.replaceAll(`</${el.markdown}>`, '</span>')
   }
 
   markdown = markdown.replace(/<link\s+ref="([^"]+)">([\s\S]*?)<\/link>/g, '<a href="$1">$2</a>')

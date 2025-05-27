@@ -14,6 +14,16 @@ const nav = {
             { name: "Data Values", link: "/html/general/Data_Values.html"}
         ]
     },
+    Systems: {
+        icon: "settings",
+        iconColor: "#fc6203",
+        points: [
+            { name: "Regions", link: "/html/systems/Regions.html" },
+            { name: "Event Actions", link: "/html/systems/Event_Actions.html"},
+            { name: "Scoreboard Editor", link:"/html/systems/Scoreboard_Editor.html" },
+            { name: "Commands", link:"/html/systems/Commands.html" }
+        ]
+    },
     HTSL: {
         icon: "code",
         iconColor: "#67C520",
