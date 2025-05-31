@@ -105,7 +105,7 @@ document.querySelectorAll('.page-content-table').forEach((table) => {
     table.querySelectorAll('.page-content-table-column').forEach((column) => {
         console.log(column.parentNode, firstRow)
         const hasTitle = firstRow == column.parentNode
-        const rows = column.textContent.split('|')
+        const rows = column.innerHTML.split('|')
         const title = hasTitle ? rows.shift() : ''
 
         let newHTML = hasTitle ? `<div class="page-content-table-title">${title}</div>` : ''

@@ -368,7 +368,6 @@ button {
     padding: 16px;
     font-weight: 500;
     flex: auto;
-    display: flex;
     align-items: center;
 }
 
@@ -379,6 +378,7 @@ button {
 }
 
 .markdown-monospace {
+    display: inline-block;
     background-color: #1e1e2e;
     color: #cba6f7;
     font-family: monospace;
