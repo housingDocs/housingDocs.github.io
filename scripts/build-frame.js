@@ -11,7 +11,8 @@ const nav = {
         icon: "hardware",
         iconColor: "#f5e942",
         points: [
-            { name: "Data Values", link: "/html/general/Data_Values.html"}
+            { name: "Color Codes", link: "/html/general/Color_Codes.html" },
+            { name: "Data Values", link: "/html/general/Data_Values.html" }
         ]
     },
     Systems: {

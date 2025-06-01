@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Article Editor • Housing Docs</title>
+        <link rel="stylesheet" href="../../css/structure.css">
+        <link rel="stylesheet" href="../../css/colors.css">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    </head>
+
+    <body>
+
+        <div class="top bg-light-purple">
+
+        </div>
+
+
+
+        <div class="main">
+            <div class="sidebar">
+                <div class="sidebar-content bg-dark-purple">
+                    
+                </div>
+            </div>
+
+
+
+            <div class="page bg-dark-purple">
+                <div class="page-content-text">
+                    <style>
+                        .page-content-table-cell{
+                        font-family: monospace !important;
+                        }
+                    </style>
+                    <div class="page-title">Formatting Codes</div>
+                    <div class="page-subtitle">Reformat your texts using Formatting Codes</div>
+
+                    <div class="page-content-header">Introduction to Formatting Codes</div>
+                    <div class="page-content-text">"Formatting Codes" is a vanilla feature, but is slightly made easier to use in Housing.
+                    As the name suggests, Formatting Codes are used to change the format of text.
+                    (The ones that change texts' color are also known as "Color Codes")</div>
+
+                    <div class="page-content-header">How do I use Formatting Codes?</div>
+                    <div class="page-content-text">In Housing, Formatting Codes begin with the ampersand symbol (&).
+                    It is then followed by a certain character to form a Formatting Code.
+                    (Color Codes override other Formatting Codes, so they have to be used <b>before</b> them)</div>
+
+                    <div class="page-content-header">List of Formatting Codes</div>
+                    <div class="page-content-text">(Note: Colors shown here may not accurately represent the colors in-game)<br><br></div>
+
+                    <div style="display: flex; gap: 24px;">
+                    <div style="width: 50%;">
+                        <div class="page-content-text"><b>Colors</b></div>
+                        <div class="minecraft-text">
+                        <div class="page-content-table">
+                        <div class="page-content-table-row">
+                            <div class="page-content-table-column" style="width: 40%;">
+                            Color Code | &0 | &1 | &2 | &3 | &4 | &5 | &6 | &7 | &8 | &9 | &a | &b | &c | &d | &e | &f
+                            </div>
+                            <div class="page-content-table-column" style="width: 60%;">
+                            Action |
+                            <span style="color:#000000; background-color:#af99ff; padding:2px 6px; border-radius: 4px">Black</span> |
+                            <span style="color:#0000aa; background-color:#af99ff; padding:2px 6px; border-radius: 4px">Dark Blue</span> |
+                            <span style="color:#00aa00;">Green</span> |
+                            <span style="color:#00aaaa;">Dark Cyan</span> |
+                            <span style="color:#aa0000;">Dark Red</span> |
+                            <span style="color:#aa00aa;">Dark Purple</span> |
+                            <span style="color:#ffaa00;">Gold</span> |
+                            <span style="color:#aaaaaa;">Gray</span> |
+                            <span style="color:#555555;">Dark Gray</span> |
+                            <span style="color:#5555ff;">Blue</span> |
+                            <span style="color:#55ff55;">Lime</span> |
+                            <span style="color:#55ffff;">Cyan</span> |
+                            <span style="color:#ff5555;">Red</span> |
+                            <span style="color:#ff55ff;">Light Purple</span> |
+                            <span style="color:#ffff55;">Yellow</span> |
+                            <span style="color:#ffffff;">White</span>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div style="width: 50%;">
+                        <div class="page-content-text"><b>Text Styles</b></div>
+                        <div class="minecraft-text">
+                        <div class="page-content-table">
+                        <div class="page-content-table-row">
+                            <div class="page-content-table-column" style="width: 40%;">
+                            Color Code | &l | &m | &n | &o | &r
+                            </div>
+                            <div class="page-content-table-column" style="width: 60%;">
+                            Style |
+                            <b>Bold</b> |
+                            <strike>Strikethrough</strike> |
+                            <u>Underline</u> |
+                            <i>Italic</i> |
+                            Reset
+                            </div>
+                        </div>
+                        <div class="page-content-table-row">
+                            <div class="page-content-table-column" style="width: 40%;">
+                                &k
+                            </div>
+                            <div class="page-content-table-column" style="width: 60%;">
+                                <span class="obfuscated">Obfuscated</span> (Obfuscated)
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="sidebar">
+                <div class="sidebar-content bg-dark-purple">
+                    <div class="sidebar-credit-header">
+                        Credits
+                    </div>
+                    <div class="sidebar-credit-card">
+                        <div class="sidebar-credit-name">
+                            Castorice
+                        </div>
+                        <hr>
+                        <div class="sidebar-credit-links">
+                            <a href="https:discord.com/users/1044215878687916042" target="_blank">Discord <span class="material-symbols-outlined">open_in_new</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </body>
+
+    <script src="../../scripts/code-block.js"></script>
+    <script src="../../scripts/build-frame.js"></script>
+
+    <script>
+        const obfElement = document.querySelector('.obfuscated');
+        console.log(obfElement)
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()';
+
+        function obfuscate() {
+            let result = '';
+            for (let i = 0; i < 8; i++) {
+                const randChar = chars.charAt(Math.floor(Math.random() * chars.length));
+                result += randChar;
+            }
+            obfElement.textContent = result;
+        }
+        setInterval(obfuscate, 100); // update every 100ms
+    </script>
+
+</html>
