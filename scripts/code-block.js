@@ -308,7 +308,6 @@ function fixMarkdownPreview(preview) {
   document.querySelectorAll('.page-content-table').forEach((table) => {
     const firstRow = table.firstElementChild
     table.querySelectorAll('.page-content-table-column').forEach((column) => {
-        console.log(column.parentNode, firstRow)
         const hasTitle = firstRow == column.parentNode
         const rows = column.innerHTML.split('|')
         const title = hasTitle ? rows.shift() : ''
