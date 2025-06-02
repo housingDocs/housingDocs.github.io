@@ -12,6 +12,7 @@ const nav = {
         iconColor: "#f5e942",
         points: [
             { name: "Plot Size", link: "/html/general/Plot_Size.html" },
+            { name: "Groups and Permissions", link: "/html/general/Groups_and_Permissions.html"},
             { name: "Formatting Codes", link: "/html/general/Formatting_Codes.html" },
             { name: "Data Values", link: "/html/general/Data_Values.html" }
         ]
