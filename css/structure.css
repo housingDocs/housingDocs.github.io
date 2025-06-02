@@ -96,10 +96,30 @@ button {
 .sidebar-content {
     width: 100%;
     height: 100%;
-    padding: 40px 16px;
+    padding: 20px 16px 40px 16px;
     overflow: auto;
     scrollbar-width: auto;
     scrollbar-color: #af99ff #463085; 
+}
+
+.sidebar-search {
+    width: 100%;
+    height: 40px;
+    background-color: #170b28;
+    margin-bottom: 16px;
+    border: 2px solid #463085;
+    border-radius: 6px;
+    color: #af99ff;
+    padding: 8px;
+    font-size: 16px;
+}
+
+.sidebar-search::placeholder {
+    color: #463085;
+}
+
+.sidebar-search:focus {
+    outline: none;
 }
 
 .sidebar-nav-group {

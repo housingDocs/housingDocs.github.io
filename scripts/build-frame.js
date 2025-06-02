@@ -57,7 +57,7 @@ const nav = {
 // Create Navbar
 const sidebars = document.querySelectorAll('.sidebar-content')
 
-let navHTML = ''
+ let navHTML = '<input class="sidebar-search" placeholder="Search"></input>'
 
 for (const group in nav) {
     navHTML += 
@@ -94,6 +94,33 @@ document.querySelector('.top').innerHTML =
     <img src="../../assets/discord.png">
 </div></a>`
 
+// Searchbat
+const searchBar = document.querySelector('.sidebar-search')
+
+searchBar.addEventListener('input', () => {
+    document.querySelectorAll('.sidebar-nav-point').forEach((point) => {
+        if (point.textContent.toLowerCase().includes(searchBar.value)) {
+            point.style = 'display: block;'
+        } else {
+            point.style = 'display: none;'
+        }
+    })
+    document.querySelectorAll('.sidebar-nav-group').forEach((group) => {
+        let display = false
+        group.querySelectorAll('.sidebar-nav-point').forEach((point) => {
+            console.log(point.style.display)
+            if (point.style.display == 'block') {
+                display = true
+            }
+        })
+        if (display) {
+            group.style = 'display: block;'
+        } else {
+            group.style = 'display: none;'
+        }
+    })
+})
+
 // Order Lists
 document.querySelectorAll('.page-content-list').forEach((list) => {
     let i = 1
@@ -114,7 +141,6 @@ document.querySelectorAll('.page-content-superheader').forEach((superHeader) => 
 document.querySelectorAll('.page-content-table').forEach((table) => {
     const firstRow = table.firstElementChild
     table.querySelectorAll('.page-content-table-column').forEach((column) => {
-        console.log(column.parentNode, firstRow)
         const hasTitle = firstRow == column.parentNode
         const rows = column.innerHTML.split('|')
         const title = hasTitle ? rows.shift() : ''
