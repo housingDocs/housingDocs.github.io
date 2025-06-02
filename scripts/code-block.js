@@ -167,7 +167,7 @@ function markdownToHTML(markdown) {
     { markdown: 'point', class: 'page-content-list-point' },
     { markdown: 'table', class: 'page-content-table' },
     { markdown: 'row', class: 'page-content-table-row' },
-    { markdown: 'sub', class: 'page-content-subheader' }
+    { markdown: 'subheader', class: 'page-content-subheader' }
   ]
 
   const spanMap = [
