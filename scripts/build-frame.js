@@ -11,11 +11,18 @@ const nav = {
         icon: "hardware",
         iconColor: "#f5e942",
         points: [
-            { name: "Plot Size", link: "/html/general/Plot_Size.html" },
             { name: "Groups and Permissions", link: "/html/general/Groups_and_Permissions.html"},
             { name: "Special Items", link: "/html/general/Special_Items.html" },
+            { name: "Item Editor", link: "/html/general/Item_Editor.html" },
             { name: "Formatting Codes", link: "/html/general/Formatting_Codes.html" },
             { name: "Data Values", link: "/html/general/Data_Values.html" },
+        ]
+    },
+    "House Settings": {
+        icon: "handyman",
+        iconColor: "#e41212",
+        points: [
+            { name: "Plot Size", link: "/html/settings/Plot_Size.html" }
         ]
     },
     Systems: {
