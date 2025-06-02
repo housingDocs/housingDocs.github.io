@@ -25,7 +25,7 @@ const nav = {
             { name: "Regions", link: "/html/systems/Regions.html" },
             { name: "Event Actions", link: "/html/systems/Event_Actions.html"},
             { name: "Scoreboard Editor", link:"/html/systems/Scoreboard_Editor.html" },
-            { name: "Commands", link:"/html/systems/Commands.html" }
+            { name: "Custom Commands", link:"/html/systems/Custom_Commands.html" }
         ]
     },
     HTSL: {
