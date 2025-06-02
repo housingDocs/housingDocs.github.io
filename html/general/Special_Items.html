@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Article Editor • Housing Docs</title>
+        <link rel="stylesheet" href="../../css/structure.css">
+        <link rel="stylesheet" href="../../css/colors.css">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    </head>
+
+    <body>
+
+        <div class="top bg-light-purple">
+
+        </div>
+
+
+
+        <div class="main">
+            <div class="sidebar">
+                <div class="sidebar-content bg-dark-purple">
+                    
+                </div>
+            </div>
+
+
+
+            <div class="page bg-dark-purple">
+                <div class="page-title">Special Items</div>
+<div class="page-subtitle">Add some fun or action triggers using Items</div>
+
+<div class="page-content-header">Introduction to Special Items</div>
+<div class="page-content-text">Officially called "Items". But to avoid confusion with normal items, they are referred to as "Special Items" in this document.<br>
+It can be accessed through <b>Housing Menu</b> (Ghast Tear/Nether Star) > <b>Items</b> (Emerald).</div>
+
+<div class="page-content-header">List of Special Items</div>
+
+<div class="page-content-subheader">Mailbox</div>
+<div class="page-content-text">Players with "Item: Mailbox" permission can place down a Mailbox and the owner can right click it to view mails.<br>
+The players can right click a Mailbox to obtain a Book and Quill to submit a mail.<br>
+(Please note that all signed Books and Quills will go into the Mailbox)</div>
+
+<div class="page-content-subheader">Egg Hunt Block</div>
+<div class="page-content-text">Players with "Item: Egg Hunt" permission can place down Egg Hunt Blocks (hereafter referred as Eggs).<br>
+Right clicking one will start an Egg Hunt (repeatable) to locate all the eggs within the House.<br>
+There can be at max 25 Eggs in an Egg Hunt. Finding all placed Eggs will end the Egg Hunt and announce the time taken to finish it.</div>
+
+<div class="page-content-subheader">Teleport Pad</div>
+<div class="page-content-text">As the name suggests, this item teleports you from one Teleport Pad to the other. Players with "Item: Teleport Pad" permission can place and edit Teleport Pads.<br>
+You may choose the "color" of a Teleport Pad, they act as tags to identify them among one another.<br>
+Options include: <span style="color:#ff5555">Red</span>, <span style="color:#ffff55">Yellow</span>, <span style="color:#55ff55">Lime</span>, <span style="color:#5555ff">Blue</span>, <span style="color:#ff55ff">Magenta</span>, <span style="color:#ffaa00">Orange</span>, <span style="color:#aaaaaa">Gray</span>, <span style="color:#ffffff">White</span>, <span style="color:#00aa00">Green</span>, <span style="color:#55ffff">Aqua</span>, <span style="color:#aa00aa">Purple</span>, <span style="color:#000000; background-color:#af99ff; padding:2px 6px; border-radius: 4px">Black</span><br>
+You may set the destination of a certain Teleport Pad to another with the certain color, "Another House" or "Housing Lobby".</div>
+
+<div class="page-content-subheader">Launch Pad</div>
+<div class="page-content-text">Players with "Item: Launch Pad" permission can place down a Launch Pad and right click it to change its settings.</div>
+<div class="page-content-list">
+<div class="page-content-list-point"><b>Toggle Mode</b>: Toggles whether stepping on the Launch Pad launches the player "Forward" (4 directions) or "Facing" (all directions)</div>
+<div class="page-content-list-point"><b>Change Launch Strength</b>: Set the horizontal launching strength of the Launch Pad (value 1~12, default 5)</div>
+<div class="page-content-list-point"><b>Change Vertical Strength</b>: Set the vertical launching strength of the Launch Pad (value 1~12, default 5)</div>
+</div>
+
+<div class="page-content-subheader">Parkour Block</div>
+<div class="page-content-text">Taking the appearance of the Light Weighted Pressure Plate, the owner can place a Parkour Block creates a "Parkour Start", "Checkpoint #n" or "Parkour End" of a parkour.<br>
+The Parkour Block placed most recently is always the Parkour End. Whenever you place a new one, the previous Parkour End is turned into a Checkpoint.<br>
+There can be at max 20 Checkpoints (Not including Start and End) in a House.<br>
+(Note: If players that aren't the owner try to place down a Parkour Block, it becomes an ordinary pressure plate)</div>
+
+<div class="page-content-subheader">Action Pad</div>
+<div class="page-content-text">Players with "Item: Action Pad" permission can place and right click to edit an Action Pad's behaviour.<br>
+On default, it takes the appearance of a Heavy Weighted Pressure Plate, but it can also be customized to appear as Light Weighted Pressure Plate, Stone Pressure Plate, or Wooden Pressure Plate.</div>
+
+<div class="page-content-subheader">Hologram</div>
+<div class="page-content-text">Players with "Item: Hologram" permission can place and right click to edit a Hologram's content.<br>
+It displays text using Name Tags on invisible Armor Stands, and <a href="https://cookiecrood.github.io/html/general/Formatting_Codes.html">Formatting Codes</a> can be used on a Hologram's text.<br>
+It can display at max 5 separate lines.</div>
+
+<div class="page-content-subheader">NPC</div>
+<div class="page-content-text">Players with "Item: NPCs" permission can place and right click while sneaking to edit an NPC.<br>
+It is extremely customizable, with its actions when clicked, name, appearance and equipped gear (including held item) being able to be edited.<br>
+You may also toggle whether its name tag is hidden, and whether it looks at nearby players.</div>
+
+<div class="page-content-subheader">Action Button</div>
+<div class="page-content-text">Players with "Item: Action Button" permission can place and right click while sneaking to edit an Action Button's behaviour.<br>
+On default, it takes the appearance of a Stone Button, but it can also be customized to appear as a Wooden Button.
+An Action Button behaves exactly the same as an Action Pad, except it is instead in the form of a Button.</div>
+
+<div class="page-content-subheader">Leaderboard</div>
+<div class="page-content-text">Players with "Item: Leaderboard" permission can place and right click to edit a Leaderboard's settings.<br>
+It displays the players (and the stat value) that has the highest (or lowest) stat in the House.<br>
+Below are its available settings:
+<div class="page-content-list">
+<div class="page-content-list-point"><b>Data Provider</b>: Toggles what the Leaderboard displays (Parkour Leaderboard / Player Variable / Team Variable)</div>
+<div class="page-content-list-point"><b>Title Override</b>: Customize what is displayed at the top of the Leaderboard, replacing the default</div>
+<div class="page-content-list-point"><b>Line Count</b>: Set the amount of players shown on the Leaderboard</div>
+<div class="page-content-list-point"><b>Variable</b>: Set the stat displayed on the Leaderboard</div>
+<div class="page-content-list-point"><b>Format Type</b>: Set how the numbers are displayed (Number [no commas] / Number (Formatted) [with commas] / Roman Numerals / Duration - Minutes, Seconds / Duration - Days, Hours, Minutes, Seconds)</div>
+<div class="page-content-list-point"><b>Invert Sorting</b>: Toggle whether the players with the highest or lowest stat are on top</div>
+<div class="page-content-list-point"><b>Show All Entries</b>: Toggle whether players with stat equal to or lower than zero are displayed</div>
+<div class="page-content-list-point"><b>Persistent Data</b>: Toggle whether offline players are displayed</div>
+<div class="page-content-list-point"><b>Show Personal</b>: Toggle whether the viewing player's stat is displayed at the bottom if they are not within the Leaderboard</div>
+<div class="page-content-list-point"><b>Player Conditions</b>: Add filters to which players are displayed</div>
+<div class="page-content-list-point"><b>Match Any Conditions</b>: Toggle whether players only have to meet at least 1 Condition to be displayed</div>
+</div>
+
+<div class="page-content-subheader">Trash Can</div>
+<div class="page-content-text">Players with "Item: Trash Can" permission can place a Trash Can.<br>
+Right clicking a Trash Can opens an inventory with 27 item slots.<br>
+Any item thrown into the Trash Can's inventory is deleted after closing the UI (this action is NOT reversible).</div>
+
+<div class="page-content-subheader">Biome Stick</div>
+<div class="page-content-text">Players with "Item: Biome Stick" permission can use a Biome Stick.<br>
+It changes the biome within a custom radius (default 3) to a custom biome (default desert).<br>
+Available biomes include: <span style="color:#55ff55">Desert</span>, <span style="color:#55ff55">Forest</span>, <span style="color:#55ff55">Ice Plains</span>, <span style="color:#55ff55">Jungle</span>, <span style="color:#55ff55">Mesa</span>, <span style="color:#55ff55">Ocean</span>, <span style="color:#55ff55">Plains</span>, <span style="color:#55ff55">Swamp</span>, <span style="color:#55ff55">Savanna</span>, <span style="color:#55ff55">Nether</span>, <span style="color:#55ff55">Taiga</span>, <span style="color:#55ff55">Birch Forest</span>, <span style="color:#55ff55">Deep Ocean</span>, <span style="color:#55ff55">Roofed Forest</span>, <span style="color:#55ff55">End</span>, <span style="color:#55ff55">Mushroom Island</span></div>
+
+<div class="page-content-subheader">Social Blocks</div>
+<div class="page-content-text">The owner can place down Social Blocks that links to their (or someone else's) social media.<br>
+There are currently 5 different social blocks, which are: Twitter, YouTube, Instagram, Twitch, Discord (Server or User)</div>
+
+<div class="page-content-subheader">Miscellaneous Items</div>
+<div class="page-content-list">
+<div class="page-content-list-point">Dragon Egg</div>
+<div class="page-content-list-point">Banners
+	- Unlocked through Collectibles in any Hypixel Lobby</div>
+<div class="page-content-list-point">Paintings
+	- All vanilla paintings are included, you may now choose the painting you put down instead of it being
+	  random</div>
+</div>
+            </div></div>
+
+
+
+            <div class="sidebar">
+                <div class="sidebar-content bg-dark-purple">
+                    <div class="sidebar-credit-header">
+                        Credits
+                    </div>
+                    <div class="sidebar-credit-card">
+                        <div class="sidebar-credit-name">
+                            Castorice
+                        </div>
+                        <hr>
+                        <div class="sidebar-credit-links">
+                            <a href="https:discord.com/users/1044215878687916042" target="_blank">Discord <span class="material-symbols-outlined">open_in_new</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </body>
+
+    <script src="../../scripts/code-block.js"></script>
+    <script src="../../scripts/build-frame.js"></script>
+
+</html>
