@@ -11,6 +11,7 @@ const nav = {
         icon: "hardware",
         iconColor: "#f5e942",
         points: [
+            { name: "Plot Size", link: "/html/general/Plot_Size.html" },
             { name: "Formatting Codes", link: "/html/general/Formatting_Codes.html" },
             { name: "Data Values", link: "/html/general/Data_Values.html" }
         ]
