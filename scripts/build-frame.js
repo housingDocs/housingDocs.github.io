@@ -82,6 +82,7 @@ for (const group in nav) {
 
 }
 
+// Enable @media on mobile
 document.querySelector('head').innerHTML += `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
 
 // Fill top

@@ -126,7 +126,7 @@ button {
     .dropdown {
         display: block;
     }
-    a {
+    .page a {
         word-break: break-all;
     }
 }
