@@ -155,12 +155,29 @@ document.querySelectorAll('.page-content-list').forEach((list) => {
     })
 })
 
-// Order Superheaders
+// Order Superheaders, make sub-navigation
+
+let subnavHTML = ''
+
 let i = 1
 document.querySelectorAll('.page-content-superheader').forEach((superHeader) => {
+    subnavHTML += `<a href="#${superHeader.textContent}"><span>#</span>${superHeader.textContent}<a><br>`
+    superHeader.setAttribute('id', superHeader.textContent)
     superHeader.innerHTML = `<span class="page-content-list-number">${i}.</span>  ${superHeader.innerHTML}`
     i++
 })
+
+if (i != 1) {
+    sidebars.item(1).innerHTML += 
+    `<div class="sidebar-subnav">
+        <div class="sidebar-subnav-title">
+            Content on this Page
+        </div>
+        <div class="sidebar-subnav-links">
+            ${subnavHTML}
+        </div>
+    </div>`
+}
 
 // Create Tables
 document.querySelectorAll('.page-content-table').forEach((table) => {

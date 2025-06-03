@@ -25,6 +25,7 @@ button {
     box-sizing: border-box !important;
     line-height: 1.4;
     text-wrap: auto;
+    scroll-behavior: smooth;
 }
 
 .top {
@@ -241,6 +242,30 @@ button {
     position: relative;
     top: 3px;
     font-size: 18px;
+}
+
+.sidebar-subnav {
+    color: white;
+    font-size: 22px;
+    border: 3px solid #463085;
+    border-radius: 8px;
+    padding: 6px 9px;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.sidebar-subnav-links {
+    color: #af99ff;
+    font-size: 19px;
+    font-weight: 500;
+    margin: 4px 0;
+}
+
+.sidebar-subnav-links span {
+    color: #6f4bd1;
+    font-weight: 400;
+    margin-right: 4px;
+    margin-left: 8px;
 }
 
 .page {
