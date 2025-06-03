@@ -82,6 +82,8 @@ for (const group in nav) {
 
 }
 
+document.querySelector('head').innerHTML += `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
+
 // Fill top
 sidebars.item(0).innerHTML = navHTML
 document.querySelector('.top').innerHTML = 
