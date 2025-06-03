@@ -101,7 +101,7 @@ button {
     width: 16%;
 }
 
-@media screen and (max-width: 720px) {
+@media (max-width: 720px) {
     .sidebar {
         display: none;
     }
