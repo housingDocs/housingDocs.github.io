@@ -121,7 +121,7 @@ const searchBar = document.querySelector('.sidebar-search')
 
 searchBar.addEventListener('input', () => {
     document.querySelectorAll('.sidebar-nav-point').forEach((point) => {
-        if (point.textContent.toLowerCase().includes(searchBar.value)) {
+        if (point.textContent.toLowerCase().includes(searchBar.value.toLowerCase())) {
             point.style = 'display: block;'
         } else {
             point.style = 'display: none;'
