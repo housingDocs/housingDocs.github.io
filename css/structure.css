@@ -252,6 +252,7 @@ button {
     padding: 6px 9px;
     font-weight: 400;
     margin-bottom: 8px;
+    text-wrap: nowrap !important;
 }
 
 .sidebar-subnav-links {

@@ -29,8 +29,9 @@ const nav = {
         icon: "settings",
         iconColor: "#fc6203",
         points: [
+            { name: "Edit Actions", link: "/html/systems/Edit_Actions.html" },
             { name: "Regions", link: "/html/systems/Regions.html" },
-            { name: "Event Actions", link: "/html/systems/Event_Actions.html"},
+            { name: "Event Actions", link: "/html/systems/Event_Actions.html" },
             { name: "Scoreboard Editor", link:"/html/systems/Scoreboard_Editor.html" },
             { name: "Custom Commands", link:"/html/systems/Custom_Commands.html" }
         ]
@@ -170,7 +171,7 @@ document.querySelectorAll('.page-content-superheader').forEach((superHeader) => 
 if (i != 1) {
     sidebars.item(1).innerHTML += 
     `<div class="sidebar-subnav">
-        <div class="sidebar-subnav-title">
+        <div class="sidebar-subnav-title" style="text-wrap: nowrap;">
             Content on this Page
         </div>
         <div class="sidebar-subnav-links">
