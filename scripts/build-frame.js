@@ -82,9 +82,15 @@ for (const group in nav) {
 
 }
 
+// Fill top
 sidebars.item(0).innerHTML = navHTML
 document.querySelector('.top').innerHTML = 
-`<div class="logo">
+`<button class="dropdown">
+    <span class="material-symbols-outlined">
+        menu
+    </span>
+</button>
+<div class="logo">
     <span class="material-symbols-outlined">
         import_contacts
     </span>
