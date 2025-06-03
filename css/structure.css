@@ -1,5 +1,6 @@
 html, body {
     height: 100%;
+    overflow: hidden;
 }
 
 body {
@@ -11,7 +12,6 @@ body {
 a, a:visited {
   color: inherit;
   text-decoration: none;
-  word-break: break-all;
 }
 
 button {
@@ -105,6 +105,11 @@ button {
     .sidebar {
         display: none;
     }
+    .sidebar-content:first-of-type {
+        position: absolute;
+        right: 0;
+        left: 0;
+    }
     .main {
         padding: 0;
     }
@@ -120,6 +125,9 @@ button {
     }
     .dropdown {
         display: block;
+    }
+    a {
+        word-break: break-all;
     }
 }
 
@@ -368,6 +376,7 @@ button {
 .page-content-code pre {
     margin: 16px;
     text-wrap: auto;
+    word-break: break-all;
 }
 
 .page-content-code pre:focus {
@@ -396,11 +405,11 @@ button {
 .page-content-list-point {
     color: white;
     font-size: 18px;
+    display: flex;
 }
 
-.page-content-list-point pre {
-    font-family: "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-    margin: 0;
+.page-content-list-content {
+    margin-left: 8px;
 }
 
 .page-content-list-number {

@@ -100,7 +100,23 @@ document.querySelector('.top').innerHTML =
     <img src="../../assets/discord.png">
 </div></a>`
 
-// Searchbat
+const dropdown = document.querySelector('.dropdown')
+const sidebar = document.querySelector('.sidebar')
+const page = document.querySelector('.page')
+
+dropdown.onclick = () => {
+    if (dropdown.dataset.active == 'true') {
+        sidebar.style.display = 'none'
+        page.style.display = 'block'
+        dropdown.dataset.active = 'false'
+    } else {
+        sidebar.style.display = 'block'
+        page.style.display = 'none'
+        dropdown.dataset.active = 'true'
+    }
+}
+
+// Searchbar
 const searchBar = document.querySelector('.sidebar-search')
 
 searchBar.addEventListener('input', () => {
@@ -131,7 +147,7 @@ searchBar.addEventListener('input', () => {
 document.querySelectorAll('.page-content-list').forEach((list) => {
     let i = 1
     list.querySelectorAll('.page-content-list-point').forEach((point) => {
-        point.innerHTML = `<pre>  <span class="page-content-list-number">${i}.</span>  ${point.innerHTML}</pre>`
+        point.innerHTML = `<span class="page-content-list-number">${i}.</span><div class="page-content-list-content">${point.innerHTML}</div>`
         i++
     })
 })
