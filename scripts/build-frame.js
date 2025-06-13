@@ -44,13 +44,20 @@ const nav = {
             { name: "Code Block Editor", link: "/html/htsl/Code_Block_Editor.html"}
         ]
     },
-    Other: {
+    Contribute: {
         icon: "ad_group",
-        iconColor: "#F52222",
+        iconColor: "#22DD22",
         points: [
-            { name: "Contribute", link: "/html/other/Contribute.html" },
-            { name: "Article Markdown", link: "/html/other/Article_Markdown.html"},
-            { name: "Article Editor", link: "/html/other/Article_Editor.html"}
+            { name: "Contribute", link: "/html/contribute/Contribute.html" },
+            { name: "Article Markdown", link: "/html/contribute/Article_Markdown.html"},
+            { name: "Article Editor", link: "/html/contribute/Article_Editor.html"}
+        ]
+    },
+    Other: {
+        icon: "coffee",
+        iconColor: "#f5e942",
+        points: [
+            { name: "About", link: "/html/other/About.html" }
         ]
     }
 }
