@@ -33,5 +33,5 @@ walkDir(baseDir, filePath => {
   }
 });
 
-fs.writeFileSync("./API/pages.json", JSON.stringify({ content: result, nav: nav.nav }, null, 2), "utf8");
+fs.writeFileSync("./API/pages.json", JSON.stringify({ articles: result, nav: nav.nav }, null, 2), "utf8");
 console.log("✅ pages.json created.");
