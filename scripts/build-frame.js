@@ -62,10 +62,15 @@ const nav = {
     }
 }
 
-// Create Navbar
+module.exports = {
+    nav
+}
+
+if (typeof document !== 'undefined') {
+    // Create Navbar
 const sidebars = document.querySelectorAll('.sidebar-content')
 
- let navHTML = '<input class="sidebar-search" placeholder="Search"></input>'
+let navHTML = '<input class="sidebar-search" placeholder="Search"></input>'
 
 for (const group in nav) {
     navHTML += 
@@ -203,3 +208,4 @@ document.querySelectorAll('.page-content-table').forEach((table) => {
         column.innerHTML = newHTML
     })
 })
+}
