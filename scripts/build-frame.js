@@ -1,5 +1,7 @@
 
-export const nav = {
+// Only export if not in browser environment
+const nav = (typeof window === 'undefined') ? 
+  exports.nav = {
     Home: {
         icon: "home",
         iconColor: "#6341E0",
@@ -60,7 +62,69 @@ export const nav = {
             { name: "About", link: "/html/other/About.html" }
         ]
     }
-}
+} : {
+    // Same nav object but not exported when in browser
+    Home: {
+        icon: "home",
+        iconColor: "#6341E0",
+        points: [
+            { name: "Docs Introduction", link: "/html/home/Introduction.html"},
+        ]
+    },
+    "General Housing": {
+        icon: "hardware",
+        iconColor: "#f5e942",
+        points: [
+            { name: "Groups and Permissions", link: "/html/general/Groups_and_Permissions.html"},
+            { name: "Special Items", link: "/html/general/Special_Items.html" },
+            { name: "Item Editor", link: "/html/general/Item_Editor.html" },
+            { name: "Formatting Codes", link: "/html/general/Formatting_Codes.html" },
+            { name: "Data Values", link: "/html/general/Data_Values.html" },
+        ]
+    },
+    "House Settings": {
+        icon: "handyman",
+        iconColor: "#e41212",
+        points: [
+            { name: "Plot Size", link: "/html/settings/Plot_Size.html" }
+        ]
+    },
+    Systems: {
+        icon: "settings",
+        iconColor: "#fc6203",
+        points: [
+            { name: "Edit Actions", link: "/html/systems/Edit_Actions.html" },
+            { name: "Regions", link: "/html/systems/Regions.html" },
+            { name: "Event Actions", link: "/html/systems/Event_Actions.html" },
+            { name: "Scoreboard Editor", link:"/html/systems/Scoreboard_Editor.html" },
+            { name: "Custom Commands", link:"/html/systems/Custom_Commands.html" }
+        ]
+    },
+    HTSL: {
+        icon: "code",
+        iconColor: "#67C520",
+        points: [
+            { name: "HTSL Introduction", link: "/html/htsl/Introduction.html" },
+            { name: "Code Block Editor", link: "/html/htsl/Code_Block_Editor.html"}
+        ]
+    },
+    Contribute: {
+        icon: "ad_group",
+        iconColor: "#22DD22",
+        points: [
+            { name: "Contribute", link: "/html/contribute/Contribute.html" },
+            { name: "Article Markdown", link: "/html/contribute/Article_Markdown.html"},
+            { name: "Article Editor", link: "/html/contribute/Article_Editor.html"}
+        ]
+    },
+    Other: {
+        icon: "coffee",
+        iconColor: "#f5e942",
+        points: [
+            { name: "About", link: "/html/other/About.html" }
+        ]
+    }
+};
 
 if (typeof document !== 'undefined') {
     // Create Navbar
