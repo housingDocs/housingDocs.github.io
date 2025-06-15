@@ -269,3 +269,4 @@ document.querySelectorAll('.page-content-table').forEach((table) => {
     })
 })
 }
+
