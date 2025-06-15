@@ -1,5 +1,5 @@
 
-const nav = {
+export const nav = {
     Home: {
         icon: "home",
         iconColor: "#6341E0",
@@ -60,10 +60,6 @@ const nav = {
             { name: "About", link: "/html/other/About.html" }
         ]
     }
-}
-
-module.exports = {
-    nav
 }
 
 if (typeof document !== 'undefined') {
