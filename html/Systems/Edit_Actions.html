@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Article Editor • Housing Docs</title>
+        <link rel="stylesheet" href="../../css/structure.css">
+        <link rel="stylesheet" href="../../css/colors.css">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    </head>
+
+    <body>
+
+        <div class="top bg-light-purple">
+
+        </div>
+
+
+
+        <div class="main">
+            <div class="sidebar">
+                <div class="sidebar-content bg-dark-purple">
+                    
+                </div>
+            </div>
+
+
+
+            <div class="page bg-dark-purple">
+                <div class="page-title">Edit Actions</div>
+<div class="page-subtitle">Power all your imaginations with Interactives</div>
+
+<div class="page-content-superheader">Introduction</div>
+<div class="page-content-text">Edit Actions allow Housing owners to customize interactions with clickable items, NPCs, and regions.<br>
+Using this feature, you can set commands, messages, or triggers when players interact with specific objects—enhancing gameplay, roleplay, or minigame mechanics.</div>
+
+<div class="page-content-text">Key Features:
+<ul>
+<li>Item Actions – Run commands or send messages when players click items.</li>
+<li>NPC Interactions – Customize dialogue, teleports, or permissions when talking to NPCs.</li>
+<li>Region Triggers – Execute actions when players enter/exit designated areas.</li>
+</ul>
+
+This system provides deeper control over your Housing experience, making builds more dynamic and interactive.</div>
+
+<div class="page-content-header">Fundamentals</div>
+<div class="page-content-subheader">When will we use Edit Actions?</div>
+<div class="page-content-text"><b>Edit Actions</b> is used everywhere around Housing Coding: Region Execution, Event Actions, Commands, Functions, Click Action in Custom Menus, Action Buttons // Pads // NPCs.</div>
+
+<div class="page-content-subheader">Remove Last Removed Action</div>
+<div class="page-content-text">Marked as a cauldron in an action editor, it restores the action you last removed.</div>
+
+<div class="page-content-subheader">How to add // edit // remove actions?</div>
+<div class="page-content-text">To add an action, head into the action editor, and click <b>Add Action</b> (Marked as paper).<br>
+To edit an action, left click on the selected action. Press and hold SHIFT, then left/right click to change its order.<br>
+To remove an action, right click on the selected action.</div>
+
+<div class="page-content-superheader">Actions Explained</div>
+<div class="page-content-text"><b>Edit Actions</b> currently contain 36 main functions (excluding Conditionals). Below is each component explained in detail:</div>
+
+<div class="page-content-subheader">1. Change Player's Group</div>
+<div class="page-content-text">Marked with: Player Head<br>
+Changes the group of a target player.<br>
+It contains 2 settings: <b>Target Group</b> and <b>Demotion Protection</b>.<br>
+<b>Group:</b> When the action is executed, the target player's group is set to the set target group.<br>
+<span style="color:red;"><b>Demotion Protection:</b> When enabled, the target player's group WILL NOT be changed when the target group has a lower group priority than that of the player's original group.</span><br>
+To learn more about <b>Group Priorities</b>, head to <a href="https://cookiecrood.github.io/html/general/Groups_and_Permissions.html">Permissions and Groups</a> page.</div>
+
+<div class="page-content-subheader">2. Kill Player</div>
+<div class="page-content-text">Marked with: Iron Bars<br>
+Kills the target player.<br>
+<span style="color:red;">This action will NOT work when the target player is in Creative Mode!!!</span></div>
+
+<div class="page-content-subheader">3. Full Heal</div>
+<div class="page-content-text">Marked with: Golden Apple<br>
+Heals the target player back to full health.</div>
+
+<div class="page-content-subheader">4. Display Title</div>
+<div class="page-content-text">Marked with: Book<br>
+Displays a title to the target player on the middle of their screen.<br>
+It contains 5 settings: <b>Title</b>, <b>Subtitle</b>, <b>Fadein</b>, <b>Stay</b>, and <b>Fadeout</b><br>
+<b>Title:</b> Displayed as the primary text on the screen.<br>
+<b>Subtitle:</b> Displayed as the secondary text on the screen, below <b>Title</b>.<br>
+<b>Fadein:</b> Counted in seconds, determines how much time it takes for the title to gradually appear.<br>
+<b>Stay:</b> Counted in seconds, determines how long the title should stay on screen.<br>
+<b>Fadeout:</b> Counted in seconds, determines how much time it takes for the title to gradually disappear.<br></div>
+
+<div class="page-content-subheader">5. Display Action Bar</div>
+<div class="page-content-text">Marked with: Book and Quill<br>
+Displays a message to the target player at a position above the player's hotbar.<br></div>
+
+<div class="page-content-subheader">6. Reset Inventory</div>
+<div class="page-content-text">Marked with: Stone<br>
+Resets a player's inventory.<br>
+If a default inventory layout is set, the player's inventory will be reset to the default inventory layout.</div>
+
+<div class="page-content-subheader">7. Change Max Health</div>
+<div class="page-content-text">Marked with: Dandelion<br>
+TChanges a player's maximum health.<br>
+It contains 3 settings: <b>Max Health</b>, <b>Mode</b>, and <b>Heal On Change</b>.<br>
+<b>Max Health:</b> Specifies a set variable. (Default: 20)<br>
+<b>Mode:</b> Specifies which algorithmic action to perform on the variable. (Set, Increment, Decrement, Multiply, Divide)<br>
+<b>Heal on Change:</b> When the maximum health of the player is changed, heal the target player to full health.</div>
+
+<div class="page-content-subheader">8. Parkour Checkpoint</div>
+<div class="page-content-text">Marked with: Lightweighted Pressure Plate (Gold)<br>
+If a parkour is present in the Housing, teleports the player to the last parkour checkpoint they reached.<br>
+If the target player hasn't started a parkour, teleports the player to the parkour start plate.</div>
+
+<div class="page-content-subheader">9. Give Item</div>
+<div class="page-content-text">Marked with: Chest<br>
+Gives the target player a selected item.<br>
+It contains 4 settings: <b>Item</b>, <b>Allow Multiple</b>, <b>Inventory Slot</b>, and <b>Replace Existing Item</b>.<br>
+<b>Item:</b> Specifies the selected item given to the player. Stacking items in the variable will give the player that amount.<br>
+<b>Allow Multiple:</b> When disabled, if the target player already has the target item, it won't be given again.<br>
+<b>Inventory Slot:</b> Specifies where the item appears in the target player's inventory. It can be any inventory slot.<br>
+<b>Replace Existing Item:</b> When enabled, if an item currently occupies the inventory slot it will be replaced with the new item.</div>
+
+<div class="page-content-subheader">10. Remove Item</div>
+<div class="page-content-text">Marked with: Cauldron<br>
+Removes a selected item from the targeted player. Stacking items in the variable will remove that amount from the player.<br>
+If the player has insufficient amount of items, it will be fully cleared.</div>
+
+<div class="page-content-subheader">11. Send a Chat Message</div>
+<div class="page-content-text">Marked with: Empty Map<br>
+Sends a message in chat to the target player.</div>
+
+<div class="page-content-subheader">12. Apply Potion Effect</div>
+<div class="page-content-text">Marked with: Water Bottle<br>
+Applies a potion effect to the targeted player.<br>
+It contains 5 settings: <b>Effect</b>, <b>Duration</b>, <b>Level</b>, <b>Override Existing Effects</b>, and <b>Show Potion Icon</b>.<br>
+<b>Effect:</b> Determines the potion effect the target player would get.<br>
+<b>Duration:</b> Counted in seconds, determines the longevity of the potion effect. (Maximum: 2592000)<br>
+<b>Level:</b> Specifies ntensity of the effect. (Maximum: 10)<br>
+<b>Override Existing Effects:</b> When enabled, replaces the current potion effect if the target player already has the selected potion effect.<br>
+<b>Show Potion Icon:</b> When enabled, shows the potion icon on the top right of the Minecraft Client for players running version 1.9 or later.</div>
+
+<div class="page-content-subheader">13. Clear All Potion Effects</div>
+<div class="page-content-text">Marked with: Empty Bottle<br>
+Clears all potion effects of the targeted player.</div>
+
+<div class="page-content-subheader">14. Give Experience Levels</div>
+<div class="page-content-text">Marked with: Experience Bottles<br>
+Adds XP levels to the target player.</div>
+
+<div class="page-content-subheader">15. Send to Lobby</div>
+<div class="page-content-text">Marked with: Bookshelf<br>
+Sends a player to any selected lobby in Hypixel.<br>
+Due to <b>Owner Protection</b>, Housing owners will not be affected by this action.</div>
+
+<div class="page-content-subheader">16. Change Variable</div>
+<div class="page-content-text">Marked with: Feather<br>
+Changes a variable stat of the targeted player. It can be a number or a string.<br>
+It contains 5 settings: <b>Holder</b>, <b>Variable</b>, <b>Mode</b>, <b>Value</b>, and <b>Automatic Unset</b>.<br>
+<b>Holder:</b> Specifies which type of variable will be changed. (Player, Global, Team)<br>
+<b>Variable:</b> Specifies the name of the target variable.<br>
+<b>Mode:</b> Specifies which algorithmic action to perform on the variable. (Unset, Set, Increment, Decrement, Multiply, Divide)<br>
+<b>Value:</b> Specifies the value to be assigned to the variable.<br>
+<b>Automatic Unset:</b> When enabled, values that are considered default will unset the variable automatically.</div>
+
+<div class="page-content-subheader">17. Teleport Player</div>
+<div class="page-content-text">Marked with: Ender Pearl<br>
+Teleports the target player to a set location.<br>
+It contains 2 settings: <b>Location</b> and <b>Prevent Teleporting Inside Blocks</b>.<br>
+<b>Location:</b> Specifies the location the target player gets teleported to.<br>
+Options include: <b>House Spawn Location</b>, <b>Location of the player activating the function</b>, <b>Location of the coder of the function</b>, and <b>Custom Coordinates</b>.<br>
+<b>Prevent Teleporting Inside Blocks:</b> If the target coordinate is within a block, the target player automatically gets teleported upwards until there's sufficient space.</div>
+
+<div class="page-content-subheader">18. Fail Parkour</div>
+<div class="page-content-text">Marked with: Lightweighted Pressure Plate (Gold)<br>
+Ends the target player's timed parkour session. (IF applicable)<br>
+A reason for ending the session can also be provided to the target player.</div>
+
+<div class="page-content-subheader">19. Play Sound</div>
+<div class="page-content-text">Marked with: Note Block<br>
+Gives the target player a selected item.<br>
+It contains 4 settings: <b>Sound</b>, <b>Volume</b>, <b>Pitch</b>, and <b>Location</b>.<br>
+<b>Sound:</b> Specifies the sound to be played. Must be a vanilla Minecraft sound.<br>
+<b>Volume:</b> (Range: 0-2), determines the volume of the sound.<br>
+<b>Pitch:</b> (Range 0-2), determines the pitch of the sound.<br>
+<b>Location:</b> Specifies where would the sound be played.</div>
+
+<div class="page-content-subheader">20. Set Compass Target</div>
+<div class="page-content-text">Marked with: Compass<br>
+Specifies where would the compass of a target player point towards. <b>Input must be a coordinate.</b></div>
+
+<div class="page-content-subheader">21. Set Gamemode</div>
+<div class="page-content-text">Marked with: Daylight Detector<br>
+Specifies what gamemode will the target player obtain. (Adventure // Survival // Creative)</div>
+
+<div class="page-content-subheader">22. Change Health</div>
+<div class="page-content-text">Marked with: Red Apple<br>
+Specifies the amount of health the target player gets.<br>
+It contains 2 settings: <b>Health</b> and <b>Mode</b>.<br>
+<b>Health:</b> Specifies a specific variable. (Default: 20).<br>
+<b>Mode:</b> Specifies which algorithmic action to perform on the variable. (Set, Increment, Decrement, Multiply, Divide)</div>
+
+<div class="page-content-subheader">23. Change Hunger Level</div>
+<div class="page-content-text">Marked with: Cooked Steak<br>
+Specifies the amount of hunger/saturation level the target player gets.<br>
+It contains 2 settings: <b>Level</b> and <b>Mode</b>.<br>
+<b>Level:</b> Specifies a specific variable. (Default: 20).<br>
+<b>Mode:</b> Specifies which algorithmic action to perform on the variable. (Set, Increment, Decrement, Multiply, Divide)</div>
+
+<div class="page-content-subheader">24. Random Action</div>
+<div class="page-content-text">Marked with: Ender Chest<br>
+Executes a single random action from a list of selected actions.<br>
+Every Edit Action is allowed to be randomized within <span style="color:red;">except Conditionals.</span></div>
+
+<div class="page-content-subheader">25. Trigger Function</div>
+<div class="page-content-text">Marked with: Activator Rail<br>
+Triggers a pre-defined function. (/functions)</div>
+
+<div class="page-content-subheader">26. Apply Inventory Layout</div>
+<div class="page-content-text">Marked with: Iron Axe<br>
+Applies a pre-defined inventory layout to the target player.</div>
+
+<div class="page-content-subheader">27. Enchant Held Item</div>
+<div class="page-content-text">Marked with: Enchanted Book<br>
+Enchants the item held by the target player.<br>
+It contains 2 settings: <b>Enchantment</b> and <b>Level</b>.<br>
+<b>Level:</b> Specifies a target enchantment. <b>All enchantments from Minecraft 1.8 are included.</b><br>
+<b>Mode:</b> Specifies the intensity of the enchantment. (Range: 1-10)</div>
+
+<div class="page-content-subheader">28. Pause Execution</div>
+<div class="page-content-text">Marked with: Red Bed<br>
+Pauses execution for the remaining actions for a specific amount of time. (Counted in ticks, 20 ticks = 1 second)</div>
+
+<div class="page-content-subheader">29. Set Player Team</div>
+<div class="page-content-text">Marked with: Wooden Sign<br>
+Allocates the target player to a team.</div>
+
+<div class="page-content-subheader">30. Display Menu</div>
+<div class="page-content-text">Marked with: Chest<br>
+Displays a custom menu to the target player.</div>
+
+<div class="page-content-subheader">31. Drop Item</div>
+<div class="page-content-text">Marked with: Dropper<br>
+Drops an item at a specific location.<br>
+It contains 6 settings: <b>Item</b>, <b>Location</b>, <b>Drop Naturally</b>, <b>Disable Item Merging</b>, <b>Prioritize Player</b>, and <b>Fallback to Inventory</b>.<br>
+<b>Item:</b> Specifies a target item / block.<br>
+<b>Location:</b> Specifies a target location for the item to appear.<br>
+<b>Drop Naturally:</b> When enabled, the item will be dropped naturally in the Housing, having slight randomness to its location.<br>
+<b>Disable Item Merging:</b> When enabled, the item will not merge with other items on the ground.<br>
+<b>Prioritize Player:</b> When enabled, the player the action is executed on will be prioritized for picking up the item.<br>
+<b>Fallback to Inventory:</b> When enabled, items will be put into the player inventory if they can't be dropped in the Housing.</div>
+
+<div class="page-content-subheader">32. Change Velocity</div>
+<div class="page-content-text">Marked with: Slime Block<br>
+Changes the velocity direction of the player.<br>
+It contains 3 settings: <b>X Velocity</b>, <b>Y Velocity</b>, and <b>Z Velocity</b>.<br>
+Each direction and velocity value should be determined using the coordinates system (F3)</div>
+
+<div class="page-content-subheader">33. Launch to Target</div>
+<div class="page-content-text">Marked with: Slime Ball<br>
+Launches the player in the general direction of the provided location.<br>
+It ontains 2 settings: <b>Target Location</b> and <b>Launch Strength</b>.<br>
+<b>Target Location:</b> Specifies the target location.<br>
+<b>Demotion Protection:</b> Specifies the strength of launching the target player.</div>
+
+<div class="page-content-subheader">34. Set Player Weather</div>
+<div class="page-content-text">Marked with: Water Bucket<br>
+Changes the weather for a target player. This will result in the weather being different from the world while set. (Sunny // Raining)</div>
+
+<div class="page-content-subheader">35. Set Player Time</div>
+<div class="page-content-text">Marked with: Clock<br>
+Changes the time of the world for a target player.</div>
+
+<div class="page-content-subheader">36. Toggle Nametag Display</div>
+<div class="page-content-text">Marked with: Water Bucket<br>
+Toggles whether the player's nametag is shown or hidden to other players in the Housing. (On // Off)</div>
+
+<div class="page-content-superheader">Conditionals</div>
+<div class="page-content-text">Marked with: Redstone Dust<br>
+(IF-THEN-ELSE) Use conditions to only execute provided actions when conditions are met by the player.<br>
+It contains 4 settings: <b>Conditions</b>, <b>Match Any Condition</b>, <b>If Actions</b>, and <b>Else Actions</b>.<br>
+<b>Conditions:</b> Specifies the selected item given to the player. Stacking items in the variable will give the player that amount.<br>
+<b>Match Any Condition:</b> When enabled, only one condition needs to match for IF ACTIONS to be performed.<br>
+<b>If Actions:</b> Actions that will run when the conditions are met.<br>
+<b>Else Actions:</b> Actions that will run if the conditions are not met.<br><br>
+Each condition has an <span style="color:#55FFFF;"><b>invert</b></span> option, which changes the condition to activate when the condition is <span style="color:red;"><b>not met.</b></span><br><br>
+Here is a list of all Conditionals:</div>
+<div class="page-content-table">
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Condtional</div> <div class="page-content-table-column" style="width: 20%;">Marked As</div> <div class="page-content-table-column" style="width: 20%;">Settings</div> <div class="page-content-table-column" style="width: 40%;">Description</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Required Group</div> <div class="page-content-table-column" style="width: 20%;">Player Head</div> <div class="page-content-table-column" style="width: 20%;">Required Group // Include Higher Groups</div> <div class="page-content-table-column" style="width: 40%;">Requires players to match the required group or higher, if set.</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Variable Requirement</div> <div class="page-content-table-column" style="width: 20%;">Feather</div> <div class="page-content-table-column" style="width: 20%;">Holder // Variable // Comparator // Compare Value // Fallback Value</div> <div class="page-content-table-column" style="width: 40%;">Requires players to match the provided comparator for the provided variable.</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Required Permission</div> <div class="page-content-table-column" style="width: 20%;">Filled Map</div> <div class="page-content-table-column" style="width: 20%;">Required Permission</div> <div class="page-content-table-column" style="width: 40%;">Requires players to have a specific permission, relative to their player group.</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Within Region</div> <div class="page-content-table-column" style="width: 20%;">Grass Block</div> <div class="page-content-table-column" style="width: 20%;">Region</div> <div class="page-content-table-column" style="width: 40%;">Requires the location to be within the selected region.</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Has Item</div> <div class="page-content-table-column" style="width: 20%;">Chest</div> <div class="page-content-table-column" style="width: 20%;">Item // What to Check // Where to Check // Required Amount</div> <div class="page-content-table-column" style="width: 40%;">Requires players to have the provided item and match the required cases.</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Doing Parkour</div> <div class="page-content-table-column" style="width: 20%;">Lightweighted Pressure Plate (Gold)</div> <div class="page-content-table-column" style="width: 20%;">Doing Parkour</div> <div class="page-content-table-column" style="width: 40%;">Requries players to be currently doing a parkour.</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Has Potion Effect</div> <div class="page-content-table-column" style="width: 20%;">Water Bottle</div> <div class="page-content-table-column" style="width: 20%;">Potion Effect</div> <div class="page-content-table-column" style="width: 40%;">Requries players to have the provided potion effect.</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Player Sneaking</div> <div class="page-content-table-column" style="width: 20%;">Haybale</div> <div class="page-content-table-column" style="width: 20%;">Sneaking</div> <div class="page-content-table-column" style="width: 40%;">Requires the player to be currently sneaking.</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Player Flying</div> <div class="page-content-table-column" style="width: 20%;">Feather</div> <div class="page-content-table-column" style="width: 20%;">Flying</div> <div class="page-content-table-column" style="width: 40%;">Requires the player to be currently flying.</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Player Health</div> <div class="page-content-table-column" style="width: 20%;">Red Apple</div> <div class="page-content-table-column" style="width: 20%;">Comparator // Compare Value</div> <div class="page-content-table-column" style="width: 40%;">Compare against a player's current health level.</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Max Player Health</div> <div class="page-content-table-column" style="width: 20%;">Golden Apple</div> <div class="page-content-table-column" style="width: 20%;">Comparator // Compare Value</div> <div class="page-content-table-column" style="width: 40%;">Compare against a player's max health level.</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Player Hunger</div> <div class="page-content-table-column" style="width: 20%;">Cooked Steak</div> <div class="page-content-table-column" style="width: 20%;">Comparator // Compare Value</div> <div class="page-content-table-column" style="width: 40%;">Compare against a player's current hunger level.</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Required Gamemode</div> <div class="page-content-table-column" style="width: 20%;">Daylight Detector</div> <div class="page-content-table-column" style="width: 20%;">Gamemode</div> <div class="page-content-table-column" style="width: 40%;">Requires players to be in a specific gamemode.</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Placeholder Number Requirement</div> <div class="page-content-table-column" style="width: 20%;">Wooden Sign</div> <div class="page-content-table-column" style="width: 20%;">Placeholder // Comparator // Compare Value</div> <div class="page-content-table-column" style="width: 40%;">Requires a number placeholder to match the provided condition.</div></div>
+<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Required Team</div> <div class="page-content-table-column" style="width: 20%;">Custom Player Head</div> <div class="page-content-table-column" style="width: 20%;">Team</div> <div class="page-content-table-column" style="width: 40%;">Requires players to match the required team.</div></div>
+</div>
+            </div>
+
+
+
+            <div class="sidebar">
+                <div class="sidebar-content bg-dark-purple">
+                    <div class="sidebar-credit-header">
+                        Credits
+                    </div>
+                    <div class="sidebar-credit-card">
+                        <div class="sidebar-credit-name">
+                            cookieCrood
+                        </div>
+                        <hr>
+                        <div class="sidebar-credit-links">
+                            <a href="https://github.com/cookieCrood" target="_blank">GitHub <span class="material-symbols-outlined">open_in_new</span></a>
+                            <a href="https://discord.com/users/783404892039282709" target="_blank">Discord <span class="material-symbols-outlined">open_in_new</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </body>
+
+    <script src="../../scripts/code-block.js"></script>
+    <script src="../../scripts/build-frame.js"></script>
+
+</html>
