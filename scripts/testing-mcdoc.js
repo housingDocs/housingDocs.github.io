@@ -86,7 +86,6 @@ for (const dir of topDirs) {
   const fullDir = path.join(INPUT_ROOT, groupName);
 
   nav[groupName] = {
-    icon: "file",
     iconColor: "#888",
     points: []
   };
@@ -117,7 +116,7 @@ for (const dir of topDirs) {
     articles[fileId] = mcdoc;
 
     nav[groupName].points.push({
-      name: mcdoc.title || fileId,
+      name: filePath.split('/')[filePath.split('/').length - 1].replaceAll('_', ' ').replace('.html', '') || fileId,
       link: urlPath
     });
   }

@@ -5,15 +5,15 @@
       "iconColor": "#888",
       "points": [
         {
-          "name": "contribute/Article_Editor",
+          "name": "Article Editor",
           "link": "/html/contribute/Article_Editor.html"
         },
         {
-          "name": "Title, Subtitle, Headers",
+          "name": "Article Markdown",
           "link": "/html/contribute/Article_Markdown.html"
         },
         {
-          "name": "contribute/Contribute",
+          "name": "Contribute",
           "link": "/html/contribute/Contribute.html"
         }
       ]
@@ -23,23 +23,23 @@
       "iconColor": "#888",
       "points": [
         {
-          "name": "general/Data_Values",
+          "name": "Data Values",
           "link": "/html/general/Data_Values.html"
         },
         {
-          "name": "general/Formatting_Codes",
+          "name": "Formatting Codes",
           "link": "/html/general/Formatting_Codes.html"
         },
         {
-          "name": "Introduction",
+          "name": "Groups and Permissions",
           "link": "/html/general/Groups_and_Permissions.html"
         },
         {
-          "name": "general/Item_Editor",
+          "name": "Item Editor",
           "link": "/html/general/Item_Editor.html"
         },
         {
-          "name": "general/Special_Items",
+          "name": "Special Items",
           "link": "/html/general/Special_Items.html"
         }
       ]
@@ -49,7 +49,7 @@
       "iconColor": "#888",
       "points": [
         {
-          "name": "Navigating the Documentation",
+          "name": "Introduction",
           "link": "/html/home/Introduction.html"
         }
       ]
@@ -59,11 +59,11 @@
       "iconColor": "#888",
       "points": [
         {
-          "name": "htsl/Code_Block_Editor",
+          "name": "Code Block Editor",
           "link": "/html/htsl/Code_Block_Editor.html"
         },
         {
-          "name": "htsl/Introduction",
+          "name": "Introduction",
           "link": "/html/htsl/Introduction.html"
         }
       ]
@@ -73,7 +73,7 @@
       "iconColor": "#888",
       "points": [
         {
-          "name": "other/About",
+          "name": "About",
           "link": "/html/other/About.html"
         }
       ]
@@ -83,7 +83,7 @@
       "iconColor": "#888",
       "points": [
         {
-          "name": "settings/Plot_Size",
+          "name": "Plot Size",
           "link": "/html/settings/Plot_Size.html"
         }
       ]
@@ -93,31 +93,31 @@
       "iconColor": "#888",
       "points": [
         {
-          "name": "systems/Custom_Commands",
+          "name": "Custom Commands",
           "link": "/html/systems/Custom_Commands.html"
         },
         {
-          "name": "systems/Custom_Menus",
+          "name": "Custom Menus",
           "link": "/html/systems/Custom_Menus.html"
         },
         {
-          "name": "Introduction",
+          "name": "Edit Actions",
           "link": "/html/systems/Edit_Actions.html"
         },
         {
-          "name": "systems/Event_Actions",
+          "name": "Event Actions",
           "link": "/html/systems/Event_Actions.html"
         },
         {
-          "name": "systems/Functions",
+          "name": "Functions",
           "link": "/html/systems/Functions.html"
         },
         {
-          "name": "systems/Regions",
+          "name": "Regions",
           "link": "/html/systems/Regions.html"
         },
         {
-          "name": "systems/Scoreboard_Editor",
+          "name": "Scoreboard Editor",
           "link": "/html/systems/Scoreboard_Editor.html"
         }
       ]
