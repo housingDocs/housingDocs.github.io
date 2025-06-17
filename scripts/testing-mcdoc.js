@@ -80,8 +80,16 @@ const topDirs = fs.readdirSync(INPUT_ROOT, { withFileTypes: true }).filter(d => 
 for (const dir of topDirs) {
   const groupName = dir.name;
   const fullDir = path.join(INPUT_ROOT, groupName);
+  const navKey = groupName.replaceAll('_', ' ');
+  const navEntry = navMap[navKey];
+
+  if (!navEntry) {
+    console.warn(`⚠️ No navMap entry found for group: ${navKey}`);
+    continue;
+  }
+
   nav[groupName] = {
-    iconColor: navMap[groupName.replaceAll('_', ' ')].iconColor,
+    iconColor: navEntry.iconColor,
     points: []
   };
 
@@ -92,7 +100,7 @@ for (const dir of topDirs) {
     for (const entry of entries) {
       const fullPath = path.join(base, entry.name);
       if (entry.isDirectory()) {
-        gatherHtmlFiles(fullPath); // nested files will still be listed
+        gatherHtmlFiles(fullPath);
       } else if (entry.name.endsWith(".html")) {
         allFiles.push(fullPath);
       }
@@ -100,6 +108,8 @@ for (const dir of topDirs) {
   }
 
   gatherHtmlFiles(fullDir);
+
+  const fileMap = {};
 
   for (const filePath of allFiles) {
     const relative = path.relative(INPUT_ROOT, filePath); // e.g. "home/Intro.html"
@@ -110,10 +120,20 @@ for (const dir of topDirs) {
     const mcdoc = parseHTMLtoMcdoc(html);
     articles[fileId] = mcdoc;
 
-    nav[groupName].points.push({
-      name: filePath.split('/')[filePath.split('/').length - 1].replaceAll('_', ' ').replace('.html', '') || fileId,
+    const fileName = path.basename(filePath, ".html").replaceAll('_', ' ') || fileId;
+    fileMap[urlPath] = {
+      name: fileName,
       link: urlPath
-    });
+    };
+  }
+
+  // Preserve ordering from navMap
+  for (const point of navEntry.points) {
+    if (fileMap[point.link]) {
+      nav[groupName].points.push(fileMap[point.link]);
+    } else {
+      console.warn(`⚠️ Missing file for navMap entry: ${point.link}`);
+    }
   }
 }
 

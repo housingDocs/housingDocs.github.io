@@ -4,16 +4,16 @@
       "iconColor": "#22DD22",
       "points": [
         {
-          "name": "Article Editor",
-          "link": "/html/Contribute/Article_Editor.html"
+          "name": "Contribute",
+          "link": "/html/Contribute/Contribute.html"
         },
         {
           "name": "Article Markdown",
           "link": "/html/Contribute/Article_Markdown.html"
         },
         {
-          "name": "Contribute",
-          "link": "/html/Contribute/Contribute.html"
+          "name": "Article Editor",
+          "link": "/html/Contribute/Article_Editor.html"
         }
       ]
     },
@@ -21,24 +21,24 @@
       "iconColor": "#f5e942",
       "points": [
         {
-          "name": "Data Values",
-          "link": "/html/General_Housing/Data_Values.html"
-        },
-        {
-          "name": "Formatting Codes",
-          "link": "/html/General_Housing/Formatting_Codes.html"
-        },
-        {
           "name": "Groups and Permissions",
           "link": "/html/General_Housing/Groups_and_Permissions.html"
+        },
+        {
+          "name": "Special Items",
+          "link": "/html/General_Housing/Special_Items.html"
         },
         {
           "name": "Item Editor",
           "link": "/html/General_Housing/Item_Editor.html"
         },
         {
-          "name": "Special Items",
-          "link": "/html/General_Housing/Special_Items.html"
+          "name": "Formatting Codes",
+          "link": "/html/General_Housing/Formatting_Codes.html"
+        },
+        {
+          "name": "Data Values",
+          "link": "/html/General_Housing/Data_Values.html"
         }
       ]
     },
@@ -46,12 +46,12 @@
       "iconColor": "#67C520",
       "points": [
         {
-          "name": "Code Block Editor",
-          "link": "/html/HTSL/Code_Block_Editor.html"
-        },
-        {
           "name": "Introduction",
           "link": "/html/HTSL/Introduction.html"
+        },
+        {
+          "name": "Code Block Editor",
+          "link": "/html/HTSL/Code_Block_Editor.html"
         }
       ]
     },
@@ -86,32 +86,24 @@
       "iconColor": "#fc6203",
       "points": [
         {
-          "name": "Custom Commands",
-          "link": "/html/Systems/Custom_Commands.html"
-        },
-        {
-          "name": "Custom Menus",
-          "link": "/html/Systems/Custom_Menus.html"
-        },
-        {
           "name": "Edit Actions",
           "link": "/html/Systems/Edit_Actions.html"
-        },
-        {
-          "name": "Event Actions",
-          "link": "/html/Systems/Event_Actions.html"
-        },
-        {
-          "name": "Functions",
-          "link": "/html/Systems/Functions.html"
         },
         {
           "name": "Regions",
           "link": "/html/Systems/Regions.html"
         },
         {
+          "name": "Event Actions",
+          "link": "/html/Systems/Event_Actions.html"
+        },
+        {
           "name": "Scoreboard Editor",
           "link": "/html/Systems/Scoreboard_Editor.html"
+        },
+        {
+          "name": "Custom Commands",
+          "link": "/html/Systems/Custom_Commands.html"
         }
       ]
     }
