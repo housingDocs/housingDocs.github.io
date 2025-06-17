@@ -118,7 +118,6 @@
   },
   "articles": {
     "Contribute/Article_Editor": {
-      "title": "",
       "blocks": [
         {
           "type": "page-title",
@@ -139,7 +138,6 @@
       ]
     },
     "Contribute/Article_Markdown": {
-      "title": "Title, Subtitle, Headers",
       "blocks": [
         {
           "type": "page-title",
@@ -332,7 +330,6 @@
       ]
     },
     "Contribute/Contribute": {
-      "title": "",
       "blocks": [
         {
           "type": "page-title",
@@ -405,7 +402,6 @@
       ]
     },
     "General_Housing/Data_Values": {
-      "title": "",
       "blocks": [
         {
           "type": "page-title",
@@ -706,7 +702,6 @@
       ]
     },
     "General_Housing/Formatting_Codes": {
-      "title": "",
       "blocks": [
         {
           "type": "page-title",
@@ -803,7 +798,6 @@
       ]
     },
     "General_Housing/Groups_and_Permissions": {
-      "title": "Introduction",
       "blocks": [
         {
           "type": "page-title",
@@ -1892,7 +1886,6 @@
       ]
     },
     "General_Housing/Item_Editor": {
-      "title": "",
       "blocks": [
         {
           "type": "page-title",
@@ -1932,7 +1925,6 @@
       ]
     },
     "General_Housing/Special_Items": {
-      "title": "",
       "blocks": [
         {
           "type": "page-title",
@@ -2097,7 +2089,6 @@
       ]
     },
     "HTSL/Code_Block_Editor": {
-      "title": "",
       "blocks": [
         {
           "type": "page-title",
@@ -2114,7 +2105,6 @@
       ]
     },
     "HTSL/Introduction": {
-      "title": "",
       "blocks": [
         {
           "type": "page-title",
@@ -2165,7 +2155,6 @@
       ]
     },
     "Home/Introduction": {
-      "title": "Navigating the Documentation",
       "blocks": [
         {
           "type": "page-title",
@@ -2240,7 +2229,6 @@
       ]
     },
     "House_Settings/Plot_Size": {
-      "title": "",
       "blocks": [
         {
           "type": "page-title",
@@ -2397,11 +2385,9 @@
       ]
     },
     "Other/About": {
-      "title": "",
       "blocks": []
     },
     "Systems/Custom_Commands": {
-      "title": "",
       "blocks": [
         {
           "type": "page-title",
@@ -2470,11 +2456,9 @@
       ]
     },
     "Systems/Custom_Menus": {
-      "title": "",
       "blocks": []
     },
     "Systems/Edit_Actions": {
-      "title": "Introduction",
       "blocks": [
         {
           "type": "page-title",
@@ -3155,7 +3139,6 @@
       ]
     },
     "Systems/Event_Actions": {
-      "title": "",
       "blocks": [
         {
           "type": "text",
@@ -3164,7 +3147,6 @@
       ]
     },
     "Systems/Functions": {
-      "title": "",
       "blocks": [
         {
           "type": "text",
@@ -3173,7 +3155,6 @@
       ]
     },
     "Systems/Regions": {
-      "title": "",
       "blocks": [
         {
           "type": "page-title",
@@ -3233,7 +3214,6 @@
       ]
     },
     "Systems/Scoreboard_Editor": {
-      "title": "",
       "blocks": [
         {
           "type": "page-title",

@@ -8,7 +8,6 @@ function parseHTMLtoMcdoc(htmlString) {
   const document = dom.window.document;
 
   const result = {
-    title: "",
     blocks: []
   };
 
@@ -30,10 +29,6 @@ function parseHTMLtoMcdoc(htmlString) {
     if (type === "list") {
       i++;
       continue;
-    }
-
-    if (type === "superheader" && !result.title) {
-      result.title = extractTextWithLinks(div);
     }
 
     if (type === "list-point") {
