@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const { JSDOM } = require("jsdom");
+const navMap = require("./build-frame").nav;
 
 function parseHTMLtoMcdoc(htmlString) {
   const dom = new JSDOM(htmlString);
@@ -84,9 +85,8 @@ const topDirs = fs.readdirSync(INPUT_ROOT, { withFileTypes: true }).filter(d => 
 for (const dir of topDirs) {
   const groupName = dir.name;
   const fullDir = path.join(INPUT_ROOT, groupName);
-
   nav[groupName] = {
-    iconColor: "#888",
+    iconColor: navMap[groupName.replaceAll('_', ' ')].iconColor,
     points: []
   };
 

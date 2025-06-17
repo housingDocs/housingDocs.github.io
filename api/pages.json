@@ -1,130 +1,123 @@
 {
   "nav": {
-    "contribute": {
-      "icon": "file",
-      "iconColor": "#888",
+    "Contribute": {
+      "iconColor": "#22DD22",
       "points": [
         {
           "name": "Article Editor",
-          "link": "/html/contribute/Article_Editor.html"
+          "link": "/html/Contribute/Article_Editor.html"
         },
         {
           "name": "Article Markdown",
-          "link": "/html/contribute/Article_Markdown.html"
+          "link": "/html/Contribute/Article_Markdown.html"
         },
         {
           "name": "Contribute",
-          "link": "/html/contribute/Contribute.html"
+          "link": "/html/Contribute/Contribute.html"
         }
       ]
     },
-    "general": {
-      "icon": "file",
-      "iconColor": "#888",
+    "General_Housing": {
+      "iconColor": "#f5e942",
       "points": [
         {
           "name": "Data Values",
-          "link": "/html/general/Data_Values.html"
+          "link": "/html/General_Housing/Data_Values.html"
         },
         {
           "name": "Formatting Codes",
-          "link": "/html/general/Formatting_Codes.html"
+          "link": "/html/General_Housing/Formatting_Codes.html"
         },
         {
           "name": "Groups and Permissions",
-          "link": "/html/general/Groups_and_Permissions.html"
+          "link": "/html/General_Housing/Groups_and_Permissions.html"
         },
         {
           "name": "Item Editor",
-          "link": "/html/general/Item_Editor.html"
+          "link": "/html/General_Housing/Item_Editor.html"
         },
         {
           "name": "Special Items",
-          "link": "/html/general/Special_Items.html"
+          "link": "/html/General_Housing/Special_Items.html"
         }
       ]
     },
-    "home": {
-      "icon": "file",
-      "iconColor": "#888",
-      "points": [
-        {
-          "name": "Introduction",
-          "link": "/html/home/Introduction.html"
-        }
-      ]
-    },
-    "htsl": {
-      "icon": "file",
-      "iconColor": "#888",
+    "HTSL": {
+      "iconColor": "#67C520",
       "points": [
         {
           "name": "Code Block Editor",
-          "link": "/html/htsl/Code_Block_Editor.html"
+          "link": "/html/HTSL/Code_Block_Editor.html"
         },
         {
           "name": "Introduction",
-          "link": "/html/htsl/Introduction.html"
+          "link": "/html/HTSL/Introduction.html"
         }
       ]
     },
-    "other": {
-      "icon": "file",
-      "iconColor": "#888",
+    "Home": {
+      "iconColor": "#6341E0",
       "points": [
         {
-          "name": "About",
-          "link": "/html/other/About.html"
+          "name": "Introduction",
+          "link": "/html/Home/Introduction.html"
         }
       ]
     },
-    "settings": {
-      "icon": "file",
-      "iconColor": "#888",
+    "House_Settings": {
+      "iconColor": "#e41212",
       "points": [
         {
           "name": "Plot Size",
-          "link": "/html/settings/Plot_Size.html"
+          "link": "/html/House_Settings/Plot_Size.html"
         }
       ]
     },
-    "systems": {
-      "icon": "file",
-      "iconColor": "#888",
+    "Other": {
+      "iconColor": "#f5e942",
+      "points": [
+        {
+          "name": "About",
+          "link": "/html/Other/About.html"
+        }
+      ]
+    },
+    "Systems": {
+      "iconColor": "#fc6203",
       "points": [
         {
           "name": "Custom Commands",
-          "link": "/html/systems/Custom_Commands.html"
+          "link": "/html/Systems/Custom_Commands.html"
         },
         {
           "name": "Custom Menus",
-          "link": "/html/systems/Custom_Menus.html"
+          "link": "/html/Systems/Custom_Menus.html"
         },
         {
           "name": "Edit Actions",
-          "link": "/html/systems/Edit_Actions.html"
+          "link": "/html/Systems/Edit_Actions.html"
         },
         {
           "name": "Event Actions",
-          "link": "/html/systems/Event_Actions.html"
+          "link": "/html/Systems/Event_Actions.html"
         },
         {
           "name": "Functions",
-          "link": "/html/systems/Functions.html"
+          "link": "/html/Systems/Functions.html"
         },
         {
           "name": "Regions",
-          "link": "/html/systems/Regions.html"
+          "link": "/html/Systems/Regions.html"
         },
         {
           "name": "Scoreboard Editor",
-          "link": "/html/systems/Scoreboard_Editor.html"
+          "link": "/html/Systems/Scoreboard_Editor.html"
         }
       ]
     }
   },
   "articles": {
-    "contribute/Article_Editor": {
+    "Contribute/Article_Editor": {
       "title": "",
       "blocks": [
         {
@@ -145,7 +138,7 @@
         }
       ]
     },
-    "contribute/Article_Markdown": {
+    "Contribute/Article_Markdown": {
       "title": "Title, Subtitle, Headers",
       "blocks": [
         {
@@ -338,7 +331,7 @@
         }
       ]
     },
-    "contribute/Contribute": {
+    "Contribute/Contribute": {
       "title": "",
       "blocks": [
         {
@@ -411,7 +404,7 @@
         }
       ]
     },
-    "general/Data_Values": {
+    "General_Housing/Data_Values": {
       "title": "",
       "blocks": [
         {
@@ -712,7 +705,7 @@
         }
       ]
     },
-    "general/Formatting_Codes": {
+    "General_Housing/Formatting_Codes": {
       "title": "",
       "blocks": [
         {
@@ -809,7 +802,7 @@
         }
       ]
     },
-    "general/Groups_and_Permissions": {
+    "General_Housing/Groups_and_Permissions": {
       "title": "Introduction",
       "blocks": [
         {
@@ -1898,7 +1891,7 @@
         }
       ]
     },
-    "general/Item_Editor": {
+    "General_Housing/Item_Editor": {
       "title": "",
       "blocks": [
         {
@@ -1938,7 +1931,7 @@
         }
       ]
     },
-    "general/Special_Items": {
+    "General_Housing/Special_Items": {
       "title": "",
       "blocks": [
         {
@@ -2103,7 +2096,75 @@
         }
       ]
     },
-    "home/Introduction": {
+    "HTSL/Code_Block_Editor": {
+      "title": "",
+      "blocks": [
+        {
+          "type": "page-title",
+          "text": "Code Block Editor"
+        },
+        {
+          "type": "page-subtitle",
+          "text": "Check out how text would be displayed in a Code Block"
+        },
+        {
+          "type": "code code-editor",
+          "text": ""
+        }
+      ]
+    },
+    "HTSL/Introduction": {
+      "title": "",
+      "blocks": [
+        {
+          "type": "page-title",
+          "text": "Welcome to HTSL!"
+        },
+        {
+          "type": "page-subtitle",
+          "text": "Housing Text Scripting Language, created by BusterBrown1218."
+        },
+        {
+          "type": "text",
+          "text": "HTSL (Housing Text Scripting Language) is both a scripting syntax and a ChatTriggers module designed to help users write, share, and import/export scripts directly within Housing using a macro. Its syntax mirrors Housing code, each line in HTSL corresponds directly to a Housing action, with no additional functionality beyond what Housing already provides."
+        },
+        {
+          "type": "text",
+          "text": "The creator, BusterBrown1218, describes HTSL as follows:\nHTSL is a direct one-to-one, line-to-Housing action script. It is by no means a language, and is only capable of doing what housing does. There is no abstraction, what you write is what you get.\nHTSL's purpose is to make it easier for people to develop housings or just sharing code with other people. Having a standard to talk about Housing actions makes it much easier to discuss code as we don't have to use weird different forms of pseudocode unique to everyone."
+        },
+        {
+          "type": "text",
+          "text": "With Hypixel's latest update to their rules, macros for specifically importing/exporting Housing actions are now allowed, meaning you can safely use HTSL as you want without safe mode enabled."
+        },
+        {
+          "type": "header",
+          "text": "Installation"
+        },
+        {
+          "type": "text",
+          "text": "Requirements\nBefore we begin there's a few requirements you need to actually use HTSL:\n\nForge for 1.8\nChatTriggers mod for Forge 1.8\nVisual Studio Code (optional, if you want to write code)\n\n\n\nHTSL Installation\n\nGo to the HTSL GitHub releases page.\nDownload the HTSL.zip.\nExtract the zipped file into a new folder called HTSL (make sure there is only one HTSL folder, not\n       HTSL\\HTSL\\rest of files).\nNow, in-game we're going to run /ct files, and go into your modules folder and drop your HTSL\n       folder right in there.\nLast thing left to do is /ct reload and you can now use the HTSL module!"
+        },
+        {
+          "type": "list",
+          "items": [
+            "[Forge for 1.8](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.8.9.html)",
+            "[ChatTriggers mod for Forge 1.8](https://chattriggers.com/)",
+            "[Visual Studio Code (optional, if you want to write code)](https://code.visualstudio.com/Download)"
+          ]
+        },
+        {
+          "type": "list",
+          "items": [
+            "Go to the [HTSL GitHub](https://github.com/BusterBrown1218/HTSL/releases/latest) releases page.",
+            "Download the HTSL.zip.",
+            "Extract the zipped file into a new folder called HTSL (make sure there is only one HTSL folder, not\n       HTSL\\HTSL\\rest of files).",
+            "Now, in-game we're going to run /ct files, and go into your modules folder and drop your HTSL\n       folder right in there.",
+            "Last thing left to do is /ct reload and you can now use the HTSL module!"
+          ]
+        }
+      ]
+    },
+    "Home/Introduction": {
       "title": "Navigating the Documentation",
       "blocks": [
         {
@@ -2178,79 +2239,7 @@
         }
       ]
     },
-    "htsl/Code_Block_Editor": {
-      "title": "",
-      "blocks": [
-        {
-          "type": "page-title",
-          "text": "Code Block Editor"
-        },
-        {
-          "type": "page-subtitle",
-          "text": "Check out how text would be displayed in a Code Block"
-        },
-        {
-          "type": "code code-editor",
-          "text": ""
-        }
-      ]
-    },
-    "htsl/Introduction": {
-      "title": "",
-      "blocks": [
-        {
-          "type": "page-title",
-          "text": "Welcome to HTSL!"
-        },
-        {
-          "type": "page-subtitle",
-          "text": "Housing Text Scripting Language, created by BusterBrown1218."
-        },
-        {
-          "type": "text",
-          "text": "HTSL (Housing Text Scripting Language) is both a scripting syntax and a ChatTriggers module designed to help users write, share, and import/export scripts directly within Housing using a macro. Its syntax mirrors Housing code, each line in HTSL corresponds directly to a Housing action, with no additional functionality beyond what Housing already provides."
-        },
-        {
-          "type": "text",
-          "text": "The creator, BusterBrown1218, describes HTSL as follows:\nHTSL is a direct one-to-one, line-to-Housing action script. It is by no means a language, and is only capable of doing what housing does. There is no abstraction, what you write is what you get.\nHTSL's purpose is to make it easier for people to develop housings or just sharing code with other people. Having a standard to talk about Housing actions makes it much easier to discuss code as we don't have to use weird different forms of pseudocode unique to everyone."
-        },
-        {
-          "type": "text",
-          "text": "With Hypixel's latest update to their rules, macros for specifically importing/exporting Housing actions are now allowed, meaning you can safely use HTSL as you want without safe mode enabled."
-        },
-        {
-          "type": "header",
-          "text": "Installation"
-        },
-        {
-          "type": "text",
-          "text": "Requirements\nBefore we begin there's a few requirements you need to actually use HTSL:\n\nForge for 1.8\nChatTriggers mod for Forge 1.8\nVisual Studio Code (optional, if you want to write code)\n\n\n\nHTSL Installation\n\nGo to the HTSL GitHub releases page.\nDownload the HTSL.zip.\nExtract the zipped file into a new folder called HTSL (make sure there is only one HTSL folder, not\n       HTSL\\HTSL\\rest of files).\nNow, in-game we're going to run /ct files, and go into your modules folder and drop your HTSL\n       folder right in there.\nLast thing left to do is /ct reload and you can now use the HTSL module!"
-        },
-        {
-          "type": "list",
-          "items": [
-            "[Forge for 1.8](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.8.9.html)",
-            "[ChatTriggers mod for Forge 1.8](https://chattriggers.com/)",
-            "[Visual Studio Code (optional, if you want to write code)](https://code.visualstudio.com/Download)"
-          ]
-        },
-        {
-          "type": "list",
-          "items": [
-            "Go to the [HTSL GitHub](https://github.com/BusterBrown1218/HTSL/releases/latest) releases page.",
-            "Download the HTSL.zip.",
-            "Extract the zipped file into a new folder called HTSL (make sure there is only one HTSL folder, not\n       HTSL\\HTSL\\rest of files).",
-            "Now, in-game we're going to run /ct files, and go into your modules folder and drop your HTSL\n       folder right in there.",
-            "Last thing left to do is /ct reload and you can now use the HTSL module!"
-          ]
-        }
-      ]
-    },
-    "other/About": {
-      "title": "",
-      "blocks": []
-    },
-    "settings/Plot_Size": {
+    "House_Settings/Plot_Size": {
       "title": "",
       "blocks": [
         {
@@ -2407,7 +2396,11 @@
         }
       ]
     },
-    "systems/Custom_Commands": {
+    "Other/About": {
+      "title": "",
+      "blocks": []
+    },
+    "Systems/Custom_Commands": {
       "title": "",
       "blocks": [
         {
@@ -2476,11 +2469,11 @@
         }
       ]
     },
-    "systems/Custom_Menus": {
+    "Systems/Custom_Menus": {
       "title": "",
       "blocks": []
     },
-    "systems/Edit_Actions": {
+    "Systems/Edit_Actions": {
       "title": "Introduction",
       "blocks": [
         {
@@ -3161,7 +3154,7 @@
         }
       ]
     },
-    "systems/Event_Actions": {
+    "Systems/Event_Actions": {
       "title": "",
       "blocks": [
         {
@@ -3170,7 +3163,7 @@
         }
       ]
     },
-    "systems/Functions": {
+    "Systems/Functions": {
       "title": "",
       "blocks": [
         {
@@ -3179,7 +3172,7 @@
         }
       ]
     },
-    "systems/Regions": {
+    "Systems/Regions": {
       "title": "",
       "blocks": [
         {
@@ -3239,7 +3232,7 @@
         }
       ]
     },
-    "systems/Scoreboard_Editor": {
+    "Systems/Scoreboard_Editor": {
       "title": "",
       "blocks": [
         {
