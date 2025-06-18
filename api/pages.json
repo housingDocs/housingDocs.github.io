@@ -1,23 +1,17 @@
 {
-  "nav": {
-    "Contribute": {
-      "iconColor": "#22DD22",
+  "navMap": {
+    "Home": {
+      "icon": "home",
+      "iconColor": "#6341E0",
       "points": [
         {
-          "name": "Contribute",
-          "link": "/html/Contribute/Contribute.html"
-        },
-        {
-          "name": "Article Markdown",
-          "link": "/html/Contribute/Article_Markdown.html"
-        },
-        {
-          "name": "Article Editor",
-          "link": "/html/Contribute/Article_Editor.html"
+          "name": "Docs Introduction",
+          "link": "/html/Home/Introduction.html"
         }
       ]
     },
-    "General_Housing": {
+    "General Housing": {
+      "icon": "hardware",
       "iconColor": "#f5e942",
       "points": [
         {
@@ -42,29 +36,8 @@
         }
       ]
     },
-    "HTSL": {
-      "iconColor": "#67C520",
-      "points": [
-        {
-          "name": "Introduction",
-          "link": "/html/HTSL/Introduction.html"
-        },
-        {
-          "name": "Code Block Editor",
-          "link": "/html/HTSL/Code_Block_Editor.html"
-        }
-      ]
-    },
-    "Home": {
-      "iconColor": "#6341E0",
-      "points": [
-        {
-          "name": "Introduction",
-          "link": "/html/Home/Introduction.html"
-        }
-      ]
-    },
-    "House_Settings": {
+    "House Settings": {
+      "icon": "handyman",
       "iconColor": "#e41212",
       "points": [
         {
@@ -73,16 +46,8 @@
         }
       ]
     },
-    "Other": {
-      "iconColor": "#f5e942",
-      "points": [
-        {
-          "name": "About",
-          "link": "/html/Other/About.html"
-        }
-      ]
-    },
     "Systems": {
+      "icon": "settings",
       "iconColor": "#fc6203",
       "points": [
         {
@@ -104,6 +69,48 @@
         {
           "name": "Custom Commands",
           "link": "/html/Systems/Custom_Commands.html"
+        }
+      ]
+    },
+    "HTSL": {
+      "icon": "code",
+      "iconColor": "#67C520",
+      "points": [
+        {
+          "name": "HTSL Introduction",
+          "link": "/html/HTSL/Introduction.html"
+        },
+        {
+          "name": "Code Block Editor",
+          "link": "/html/HTSL/Code_Block_Editor.html"
+        }
+      ]
+    },
+    "Contribute": {
+      "icon": "ad_group",
+      "iconColor": "#22DD22",
+      "points": [
+        {
+          "name": "Contribute",
+          "link": "/html/Contribute/Contribute.html"
+        },
+        {
+          "name": "Article Markdown",
+          "link": "/html/Contribute/Article_Markdown.html"
+        },
+        {
+          "name": "Article Editor",
+          "link": "/html/Contribute/Article_Editor.html"
+        }
+      ]
+    },
+    "Other": {
+      "icon": "coffee",
+      "iconColor": "#f5e942",
+      "points": [
+        {
+          "name": "About",
+          "link": "/html/Other/About.html"
         }
       ]
     }
@@ -2108,11 +2115,7 @@
         },
         {
           "type": "text",
-          "text": "HTSL (Housing Text Scripting Language) is both a scripting syntax and a ChatTriggers module designed to help users write, share, and import/export scripts directly within Housing using a macro. Its syntax mirrors Housing code, each line in HTSL corresponds directly to a Housing action, with no additional functionality beyond what Housing already provides."
-        },
-        {
-          "type": "text",
-          "text": "The creator, BusterBrown1218, describes HTSL as follows:\nHTSL is a direct one-to-one, line-to-Housing action script. It is by no means a language, and is only capable of doing what housing does. There is no abstraction, what you write is what you get.\nHTSL's purpose is to make it easier for people to develop housings or just sharing code with other people. Having a standard to talk about Housing actions makes it much easier to discuss code as we don't have to use weird different forms of pseudocode unique to everyone."
+          "text": "HTSL (Housing Text Scripting Language) is both a scripting syntax and a ChatTriggers module designed to help users write, share, and import/export scripts directly within Housing using a macro. Its syntax mirrors Housing code, each line in HTSL corresponds directly to a Housing action, with no additional functionality beyond what Housing already provides.\n\nThe creator, BusterBrown1218, describes HTSL as follows:\nHTSL is a direct one-to-one, line-to-Housing action script. It is by no means a language, and is only capable of doing what housing does. There is no abstraction, what you write is what you get.\nHTSL's purpose is to make it easier for people to develop housings or just sharing code with other people. Having a standard to talk about Housing actions makes it much easier to discuss code as we don't have to use weird different forms of pseudocode unique to everyone."
         },
         {
           "type": "text",
@@ -2123,8 +2126,12 @@
           "text": "Installation"
         },
         {
+          "type": "header",
+          "text": "Requirements"
+        },
+        {
           "type": "text",
-          "text": "Requirements\nBefore we begin there's a few requirements you need to actually use HTSL:\n\nForge for 1.8\nChatTriggers mod for Forge 1.8\nVisual Studio Code (optional, if you want to write code)\n\n\n\nHTSL Installation\n\nGo to the HTSL GitHub releases page.\nDownload the HTSL.zip.\nExtract the zipped file into a new folder called HTSL (make sure there is only one HTSL folder, not\n       HTSL\\HTSL\\rest of files).\nNow, in-game we're going to run /ct files, and go into your modules folder and drop your HTSL\n       folder right in there.\nLast thing left to do is /ct reload and you can now use the HTSL module!"
+          "text": "Before we begin there's a few requirements you need to actually use HTSL:"
         },
         {
           "type": "list",
@@ -2135,12 +2142,16 @@
           ]
         },
         {
+          "type": "header",
+          "text": "HTSL Installation"
+        },
+        {
           "type": "list",
           "items": [
             "Go to the [HTSL GitHub](https://github.com/BusterBrown1218/HTSL/releases/latest) releases page.",
             "Download the HTSL.zip.",
-            "Extract the zipped file into a new folder called HTSL (make sure there is only one HTSL folder, not\n       HTSL\\HTSL\\rest of files).",
-            "Now, in-game we're going to run /ct files, and go into your modules folder and drop your HTSL\n       folder right in there.",
+            "Extract the zipped file into a new folder called HTSL (make sure there is only one HTSL folder, not HTSL\\HTSL\\rest of files).",
+            "Now, in-game we're going to run /ct files, and go into your modules folder and drop your HTSL folder right in there.",
             "Last thing left to do is /ct reload and you can now use the HTSL module!"
           ]
         }

@@ -138,5 +138,5 @@ for (const dir of topDirs) {
 }
 
 fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
-fs.writeFileSync(OUTPUT_FILE, JSON.stringify({ nav, articles }, null, 2));
+fs.writeFileSync(OUTPUT_FILE, JSON.stringify({ navMap, articles }, null, 2));
 console.log(`✅ Exported ${Object.keys(articles).length} articles from ${topDirs.length} nav groups.`);
