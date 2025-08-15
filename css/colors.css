@@ -59,3 +59,11 @@
 .syntax-markdown {
   color: #4fd6ff
 }
+
+.syntax-escape {
+  color: #999;
+}
+
+.article-preview .syntax-escape {
+  display: none;
+}

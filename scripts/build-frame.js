@@ -220,12 +220,12 @@ searchBar.addEventListener('input', () => {
 
 // Order Lists
 document.querySelectorAll('.page-content-list').forEach((list) => {
-    let i = 1
+    let i = 1;
     list.querySelectorAll('.page-content-list-point').forEach((point) => {
-        point.innerHTML = `<span class="page-content-list-number">${i}.</span><div class="page-content-list-content">${point.innerHTML}</div>`
-        i++
-    })
-})
+      point.innerHTML = `<pre>  <span class="page-content-list-number">${i}.</span>  ${point.innerHTML}</pre>`;
+      i++;
+    });
+  });
 
 // Order Superheaders, make sub-navigation
 

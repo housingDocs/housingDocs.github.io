@@ -38,14 +38,14 @@
                 <div class="page-content-superheader">Title, Subtitle, Headers</div>
                 <div class="page-content-header">Example Header</div>
                 <div class="page-content-subheader">Example Subheader</div>
-                <div class="page-content-text">The general structure for an element is <a href="https://www.w3schools.com/html/html_intro.asp">&lt;type&gt;Some content here&lt;/type&gt;</a></div>
+                <div class="page-content-text">Use the following characters to declare titles and headers</div>
                 <div class="page-content-code markdown">
 <pre>
-&lt;title&gt;Article Markdown&lt;/title&gt;
-&lt;subtitle&gt;Check out the markdown/styling used in the Article Editor&lt;/subtitle&gt;
-&lt;superheader&gt;Title, Subtitle, Headers&lt;/superheader&gt;
-&lt;header&gt;Example Header&lt;/header&gt;
-&lt;subheader&gt;Example Subheader&lt;/subheader&gt;
+! Article Markdown
+!! Check out the markdown/styling used in the Article Editor
+# Title, Subtitle, Headers
+## Example Header
+### Example Subheader
 </pre></div>
 
 
@@ -67,23 +67,22 @@ chat "Kills > 10"
 } else {
 chat "Kills aren't > 10"
 }</pre></div>
-                <div class="page-content-text">The Blocks in Markdown:</div>
+                <div class="page-content-text">Blocks in Markdown (Note: the Text Block doesn't need any special declaration):</div>
                 <div class="page-content-code markdown"><pre>
-&lt;text&gt;Beneath a sky painted in fading gold, whispers of forgotten stories danced through the tall grass, weaving memories into the breeze. Shadows stretched like fingers across the earth, and somewhere in the distance, a bell rang for no one, echoing through the stillness like a question never answered.&lt;/text&gt;
+Beneath a sky painted in fading gold, whispers of forgotten stories danced through the tall grass, weaving memories into the breeze. Shadows stretched like fingers across the earth, and somewhere in the distance, a bell rang for no one, echoing through the stillness like a question never answered.
 
-&lt;list&gt;
-&lt;point&gt;Drinking enough water boosts your energy and concentration.&lt;/point&gt;
-&lt;point&gt;Regular exercise improves mood and reduces stress.&lt;/point&gt;
-&lt;point&gt;Reading daily can expand your knowledge and vocabulary.&lt;/point&gt;
-&lt;point&gt;Getting enough sleep helps your body recover and stay healthy.&lt;/point&gt;
-&lt;/list&gt;
+- Drinking enough water boosts your energy and concentration.
+- Regular exercise improves mood and reduces stress.
+- Reading daily can expand your knowledge and vocabulary.
+- Getting enough sleep helps your body recover and stay healthy.
 
-&lt;code&gt;if and (stat kills > 10) {
+`
+if and (stat kills > 10) {
 chat "Kills > 10"
 } else {
 chat "Kills aren't > 10"
-}&lt;/code&gt;
-                </pre></div>
+}
+`</pre></div>
 
 
 
@@ -165,17 +164,19 @@ chat "Kills aren't > 10"
                 <div class="page-content-superheader">Other Elements</div>
                 <div class="page-content-header">An <a href="https://google.com">external Link</a> (in this case in a header)</div>
                 <div class="page-content-code markdown"><pre>
-&lt;header&gt;&lt;link ref="https://google.com"&gt;A link&lt;/link&gt; (in this case inside of a header)&lt;/header&gt;</pre></div>
+## An [external Link](https://google.com) (in this case inside of a header)</pre></div>
                 <div class="page-content-header">Linking to another <a href="/html/home/Introduction.html">Article</a></div>
-                <div class="page-content-text">When linking to another article link only the "location" (eg. the location of <a href="/html/home/Introduction.html">https://cookieCrood.github.io/html/home/Introduction.html</a> is "/html/home/Introduction.html")</div>
+                <div class="page-content-text">When linking to another article link only the "location" (eg. the location of <a href="/html/Home/Introduction.html">https://cookieCrood.github.io/html/Home/Introduction.html</a> is "/html/Home/Introduction.html")</div>
                 <div class="page-content-code markdown"><pre>
-&lt;header&gt;Linking to another &lt;link ref="/html/home/Introduction.html"&gt;Article&lt;/link&gt;&lt;/header&gt;</pre></div>
+## Linking to another [Article](/html/Home/Introduction.html)</pre></div>
+                <div class="page-content-header">Styling</div>
+                <div class="page-content-text"><b>bold</b> and <i>italic</i></div>
+                <div class="page-content-code markdown"><pre>
+**bold** and *italic*</pre></div>
                 <div class="page-content-superheader">HTML Elements</div>
                 <div class="page-content-text">In addition to custom hDocs elements, the default HTML elements can be used too.<br><br>
                 List of common HTML text styling elements:</div>
                 <div class="page-content-list">
-                <div class="page-content-list-point">&lt;b&gt;<b> Bold </b>&lt;/b&gt;</div>
-                <div class="page-content-list-point">&lt;i&gt;<i> Italic </i>&lt;/i&gt;</div>
                 <div class="page-content-list-point">&lt;em&gt;<em> Emphasized </em>&lt;/em&gt;</div>
                 <div class="page-content-list-point">&lt;mark&gt; <mark>Marked</mark> &lt;/mark&gt;</div>
                 <div class="page-content-list-point">&lt;del&gt; <del>Strikethrough</del> &lt;/del&gt;</div>

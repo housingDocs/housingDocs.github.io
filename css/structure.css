@@ -425,16 +425,18 @@ button {
 
 .page-content-list {
     margin-bottom: 16px;
+    padding-left: 4px;
 }
 
 .page-content-list-point {
     color: white;
-    font-size: 18px;
     display: flex;
 }
 
-.page-content-list-content {
-    margin-left: 8px;
+.page-content-list-point pre {
+    margin: 0;
+    font-family: inherit;
+    font-size: 20px;
 }
 
 .page-content-list-number {
