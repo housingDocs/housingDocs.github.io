@@ -42,7 +42,8 @@ const nav = (typeof window === 'undefined') ?
         iconColor: "#67C520",
         points: [
             { name: "HTSL Introduction", link: "/html/HTSL/Introduction.html" },
-            { name: "Code Block Editor", link: "/html/HTSL/Code_Block_Editor.html"}
+            { name: "Code Block Editor", link: "/html/HTSL/Code_Block_Editor.html"},
+            { name: "HTSL Forum", link:"/html/HTSL/Forum.html" }
         ]
     },
     Contribute: {
@@ -103,7 +104,8 @@ const nav = (typeof window === 'undefined') ?
         iconColor: "#67C520",
         points: [
             { name: "HTSL Introduction", link: "/html/HTSL/Introduction.html" },
-            { name: "Code Block Editor", link: "/html/HTSL/Code_Block_Editor.html"}
+            { name: "Code Block Editor", link: "/html/HTSL/Code_Block_Editor.html"},
+            { name: "HTSL Forum", link:"/html/HTSL/Forum.html" }
         ]
     },
     Contribute: {

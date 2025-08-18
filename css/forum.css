@@ -1,0 +1,128 @@
+
+.page {
+    width: 80%;
+}
+
+.forum-top {
+    display: flex;
+    align-items: center;
+}
+
+.page-title:first {
+    flex: 1;
+}
+
+.forum-search {
+    height: 54px;
+    background-color: #170b28;
+    border: 2px solid #463085;
+    border-radius: 6px;
+    color: #af99ff;
+    padding: 12px;
+    font-size: 20px;
+    flex: 1;
+    min-width: calc(33% - (54px + 18px));
+}
+
+.forum-search:focus {
+    outline: none;
+}
+
+.forum-search::placeholder {
+    color: #463085;
+}
+
+.forum-search-button {
+    border: 3px solid #8665ff;
+    margin-left: 8px;
+    border-radius: 6px;
+    padding: 12px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.forum-search-button span {
+    vertical-align: center;
+    color: #8665ff;
+    font-weight: 600;
+}
+
+.forum-snippets {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 72%;
+}
+
+.forum-snippet-row {
+    flex: 1;
+    display: flex;
+    margin: 16px 0;
+}
+
+.forum-snippet {
+    border: 3px solid #8665ff;
+    border-radius: 6px;
+    flex: 1;
+    overflow: hidden;
+    background-color: #170b28;
+    margin: 0 10px;
+}
+
+.forum-snippet-top {
+    border-bottom: 3px solid #8665ff;
+    height: 20%;
+    background-color: #170e2f;
+    display: flex;
+    align-items: center;
+    padding: 4%;
+    font-size: 20px;
+    color: #8665ff;
+    font-weight: 600;
+}
+
+.forum-snippet-top:hover {
+    cursor: pointer;
+}
+
+.forum-snippet-top-name {
+    flex: 1;
+}
+
+.forum-snippet-top-author span {
+    color: #463085;
+}
+
+.forum-snippet-content {
+    padding: 14px;
+    font-size: 18px;
+    color: white;
+    overflow: scroll;
+    scrollbar-color: #9370ff transparent; /* thumb white, track transparent */
+    height: 80%;
+    user-select: none;
+}
+
+.forum-snippet-content pre {
+    margin: 0;
+    text-wrap: nowrap;
+}
+
+.forum-snippet-content::-webkit-scrollbar {
+    height: 12px; /* horizontal scrollbar thickness */
+}
+
+.forum-snippet-content::-webkit-scrollbar-track {
+    background: transparent;  /* invisible track */
+}
+
+.forum-snippet-content::-webkit-scrollbar-thumb {
+    background: white;  /* visible scrollbar handle */
+}
+
+.forum-snippet-content::-webkit-scrollbar-thumb:hover {
+    background: #9370ff; /* darker on hover */
+}
+
