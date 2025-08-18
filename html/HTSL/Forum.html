@@ -30,19 +30,35 @@
 
 
             <div class="page bg-dark-purple">
-                <div class="forum-top">
-                    <div class="page-title">HTSL Snippet Forum</div>
-                    <input placeholder="Search Snippets" class="forum-search">
-                    <button class="forum-search-button">
-                        <span class="material-symbols-outlined">search</span>
-                    </button>
+                <div id="forum">
+                    <div class="forum-top">
+                        <div class="page-title">HTSL Snippet Forum</div>
+                        <input placeholder="Search Snippets" class="forum-search">
+                        <button class="forum-search-button">
+                            <span class="material-symbols-outlined">search</span>
+                        </button>
+                    </div>
+                    <div class="forum-snippets">
+                        <div class="forum-snippet-row">
+                            
+                        </div>
+                        <div class="forum-snippet-row">
+
+                        </div>
+                    </div>
                 </div>
-                <div class="forum-snippets">
-                    <div class="forum-snippet-row">
+                <div id="big-snippet" style="display: none;">
+                    <button class="big-snippet-back" onclick="hideSnippet()">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <div id="big-snippet-name">
                         
                     </div>
-                    <div class="forum-snippet-row">
-
+                    <div id="big-snippet-description">
+                        
+                    </div>
+                    <div id="big-snippet-content">
+                        
                     </div>
                 </div>
             </div>

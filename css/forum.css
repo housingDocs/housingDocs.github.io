@@ -1,4 +1,8 @@
 
+pre {
+    margin: 0;
+}
+
 .page {
     width: 80%;
 }
@@ -6,6 +10,11 @@
 .forum-top {
     display: flex;
     align-items: center;
+}
+
+#forum {
+    width: 100%;
+    height: 100%;
 }
 
 .page-title:first {
@@ -81,6 +90,7 @@
     font-size: 20px;
     color: #8665ff;
     font-weight: 600;
+    width: 100%;
 }
 
 .forum-snippet-top:hover {
@@ -89,6 +99,7 @@
 
 .forum-snippet-top-name {
     flex: 1;
+    text-align: start;
 }
 
 .forum-snippet-top-author span {
@@ -100,29 +111,68 @@
     font-size: 18px;
     color: white;
     overflow: scroll;
-    scrollbar-color: #9370ff transparent; /* thumb white, track transparent */
+    scrollbar-color: #9370ff transparent;
     height: 80%;
     user-select: none;
 }
 
 .forum-snippet-content pre {
-    margin: 0;
     text-wrap: nowrap;
 }
 
 .forum-snippet-content::-webkit-scrollbar {
-    height: 12px; /* horizontal scrollbar thickness */
+    height: 12px;
 }
 
 .forum-snippet-content::-webkit-scrollbar-track {
-    background: transparent;  /* invisible track */
+    background: transparent;
 }
 
 .forum-snippet-content::-webkit-scrollbar-thumb {
-    background: white;  /* visible scrollbar handle */
+    background: white;
 }
 
 .forum-snippet-content::-webkit-scrollbar-thumb:hover {
-    background: #9370ff; /* darker on hover */
+    background: #9370ff;
 }
 
+.big-snippet-back {
+    color: #8665ff;
+    border: 2px solid #8665ff;
+    border-radius: 6px;
+    padding: 6px;
+    display: flex;
+}
+
+.big-snippet-back span {
+    font-weight: 500;
+}
+
+#big-snippet-name {
+    color: white;
+    width: 100%;
+    font-size: 48px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+#big-snippet-description {
+    color: white;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 44px;
+}
+
+#big-snippet-content {
+    color: white;
+    width: 100%;
+    position: relative;
+    border: 2px solid #463085;
+    border-radius: 8px;
+    background-color: #170b28;
+    font-family: monospace;
+    font-size: 16px;
+    margin-bottom: 16px;
+    padding: 16px;
+}

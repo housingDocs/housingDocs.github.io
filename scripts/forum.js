@@ -1,4 +1,5 @@
 
+const snippetCache = {}
 
 async function getSnippets(start, end) {
     return fetch('https://housingdocsserver.onrender.com/snippets', {
@@ -20,19 +21,21 @@ let curRow
 getSnippets(1, 6).then((r) => {
     r = JSON.parse(r)
     for (const snippet of r) {
+        snippetCache[snippet.id] = snippet
+
         console.log(snippet)
         curRow = snippetRows.item(i < 3 ? 0 : 1)
         curRow.innerHTML += `
 
 <div class="forum-snippet">
-    <div class="forum-snippet-top">
+    <button class="forum-snippet-top" onclick="showSnippet(${snippet.id})">
         <div class="forum-snippet-top-name">
             ${snippet.name}
         </div>
         <div class="forum-snippet-top-author">
             <span>by</span> ${snippet.author}
         </div>
-    </div>
+    </button>
     <div class="forum-snippet-content">
         <pre>${syntaxHighlightHTSL(snippet.content)}</pre>
     </div>
@@ -47,6 +50,30 @@ getSnippets(1, 6).then((r) => {
         curRow.innerHTML += '<div style="flex: 1; margin: 0 12px"></div>'
     }
 })
+
+const forumContainer = document.querySelector('#forum')
+const snippetContainer = document.querySelector('#big-snippet')
+const snippetHeader = document.querySelector('#big-snippet-name')
+const snippetDescription = document.querySelector('#big-snippet-description')
+const snippetContent = document.querySelector('#big-snippet-content')
+
+window.showSnippet = (id) => {
+    const snippet = snippetCache[id]
+    if (!snippet) return
+
+    forumContainer.style.display = 'none'
+    snippetContainer.style.display = 'block'
+
+    snippetHeader.innerHTML = `${snippet.name} <span style="font-size: 28px; color: #7c5ed7ff;">by ${snippet.author}</span>`
+    snippetDescription.textContent = snippet.description
+    snippetContent.innerHTML = `<pre>${syntaxHighlightHTSL(snippet.content)}</pre>`
+}
+
+window.hideSnippet = () => {
+    forumContainer.style.display = 'block'
+    snippetContainer.style.display = 'none'
+
+}
 
 function escapeHtml(text) {
   return text
