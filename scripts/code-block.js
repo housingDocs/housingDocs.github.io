@@ -226,7 +226,7 @@ function markdownToHTML(markdown) {
   // 3) Lists: merge consecutive "- " lines into one list block
   markdown = markdown.replace(/(?:^|\n)(- .+(?:\n- .+)*)/g, (block) => {
     const items = block.trim().split("\n").map(line =>
-      `<div class="page-content-list-point">${escapeHtml(line.replace(/^- /, '').trim())}</div>`
+      `<div class="page-content-list-point"><pre>${escapeHtml(line.replace(/^- /, ''))}</pre></div>`
     ).join('');
     return `<div class="page-content-list">${items}</div>`;
   });
@@ -390,7 +390,8 @@ function fixMarkdownPreview(preview) {
   preview.querySelectorAll('.page-content-list').forEach((list) => {
     let i = 1;
     list.querySelectorAll('.page-content-list-point').forEach((point) => {
-      point.innerHTML = `<pre>  <span class="page-content-list-number">${i}.</span>  ${point.innerHTML}</pre>`;
+      console.log(point.innerHTML)
+      point.innerHTML = `<div class="page-content-list-number">${i}.</div><pre>${unEscapeHtml(point.innerHTML)}</pre>`;
       i++;
     });
   });

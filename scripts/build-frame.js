@@ -224,7 +224,7 @@ searchBar.addEventListener('input', () => {
 document.querySelectorAll('.page-content-list').forEach((list) => {
     let i = 1;
     list.querySelectorAll('.page-content-list-point').forEach((point) => {
-      point.innerHTML = `<pre>  <span class="page-content-list-number">${i}.</span>  ${point.innerHTML}</pre>`;
+      point.innerHTML = `<div class="page-content-list-number">${i}.</div><pre>${point.innerHTML}</pre>`;
       i++;
     });
   });

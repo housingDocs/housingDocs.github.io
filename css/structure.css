@@ -28,6 +28,12 @@ button {
     scroll-behavior: smooth;
 }
 
+pre {
+    margin: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
 .top {
     width: 100%;
     height: 7.5%;
@@ -431,16 +437,14 @@ button {
 .page-content-list-point {
     color: white;
     display: flex;
-}
-
-.page-content-list-point pre {
-    margin: 0;
-    font-family: inherit;
     font-size: 20px;
 }
 
 .page-content-list-number {
     color: #af99ff;
+    margin-right: 10px;
+    margin-right: 10px;
+    font-family: inherit;
 }
 
 .page-content-table {
