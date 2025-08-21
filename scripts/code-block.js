@@ -520,8 +520,6 @@ function fixMarkdownPreview(preview) {
     const pre = btn.parentNode.querySelector('pre');
     if (pre) btn.onclick = () => copyToClipboard(pre.textContent);
   });
-
-  preview.innerHTML = `<div class="page-content-text">${preview.innerHTML}</div>`
 }
 
 /* ---------------------------
