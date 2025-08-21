@@ -23,7 +23,8 @@ const nav = (typeof window === 'undefined') ?
         icon: "handyman",
         iconColor: "#e41212",
         points: [
-            { name: "Plot Size", link: "/html/House_Settings/Plot_Size.html" }
+            { name: "Plot Size", link: "/html/House_Settings/Plot_Size.html" },
+            { name: "Themes", link: "/html/House_Settings/Themes.html"}
         ]
     },
     Systems: {
@@ -85,7 +86,8 @@ const nav = (typeof window === 'undefined') ?
         icon: "handyman",
         iconColor: "#e41212",
         points: [
-            { name: "Plot Size", link: "/html/House_Settings/Plot_Size.html" }
+            { name: "Plot Size", link: "/html/House_Settings/Plot_Size.html" },
+            { name: "Themes", link: "/html/House_Settings/Themes.html"}
         ]
     },
     Systems: {
