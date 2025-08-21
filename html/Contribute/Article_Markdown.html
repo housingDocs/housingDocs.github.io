@@ -88,77 +88,44 @@ chat "Kills aren't > 10"
                 <div class="page-content-text">Any symbol can be escaped using \ (backslash), which negates the effect of the symbol.</div>
 
                 <div class="page-content-superheader">Tables</div>
-                <div class="page-content-header">Table Structure</div>
-                <div class="page-content-text">A Markdown Table consists of <b>Rows</b> and <b>Columns</b>. A table can contain multiple rows, which contain independent columns. Each <b>Cell</b> is separated by a Pipe Symbol "|". The first cell in a column, which is in the first row is the <b>Title Cell</b>.</div>
-                <div class="page-content-table">
-                <div class="page-content-table-row">
+<div class="page-content-header">Table Structure</div>
+<div class="page-content-text">
+A Markdown Table consists of a Row of <b>Title Cells</b> and normal <b>Cells</b>. The <b>Title Cells</b> have a highlighted content and define the default widths of all cells below them. All cells in the first row of a table are automatically title cells. <b>Rows</b> can be separated using a new line while <b>Cells</b> are separated using <span class="markdown-monospace">|</span>. The default cell width can be assigned using <span class="markdown-monospace">{number}</span> in the content of a title cell.
+</div>
 
-                <div class="page-content-table-column" style="width: 50%;">
-                Title Cell of Column 1 | Some Value | Another Value
-                </div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(3, auto);"><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left data-top>
+        Title Cell 1
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  data-top>
+        Title Cell 2
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  data-top>
+        Title Cell 3
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 2;" data-left >
+        Vertically Merged Cell
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Horizontally merged Cell
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Cell
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Cell
+      </div></div>
 
-                <div class="page-content-table-column" style="width: 50%;">
-                Title Cell of Column 2 | Value spreads over entire row
-                </div>
+<div class="page-content-header">Tables in Markdown</div>
+<div class="page-content-text">
+To create a Table in Markdown, use the <span class="markdown-monospace">&lt;table&gt; &lt;/table&gt;</span> element.
 
-                </div>
+Here's the table above in markdown:
+</div>
 
-                <div class="page-content-table-row">
-
-                <div class="page-content-table-column" style="width: 25%;">
-                New Row this time
-                </div>
-
-                <div class="page-content-table-column" style="width: 50%;">
-                And the Columns have changed in width
-                </div>
-
-                <div class="page-content-table-column" style="width: 25%;">
-                Yet another Value
-                </div>
-
-                </div>
-                </div>
-
-                <div class="page-content-header">Tables in Markdown</div>
-                <div class="page-content-text">To create a Table in Markdown, use the <b>&lt;table&gt;</b> element. Then insert as many rows as you want using the <b>&lt;row&gt;</b> element. Columns also need a set column <b>width</b> which has to have a Percent Value.<br><br>
-                For example a column with a width of 50% in markdown is:<br></div>
-                <div class="page-content-code markdown"><pre>
+<div class="page-content-code markdown"><pre>
 &lt;table&gt;
-    &lt;row&gt;
-        &lt;column width="50px"&gt;
-            Some content here
-        &lt;/column&gt;
-    &lt;/row&gt;
-&lt;/table&gt;</pre></div>
-                <div class="page-content-header">Example Markdown</div>
-                <div class="page-content-text">Here is the Table from above in Markdown (The spaces are optional)</div>
-                <div class="page-content-code markdown"><pre>
-&lt;table&gt;
-    &lt;row&gt;
-        &lt;column width="50%"&gt;
-            Title Cell of Column 1 | Some Value | Another Value
-        &lt;/column&gt;
 
-        &lt;column width="50%"&gt;
-            Title Cell of Column 2 | Value spreads over entire row
-        &lt;/column&gt;
-    &lt;/row&gt;
+{1} Title Cell 1       | {2} Title Cell 2         | {1} Title Cell 3
+Vertically Merged Cell | Horizontally merged Cell | &lt;
+^                      | Cell                     | Cell
 
-    &lt;row&gt;
-        &lt;column width="25%"&gt;
-            New Row this time
-        &lt;/column&gt;
-
-        &lt;column width="50%"&gt;
-            And the Columns have changed in width
-        &lt;/column&gt;
-
-        &lt;column width="25%"&gt;
-            Yet another Value
-        &lt;/column&gt;
-    &lt;/row&gt;
-&lt;/table&gt;</pre></div>
+&lt;/table&gt;
+</pre></div>
+<div class="page-content-text"><i>Note: The symbols don't have to be aligned</i></div>
 
 
                 <div class="page-content-superheader">Other Elements</div>

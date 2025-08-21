@@ -91,11 +91,25 @@ function tokenizeMarkdown(code) {
   let pos = 0;
 
   const isLineStart = (i) => i === 0 || code[i - 1] === '\n';
-  // we'll match against raw characters (these are unchanged by escapeHtml)
   const specials = new Set(['!', '#', '-', '*', '`']);
+  let inTable = false;
 
   while (pos < code.length) {
-    // 1) Escaped special: backslash + special -> render backslash as escape token, then the char as plain
+    // 1) Table start/end
+    if (code.startsWith('&lt;table&gt;', pos)) {
+      tokens.push({ text: '&lt;table&gt;', type: 'syntax-markdown' });
+      inTable = true;
+      pos += 13;
+      continue;
+    }
+    if (code.startsWith('&lt;/table&gt;', pos)) {
+      tokens.push({ text: '&lt;/table&gt;', type: 'syntax-markdown' });
+      inTable = false;
+      pos += 14;
+      continue;
+    }
+
+    // 2) Escaped special
     if (code[pos] === '\\' && pos + 1 < code.length && specials.has(code[pos + 1])) {
       tokens.push({ text: '\\', type: 'syntax-escape' });
       tokens.push({ text: code[pos + 1], type: 'plain' });
@@ -103,8 +117,8 @@ function tokenizeMarkdown(code) {
       continue;
     }
 
-    // 2) XML-like tags user might type as &lt;...&gt;
-    if (code.startsWith('&lt;', pos)) {
+    // 3) XML-like tags (not inside table)
+    if (!inTable && code.startsWith('&lt;', pos)) {
       const end = code.indexOf('&gt;', pos + 4);
       if (end !== -1) {
         tokens.push({ text: code.slice(pos, end + 4), type: 'syntax-markdown' });
@@ -113,7 +127,7 @@ function tokenizeMarkdown(code) {
       }
     }
 
-    // 3) Line-start markers: check longest first (###, !!, ##, !, #, -)
+    // 4) Line-start markers
     if (isLineStart(pos)) {
       if (code.startsWith('### ', pos)) { tokens.push({ text: '###', type: 'syntax-markdown' }); pos += 3; continue; }
       if (code.startsWith('## ', pos))  { tokens.push({ text: '##', type: 'syntax-markdown' }); pos += 2; continue; }
@@ -123,12 +137,29 @@ function tokenizeMarkdown(code) {
       if (code.startsWith('- ', pos))   { tokens.push({ text: '-', type: 'syntax-markdown' }); pos += 1; continue; }
     }
 
-    // 4) Inline markers anywhere: '**', '*', '`'
-    if (code.startsWith('**', pos)) { tokens.push({ text: '**', type: 'syntax-markdown' }); pos += 2; continue; }
-    if (code[pos] === '*')         { tokens.push({ text: '*', type: 'syntax-markdown' }); pos += 1; continue; }
-    if (code[pos] === '`')         { tokens.push({ text: '`', type: 'syntax-markdown' }); pos += 1; continue; }
+    // 5) Table cells
+    if (inTable && code[pos] === '|') {
+      tokens.push({ text: '|', type: 'syntax-markdown' });
+      pos++;
+      continue;
+    }
 
-    // 5) Default char
+    if (inTable && code[pos] == '{') {
+      const end  = code.indexOf('}', pos + 1)
+      if (end !== -1) {
+        tokens.push({ text: code.slice(pos, end + 1), type: 'syntax-markdown' })
+        pos = end + 1
+        continue
+      }
+    }
+
+    // 6) Inline markers
+    if (code.startsWith('**', pos)) { tokens.push({ text: '**', type: 'syntax-markdown' }); pos += 2; continue; }
+    if (code[pos] === '*')          { tokens.push({ text: '*', type: 'syntax-markdown' }); pos += 1; continue; }
+    if (code[pos] === '`')          { tokens.push({ text: '`', type: 'syntax-markdown' }); pos += 1; continue; }
+    if (code[pos] === '§')          { tokens.push({ text: '§', type: 'syntax-markdown' }); pos += 1; continue; }
+
+    // 7) Default char
     tokens.push({ text: code[pos], type: 'plain' });
     pos++;
   }
@@ -137,14 +168,12 @@ function tokenizeMarkdown(code) {
 }
 
 function syntaxHighlightMarkdown(code) {
-  // highlightMarkdown works on raw text: we escape HTML then tokenize
-  const escaped = escapeHtml(code);
+  const escaped = escapeHtml(code); // escape HTML first
   const tokens = tokenizeMarkdown(escaped);
 
-  // map tokens to HTML (spans for non-plain)
   return tokens.map(t =>
     t.type === 'plain' ? t.text : `<span class="${t.type}">${t.text}</span>`
-  ).join('')
+  ).join('');
 }
 
 /* ---------------------------
@@ -210,8 +239,6 @@ function markdownToHTML(markdown) {
   let escI = 0;
   markdown = markdown.replace(/\\([!#\-\*`])/g, (m, ch) => {
     const key = `__ESC${escI++}__`;
-    // Render the backslash as a gray element and the character literal after it
-    // Note: we don't escape the char because it's not special HTML (<>& handled later if needed)
     escapeMap[key] = escapeHtml(ch)
     return key;
   });
@@ -232,24 +259,14 @@ function markdownToHTML(markdown) {
   });
 
   // 4) Inline formatting: bold, italic, inline code
-  // Note: we escape content of replacement to avoid accidental HTML injection
   markdown = markdown.replace(/\*\*(.+?)\*\*/g, (m, inner) => `<b>${escapeHtml(inner)}</b>`);
   markdown = markdown.replace(/\*(.+?)\*/g, (m, inner) => `<i>${escapeHtml(inner)}</i>`);
   markdown = markdown.replace(/`([^`]+)`/g, (m, inner) => `<code>${escapeHtml(inner)}</code>`);
 
-  // 5) Custom wiki tags (allow user to use their <table>, <row>, <subheader>, <m> tags
-  const map = [
-    { markdown: 'table', class: 'page-content-table' },
-    { markdown: 'row', class: 'page-content-table-row' },
-    { markdown: 'subheader', class: 'page-content-subheader' }
-  ];
   const spanMap = [
     { markdown: 'm', class: 'markdown-monospace' }
   ];
-  for (const el of map) {
-    markdown = markdown.replaceAll(`<${el.markdown}>`, `<div class="${el.class}">`);
-    markdown = markdown.replaceAll(`</${el.markdown}>`, '</div>');
-  }
+
   for (const el of spanMap) {
     markdown = markdown.replaceAll(`<${el.markdown}>`, `<span class="${el.class}">`);
     markdown = markdown.replaceAll(`</${el.markdown}>`, '</span>');
@@ -258,13 +275,94 @@ function markdownToHTML(markdown) {
   // 6) Links
   markdown = markdown.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, text, href) => `<a href="${href}">${text}</a>`);
 
-  // 7) Columns
-  markdown = markdown.replace(/<column\s+width="([^"]+)"\s*>/g, (m, w) => `<div class="page-content-table-column" style="width: ${escapeHtml(w)};">`);
-  markdown = markdown.replaceAll('</column>', '</div>');
-
-  // 8) Code blocks (custom <code> ... </code> tag)
+  // 9) Code blocks (custom <code> ... </code> tag)
   markdown = markdown.replaceAll('<code>', '<div class="page-content-code"><pre>');
   markdown = markdown.replaceAll('</code>', '</pre></div>');
+
+  // 9) Simple table syntax with pipe characters and cell merging
+  markdown = markdown.replace(/<table[^>]*>([\s\S]*?)<\/table>/g, (fullMatch, tableContent) => {
+    const rows = tableContent.trim().split('\n').filter(row => row.trim())
+    if (rows.length === 0) return '<div class="page-content-table"></div>'
+
+    const map = rows.map(row => row.split('|').map(cell => cell.trim()))
+    const strengths = []
+    const strengthSum = () => {
+      let sum = 0
+    
+      for (str of strengths) {
+        sum += str
+      }
+
+      return sum
+    }
+
+    const width = map[0].length;
+    const height = map.length;
+
+    let newMap = [];
+
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        if (y == 0) {
+          const strength = map[y][x].match(/\{(\d+)\}/)
+          if (strength) {
+            strengths.push(parseInt(strength[1], 10))
+          } else {
+            strengths.push(0)
+          }
+          newMap.push({ value: map[y][x].replace(/\{\d+\}/, '').trim(), width: strengths[x], height: 1, left: x == 0, top: true });
+          continue
+        }
+
+        switch (map[y][x]) {
+
+          case "<": {
+            for (let i = 1; i <= x; i++) {
+              const val = newMap[y * width + x - i];
+              if (!val) continue;
+              val.width += strengths[x];
+              break;
+            }
+            newMap.push(null);
+            break;
+          }
+
+          case "^": {
+            for (let i = 1; i <= y; i++) {
+              const val = newMap[(y - i) * width + x];
+              if (!val) continue;
+              val.height += 1;
+              break;
+            }
+            newMap.push(null);
+            break;
+          }
+
+          default: {
+            newMap.push({ value: map[y][x], width: strengths[x], height: 1, left: x == 0, top: false });
+          }
+        }
+      }
+    }
+
+    newMap = newMap.filter(item => item);
+
+    let tableHTML = `<div class="page-content-table" style="display: grid; grid-template-columns: repeat(${strengthSum()}, 1fr); grid-template-rows: repeat(${height}, auto);">`;
+
+    for (const cell of newMap) {
+      tableHTML += `<div class="page-content-table-cell" style="grid-column: span ${cell.width}; grid-row: span ${cell.height};" ${cell.left ? 'data-left' : ''} ${cell.top ? 'data-top' : ''}>
+        ${cell.value}
+      </div>`;
+    }
+
+    tableHTML += '</div>';
+    return tableHTML;
+  });
+
+  markdown = markdown.replace(/§(.*?)§/gs, (match, content) => {
+    if (content.trim() === '') return '';
+    return `<div class="page-content-text">${content}</div>`;
+  });
 
   // 10) Restore escape placeholders
   for (const key in escapeMap) {
@@ -390,7 +488,6 @@ function fixMarkdownPreview(preview) {
   preview.querySelectorAll('.page-content-list').forEach((list) => {
     let i = 1;
     list.querySelectorAll('.page-content-list-point').forEach((point) => {
-      console.log(point.innerHTML)
       point.innerHTML = `<div class="page-content-list-number">${i}.</div><pre>${unEscapeHtml(point.innerHTML)}</pre>`;
       i++;
     });

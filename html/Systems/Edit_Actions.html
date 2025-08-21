@@ -282,24 +282,135 @@ It contains 4 settings: <b>Conditions</b>, <b>Match Any Condition</b>, <b>If Act
 <b>Else Actions:</b> Actions that will run if the conditions are not met.<br><br>
 Each condition has an <span style="color:#55FFFF;"><b>invert</b></span> option, which changes the condition to activate when the condition is <span style="color:red;"><b>not met.</b></span><br><br>
 Here is a list of all Conditionals:</div>
-<div class="page-content-table">
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Condtional</div> <div class="page-content-table-column" style="width: 20%;">Marked As</div> <div class="page-content-table-column" style="width: 20%;">Settings</div> <div class="page-content-table-column" style="width: 40%;">Description</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Required Group</div> <div class="page-content-table-column" style="width: 20%;">Player Head</div> <div class="page-content-table-column" style="width: 20%;">Required Group // Include Higher Groups</div> <div class="page-content-table-column" style="width: 40%;">Requires players to match the required group or higher, if set.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Variable Requirement</div> <div class="page-content-table-column" style="width: 20%;">Feather</div> <div class="page-content-table-column" style="width: 20%;">Holder // Variable // Comparator // Compare Value // Fallback Value</div> <div class="page-content-table-column" style="width: 40%;">Requires players to match the provided comparator for the provided variable.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Required Permission</div> <div class="page-content-table-column" style="width: 20%;">Filled Map</div> <div class="page-content-table-column" style="width: 20%;">Required Permission</div> <div class="page-content-table-column" style="width: 40%;">Requires players to have a specific permission, relative to their player group.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Within Region</div> <div class="page-content-table-column" style="width: 20%;">Grass Block</div> <div class="page-content-table-column" style="width: 20%;">Region</div> <div class="page-content-table-column" style="width: 40%;">Requires the location to be within the selected region.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Has Item</div> <div class="page-content-table-column" style="width: 20%;">Chest</div> <div class="page-content-table-column" style="width: 20%;">Item // What to Check // Where to Check // Required Amount</div> <div class="page-content-table-column" style="width: 40%;">Requires players to have the provided item and match the required cases.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Doing Parkour</div> <div class="page-content-table-column" style="width: 20%;">Lightweighted Pressure Plate (Gold)</div> <div class="page-content-table-column" style="width: 20%;">Doing Parkour</div> <div class="page-content-table-column" style="width: 40%;">Requries players to be currently doing a parkour.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Has Potion Effect</div> <div class="page-content-table-column" style="width: 20%;">Water Bottle</div> <div class="page-content-table-column" style="width: 20%;">Potion Effect</div> <div class="page-content-table-column" style="width: 40%;">Requries players to have the provided potion effect.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Player Sneaking</div> <div class="page-content-table-column" style="width: 20%;">Haybale</div> <div class="page-content-table-column" style="width: 20%;">Sneaking</div> <div class="page-content-table-column" style="width: 40%;">Requires the player to be currently sneaking.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Player Flying</div> <div class="page-content-table-column" style="width: 20%;">Feather</div> <div class="page-content-table-column" style="width: 20%;">Flying</div> <div class="page-content-table-column" style="width: 40%;">Requires the player to be currently flying.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Player Health</div> <div class="page-content-table-column" style="width: 20%;">Red Apple</div> <div class="page-content-table-column" style="width: 20%;">Comparator // Compare Value</div> <div class="page-content-table-column" style="width: 40%;">Compare against a player's current health level.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Max Player Health</div> <div class="page-content-table-column" style="width: 20%;">Golden Apple</div> <div class="page-content-table-column" style="width: 20%;">Comparator // Compare Value</div> <div class="page-content-table-column" style="width: 40%;">Compare against a player's max health level.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Player Hunger</div> <div class="page-content-table-column" style="width: 20%;">Cooked Steak</div> <div class="page-content-table-column" style="width: 20%;">Comparator // Compare Value</div> <div class="page-content-table-column" style="width: 40%;">Compare against a player's current hunger level.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Required Gamemode</div> <div class="page-content-table-column" style="width: 20%;">Daylight Detector</div> <div class="page-content-table-column" style="width: 20%;">Gamemode</div> <div class="page-content-table-column" style="width: 40%;">Requires players to be in a specific gamemode.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Placeholder Number Requirement</div> <div class="page-content-table-column" style="width: 20%;">Wooden Sign</div> <div class="page-content-table-column" style="width: 20%;">Placeholder // Comparator // Compare Value</div> <div class="page-content-table-column" style="width: 40%;">Requires a number placeholder to match the provided condition.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Required Team</div> <div class="page-content-table-column" style="width: 20%;">Custom Player Head</div> <div class="page-content-table-column" style="width: 20%;">Team</div> <div class="page-content-table-column" style="width: 40%;">Requires players to match the required team.</div></div>
-</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(16, auto);"><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left data-top>
+        Condition
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  data-top>
+        Marked As
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Required Group
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Player Head
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Required Group // Include Higher Groups
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Requires players to match the required group or higher, if set.
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Variable Requirement
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Feather
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Holder // Variable // Comparator // Compare Value // Fallback Value
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Requires players to match the provided comparator for the provided variable.
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Required Permission
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Filled Map
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Required Permission
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Requires players to have a specific permission, relative to their player group.
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Within Region
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Grass Block
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Region
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Requires the location to be within the selected region.
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Has Item
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Chest
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Item // What to Check // Where to Check // Required Amount
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Requires players to have the provided item and match the required cases.
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Doing Parkour
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Lightweighted Pressure Plate (Gold)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Doing Parkour
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Requires players to be currently doing a parkour.
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Has Potion Effect
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Water Bottle
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Potion Effect
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Requires players to have the provided potion effect.
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Sneaking
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Haybale
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Sneaking
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Requires the player to be currently sneaking.
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Flying
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Feather
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Flying
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Requires the player to be currently flying.
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Health
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Red Apple
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Comparator // Compare Value
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Compare against a player's current health level.
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Max Player Health
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Golden Apple
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Comparator // Compare Value
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Compare against a player's max health level.
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Hunger
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Cooked Steak
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Comparator // Compare Value
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Compare against a player's current hunger level.
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Required Gamemode
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Daylight Detector
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Gamemode
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Requires players to be in a specific gamemode.
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Placeholder Number Requirement
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Wooden Sign
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Placeholder // Comparator // Compare Value
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Requires a number placeholder to match the provided condition.
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Required Team
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Custom Player Head
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Team
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Requires players to match the required team.
+      </div></div>
             </div>
 
 

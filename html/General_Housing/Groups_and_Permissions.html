@@ -80,61 +80,326 @@ When players join the Housing for the first time, or joins without a non-default
 <div class="page-content-text">Marked as a cauldron in the group editing page, it clears all players from the selected group, including offline players.</div>
 
 <div class="page-content-superheader">Permissions</div>
-<div class="page-content-table">
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Permission</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Description</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Fly</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can fly.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Wood Door</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can open and close wood doors.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Iron Door</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can open and close iron doors.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Wood Trapdoor</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can open and close wood trapdoors.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Iron Trapdoor</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can open and close iron trapdoors WITHOUT REDSTONE.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Fence Gate</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can open and close fence gates.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Button</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can use buttons.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Lever</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can use levers.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Use Launch Pads</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can use Launch Pads (A block similar to Rocket Launch Pads).</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">/tp</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can teleport.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">/tp Other Players</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can teleport other players.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Jukebox</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can use the Jukebox (Background Music Feature for Housings with ranked owners).</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Kick a Player</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can kick players off your House.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Ban a Player</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can ban players off your housing.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Mute a Player</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can mute players in your housing.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Chat (Slowmode)</div> <div class="page-content-table-column" style="width: 15%;">On // Slow 1 / 2 / 3 / 5 / 10 / 15 / 30 / 45 / 60s // Off</div> <div class="page-content-table-column" style="width: 65%;">Changes the chat slowmode of players in a certain group, or toggles their ability to chat.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Pet Spawning</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can spawn their Hypixel pets.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Build</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can <b>build</b> in <b>your Housing</b>.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Offline Build</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can <b>build, even when you're offline. This permission requires permission "BUILD" to be enabled.</b></div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Fluid</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can place fluids (e.g., water, lava). <b>This permission requires permission "BUILD" to be enabled.</b></div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Protools (Worldedit)</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can use Protools. <b>This permission requires permission "BUILD" to be enabled.</b></div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Use Chests</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can use chests.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Use Ender Chests</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can use ender chests.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Item Editor</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can use /item to edit items in their inventory. This includes enchantments, item descriptions (lore), and more.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Default Gamemode</div> <div class="page-content-table-column" style="width: 15%;">Adventure // Survival // Creative</div> <div class="page-content-table-column" style="width: 65%;">Changes the default Gamemode of players in a certain group.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Switch Gamemode</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can change their Gamemodes.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Edit Variables</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can use /variables to change values in your Housing system.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Change Player Group</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can change groups of other players. This feature only allows modifying the groups of players in <b>lower priorities</b>.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Change Gamerules</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can change Gamerules in your Housing.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Housing Menu</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can use the Housing Menu.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Team Chat Spy</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can /chatspy to view chat of all teams when Team Chat is enabled.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Edit Actions</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can edit actions in items or systems they have access to.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Edit Regions</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can create, edit and delete Regions.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Edit Scoreboard</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can edit the Scoreboard.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Edit Event Actions</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can create, edit, and delete Event Actions.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Edit Commands</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can create, edit, and delete Commands.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Edit Functions</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can create, edit, and delete Functions.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Edit Inventory Layouts</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can create, edit, and delete Inventory Layouts.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Edit Teams</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can create, edit, and delete Teams.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Edit Custom Menus</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can create, edit, and delete Custom Menus.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">View Analytics</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can view analytics about your Housing.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Item: Mailbox</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can place Mailboxes.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Item: Egg Hunt</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can place and remove Egg Hunts eggs.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Item: Teleport Pad</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can place and edit Teleport Pads.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Item: Launch Pad</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can place and edit Launch Pads.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Item: Action Pad</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can place and edit Action Pads.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Item: Hologram</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can place and edit Holograms.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Item: NPCs</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can place and edit NPCs.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Item: Action Button</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can place and edit Action Buttons.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Item: Leaderboard</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can place and edit Leaderboards.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Item: Trash Can</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can place and remove Trash Cans.</div></div>
-<div class="page-content-table-row"><div class="page-content-table-column" style="width: 20%;">Item: Biome Stick</div> <div class="page-content-table-column" style="width: 15%;">On // Off</div> <div class="page-content-table-column" style="width: 65%;">Toggles whether players in a certain group can use Biome Sticks.</div></div>
-</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(16, 1fr); grid-template-rows: repeat(53, auto);"><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left data-top>
+        Permission
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Fly
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        <b>On // Off</b>
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can fly.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Wood Door
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can open and close wood doors.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Iron Door
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can open and close iron doors.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Wood Trapdoor
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can open and close wood trapdoors.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Iron Trapdoor
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can open and close iron trapdoors WITHOUT REDSTONE.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Fence Gate
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can open and close fence gates.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Button
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can use buttons.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Lever
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can use levers.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Use Launch Pads
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can use Launch Pads (A block similar to Rocket Launch Pads).
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        /tp
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can teleport.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        /tp Other Players
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can teleport other players.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Jukebox
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can use the Jukebox (Background Music Feature for Housings with ranked owners).
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Kick a Player
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can kick players off your House.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Ban a Player
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can ban players off your housing.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Mute a Player
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can mute players in your housing.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Chat (Slowmode)
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Slow 1 / 2 / 3 / 5 / 10 / 15 / 30 / 45 / 60s // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Changes the chat slowmode of players in a certain group, or toggles their ability to chat.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Pet Spawning
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can spawn their Hypixel pets.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Build
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can <b>build</b> in <b>your Housing</b>.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Offline Build
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can <b>build, even when you're offline. This permission requires permission "BUILD" to be enabled.</b>
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Fluid
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can place fluids (e.g., water, lava). <b>This permission requires permission "BUILD" to be enabled.</b>
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Protools (Worldedit)
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can use Protools. <b>This permission requires permission "BUILD" to be enabled.</b>
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Use Chests
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can use chests.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Use Ender Chests
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can use ender chests.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Item Editor
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can use /item to edit items in their inventory. This includes enchantments, item descriptions (lore), and more.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Default Gamemode
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Adventure // Survival // Creative
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Changes the default Gamemode of players in a certain group.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Switch Gamemode
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can change their Gamemodes.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Edit Variables
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can use /variables to change values in your Housing system.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Change Player Group
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can change groups of other players. This feature only allows modifying the groups of players in <b>lower priorities</b>.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Change Gamerules
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can change Gamerules in your Housing.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Housing Menu
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can use the Housing Menu.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Team Chat Spy
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can /chatspy to view chat of all teams when Team Chat is enabled.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Edit Actions
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can edit actions in items or systems they have access to.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Edit Regions
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can create, edit and delete Regions.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Edit Scoreboard
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can edit the Scoreboard.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Edit Event Actions
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can create, edit, and delete Event Actions.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Edit Commands
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can create, edit, and delete Commands.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Edit Functions
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can create, edit, and delete Functions.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Edit Inventory Layouts
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can create, edit, and delete Inventory Layouts.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Edit Teams
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can create, edit, and delete Teams.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Edit Custom Menus
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can create, edit, and delete Custom Menus.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        View Analytics
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can view analytics about your Housing.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Item: Mailbox
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can place Mailboxes.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Item: Egg Hunt
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can place and remove Egg Hunts eggs.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Item: Teleport Pad
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can place and edit Teleport Pads.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Item: Launch Pad
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can place and edit Launch Pads.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Item: Action Pad
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can place and edit Action Pads.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Item: Hologram
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can place and edit Holograms.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Item: NPCs
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can place and edit NPCs.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Item: Action Button
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can place and edit Action Buttons.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Item: Leaderboard
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can place and edit Leaderboards.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Item: Trash Can
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can place and remove Trash Cans.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;" data-left >
+        Item: Biome Stick
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        On // Off
+      </div><div class="page-content-table-cell" style="grid-column: span 10; grid-row: span 1;"  >
+        Toggles whether players in a certain group can use Biome Sticks.
+      </div></div>
+
 
 <div class="page-content-superheader">Managing Groups</div>
 <div class="page-content-header">How to Create/Edit/Delete a Group?</div>
@@ -145,38 +410,47 @@ To <b>delete</b> a group, navigate to: <b>Housing Menu → Permissions and Group
 
 <div class="page-content-header">Default Groups in a new Housing</div>
 <div class="page-content-text">When you create a Housing plot, players are automatically sorted into different groups with preset permissions. These are:</div>
-<div class="page-content-table">
-  <div class="page-content-table-row">
-    <div class="page-content-table-column" style="width: 20%;">Group</div>
-    <div class="page-content-table-column" style="width: 20%;">Tag</div>
-    <div class="page-content-table-column" style="width: 30%;">Priority</div>
-	<div class="page-content-table-column" style="width: 50%;">Permissions</div>
-  </div>
-  <div class="page-content-table-row">
-    <div class="page-content-table-column" style="width: 20%;"><span style="color:gray;">Guest</span></div>
-    <div class="page-content-table-column" style="width: 20%;"><span style="color:gray;">[GUEST]</span> (Not visible)</div>
-    <div class="page-content-table-column" style="width: 30%;">1</div>
-    <div class="page-content-table-column" style="width: 50%;">Fly, Wood Door, Iron Door, Wood Trapdoor, Iron Trapdoor, Fence Gate, Button, Lever, Use Launch Pads, Chat Slowmode 3s, Use Chests, Use Ender Chests, Gamemode Adventure, Housing Menu</div>
-  </div>
-  <div class="page-content-table-row">
-    <div class="page-content-table-column" style="width: 20%;"><span style="color:orange;">Resident</span></div>
-    <div class="page-content-table-column" style="width: 20%;"><span style="color:orange;">[RESIDENT]</span> (Visible)</div>
-    <div class="page-content-table-column" style="width: 30%;">2</div>
-    <div class="page-content-table-column" style="width: 50%;">All permissions of Guest, with the following exceptions:<br>/tp, /tp Other Players, Jukebox, Kick, Mute, Chat Slowmode 0s, Pet Spawning</div>
-  </div>
-  <div class="page-content-table-row">
-    <div class="page-content-table-column" style="width: 20%;"><span style="color:yellow;">Co-Owner</span></div>
-    <div class="page-content-table-column" style="width: 20%;"><span style="color:yellow;">[CO-OWNER]</span> (Visible)</div>
-    <div class="page-content-table-column" style="width: 30%;">3</div>
-    <div class="page-content-table-column" style="width: 50%;">All permissions of Resident, with the following exceptions: Ban, Change Player Group</div>
-  </div>
-  <div class="page-content-table-row">
-    <div class="page-content-table-column" style="width: 20%;"><span style="color:yellow;">Owner</span></div>
-    <div class="page-content-table-column" style="width: 20%;"><span style="color:yellow;">[OWNER]</span> (Visible)</div>
-    <div class="page-content-table-column" style="width: 30%;">100 (Protected Value)</div>
-    <div class="page-content-table-column" style="width: 50%;">All permissions</div>
-  </div>
-</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(5, auto);"><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left data-top>
+        Group
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  data-top>
+        Tag
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  data-top>
+        Priority
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Permissions
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        <span style="color:gray;">Guest</span>
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        <span style="color:gray;">[GUEST]</span> (Not visible)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        1
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Fly, Wood Door, Iron Door, Wood Trapdoor, Iron Trapdoor, Fence Gate, Button, Lever, Use Launch Pads, Chat Slowmode 3s, Use Chests, Use Ender Chests, Gamemode Adventure, Housing Menu
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        <span style="color:orange;">Resident</span>
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        <span style="color:orange;">[RESIDENT]</span> (Visible)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        2
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        All permissions of Guest, with the following exceptions:<br>/tp, /tp Other Players, Jukebox, Kick, Mute, Chat Slowmode 0s, Pet Spawning
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        <span style="color:yellow;">Co-Owner</span>
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        <span style="color:yellow;">[CO-OWNER]</span> (Visible)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        3
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        All permissions of Resident, with the following exceptions: Ban, Change Player Group
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        <span style="color:yellow;">Owner</span>
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        <span style="color:yellow;">[OWNER]</span> (Visible)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        100 (Protected Value)
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        All permissions
+      </div></div>
             </div></div></div>
 
 
