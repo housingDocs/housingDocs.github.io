@@ -118,6 +118,7 @@ pre {
 
 .forum-snippet-content pre {
     text-wrap: nowrap;
+    font-family: monospace;
 }
 
 .forum-snippet-content::-webkit-scrollbar {
