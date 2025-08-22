@@ -278,7 +278,7 @@ function markdownToHTML(markdown) {
   // 7) Color
   markdown = markdown.replace(
     /<color\s+(#[0-9a-fA-F]{3,6}|\w+)>(.*?)<\/color>/gs,
-    '<span style="color: $1">$2</span>'
+    '<span style="color: $1; font-size: inherit;">$2</span>'
   );
 
   // 9) Code blocks (custom <code> ... </code> tag)
