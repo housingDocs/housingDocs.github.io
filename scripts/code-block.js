@@ -275,6 +275,12 @@ function markdownToHTML(markdown) {
   // 6) Links
   markdown = markdown.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, text, href) => `<a href="${href}">${text}</a>`);
 
+  // 7) Color
+  markdown = markdown.replace(
+    /<color\s+(#[0-9a-fA-F]{3,6}|\w+)>(.*?)<\/color>/gs,
+    '<span style="color: $1">$2</span>'
+  );
+
   // 9) Code blocks (custom <code> ... </code> tag)
   markdown = markdown.replaceAll('<code>', '<div class="page-content-code"><pre>');
   markdown = markdown.replaceAll('</code>', '</pre></div>');

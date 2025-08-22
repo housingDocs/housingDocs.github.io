@@ -16,6 +16,7 @@ const nav = (typeof window === 'undefined') ?
             { name: "Special Items", link: "/html/General_Housing/Special_Items.html" },
             { name: "Item Editor", link: "/html/General_Housing/Item_Editor.html" },
             { name: "Formatting Codes", link: "/html/General_Housing/Formatting_Codes.html" },
+            { name: "Pro Tools", link: "/html/General_Housing/Pro_Tools.html" },
             { name: "Data Values", link: "/html/General_Housing/Data_Values.html" },
         ]
     },
@@ -79,6 +80,7 @@ const nav = (typeof window === 'undefined') ?
             { name: "Special Items", link: "/html/General_Housing/Special_Items.html" },
             { name: "Item Editor", link: "/html/General_Housing/Item_Editor.html" },
             { name: "Formatting Codes", link: "/html/General_Housing/Formatting_Codes.html" },
+            { name: "Pro Tools", link: "/html/General_Housing/Pro_Tools.html" },
             { name: "Data Values", link: "/html/General_Housing/Data_Values.html" },
         ]
     },
