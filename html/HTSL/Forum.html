@@ -34,7 +34,7 @@
                     <div class="forum-top">
                         <div class="page-title">HTSL Snippet Forum</div>
                         <input placeholder="Search Snippets" class="forum-search">
-                        <button class="forum-search-button">
+                        <button id="forum-search-button" data-action="search">
                             <span class="material-symbols-outlined">search</span>
                         </button>
                     </div>
@@ -47,8 +47,9 @@
                         </div>
                     </div>
                 </div>
+
                 <div id="big-snippet" style="display: none;">
-                    <button class="big-snippet-back" onclick="hideSnippet()">
+                    <button class="big-snippet-back" onclick="showForum()">
                         <span class="material-symbols-outlined">arrow_back</span>
                     </button>
                     <div id="big-snippet-name">
@@ -59,6 +60,35 @@
                     </div>
                     <div id="big-snippet-content">
                         
+                    </div>
+                </div>
+
+                <div id="submit" style="display: none;">
+                    <button class="big-snippet-back" onclick="showForum()">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </button>
+                    <div class="page-title">Submit Snippets</div>
+
+                    <div id="submit-key">
+                        <input placeholder="Your Key" id="submit-key-input" autocorrect="off">
+                        <button id="submit-key-button">
+                            <span class="material-symbols-outlined">check</span>
+                        </button>
+                    </div>
+                    <div class="page-content-header">Your Snippets</div>
+                    <div id="own-snippets">
+                        
+                    </div>
+                    <div class="page-content-header">New Snippet</div>
+                    <div id="new-snippet">
+                        <div id="new-snippet-inputs">
+                            <input maxlength="30" placeholder="Name" id="new-snippet-name" class="new-snippet-input"></input>
+                            <textarea maxlength="200" placeholder="Description" id="new-snippet-description" class="new-snippet-input"></textarea>
+                            <textarea maxlength="2000" placeholder="Content" id="new-snippet-content" class="new-snippet-input"></textarea>
+                        </div>
+                        <button id="submit-snippet" disabled>
+                            Submit
+                        </button>
                     </div>
                 </div>
             </div>
