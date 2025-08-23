@@ -275,6 +275,33 @@ document.addEventListener("keyup", (event) => {
 const submitKeyButton = document.querySelector('#submit-key-button')
 const ownSnippetsContainer = document.querySelector('#own-snippets')
 
+window.deleteSnippet = (id) => {
+  try {
+    console.log('a')
+    fetch('https://housingdocsserver.onrender.com/snippets/delete', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id,
+        key: localStorage.getItem('htsl-key')
+      })
+    }).then((r) => {
+      return r.json()
+    }).then((r) => {
+      r = JSON.parse(r)
+      console.log(r)
+      if (r.status) {
+        window.location.reload()
+      } else if (r.error) {
+        alert(r.error)
+      }
+    })
+
+  } catch(e) {
+    alert(e)
+  }
+}
+
 submitKeyButton.addEventListener('click', () => {
   const key = submitKeyInput.value
   localStorage.setItem('htsl-key', key)
@@ -304,6 +331,9 @@ submitKeyButton.addEventListener('click', () => {
         <div class="own-snippet-date">
           ${timeConverter(snippet.date)}
         </div>
+        <button class="own-snippet-delete" onclick="deleteSnippet(${snippet.id})">
+          <span class="material-symbols-outlined">delete</span>
+        </button>
       </div>`
     }
   })

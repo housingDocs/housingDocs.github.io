@@ -254,6 +254,13 @@ pre {
     margin-right: 20px;
 }
 
+.own-snippet-description {
+    text-wrap: nowrap;
+    overflow: hidden;
+    margin-right: 8px;
+    text-overflow: ellipsis;
+}
+
 .own-snippet-date {
     margin-left: auto;
     font-family: monospace;
@@ -316,4 +323,14 @@ pre {
 #submit-snippet:disabled {
     color: #463085;
     border-color: #463085;
+}
+
+.own-snippet-delete {
+    color: #8665ff;
+    margin-left: 8px;
+    transition: 0.2s;
+}
+
+.own-snippet-delete:hover {
+    color: #af99ff;
 }
