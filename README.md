@@ -4,3 +4,4 @@ This is an open-source, community-run documentation for the Housing gamemode on 
 
 Any additions are welcome, just keep it ontopic and relevant!
 
+Submissions are funneled through the [Discord](https://discord.gg/qRvcDc3vz5)
