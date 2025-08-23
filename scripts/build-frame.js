@@ -18,6 +18,7 @@ const nav = (typeof window === 'undefined') ?
             { name: "Formatting Codes", link: "/html/General_Housing/Formatting_Codes.html" },
             { name: "Pro Tools", link: "/html/General_Housing/Pro_Tools.html" },
             { name: "Data Values", link: "/html/General_Housing/Data_Values.html" },
+            { name: "Cookies", link: "/html/General_Housing/Cookies.html" }
         ]
     },
     "House Settings": {
@@ -82,6 +83,7 @@ const nav = (typeof window === 'undefined') ?
             { name: "Formatting Codes", link: "/html/General_Housing/Formatting_Codes.html" },
             { name: "Pro Tools", link: "/html/General_Housing/Pro_Tools.html" },
             { name: "Data Values", link: "/html/General_Housing/Data_Values.html" },
+            { name: "Cookies", link: "/html/General_Housing/Cookies.html" }
         ]
     },
     "House Settings": {
