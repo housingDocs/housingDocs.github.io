@@ -100,6 +100,9 @@ pre {
 .forum-snippet-top-name {
     flex: 1;
     text-align: start;
+    overflow: hidden;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
 }
 
 .forum-snippet-top-author span {

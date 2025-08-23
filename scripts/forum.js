@@ -50,6 +50,22 @@ function clearRows() {
   })
 }
 
+function fixName() {
+  document.querySelectorAll('.forums-snippet-top-name').forEach(name => {
+    if (checkOverflow(name)) {
+      let i = 1
+      const wholeContent = name.textContent
+      name.textContent = ''
+      console.log(wholeContent)
+
+      while (!checkOverflow(name)) {
+        name.textContent = wholeContent.slice(0, i)
+        i += 1
+      }
+    }
+  });
+} 
+
 getSnippets(1, 6).then((r) => {
     r = JSON.parse(r)
     for (const snippet of r) {
@@ -81,6 +97,7 @@ getSnippets(1, 6).then((r) => {
     for (i; i % 3 != 0; i++) {
         curRow.innerHTML += '<div style="flex: 1; margin: 0 12px"></div>'
     }
+    fixName()
 })
 
 const forumContainer = document.querySelector('#forum')
