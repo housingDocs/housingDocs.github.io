@@ -228,6 +228,19 @@ function setCursorAtOffset(el, offset) {
   }
 }
 
+function insertAtCaret(str) {
+  const sel = window.getSelection();
+  const range = sel.getRangeAt(0);
+  range.deleteContents();
+  range.insertNode(document.createTextNode(str));
+
+  // Move cursor after inserted text
+  range.setStart(range.endContainer, range.endOffset);
+  range.setEnd(range.endContainer, range.endOffset);
+  sel.removeAllRanges();
+  sel.addRange(range);
+}
+
 /* ---------------------------
    Markdown -> HTML renderer
    (handles escapes so escaped chars do not format)
@@ -396,17 +409,31 @@ function handleEditor(editor) {
   const pre = editor.querySelector('pre');
   const button = editor.querySelector('.page-content-code-copy-button');
 
-  pre.addEventListener('input', () => {
-    const caretOffset = getCaretCharacterOffsetWithin(pre);
-    const text = pre.textContent;
-    pre.innerHTML = syntaxHighlightHTSL(text);
-    setCursorAtOffset(pre, caretOffset);
-    button.onclick = () => copyToClipboard(text);
+  console.log(pre)
+
+  pre.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      console.log('a')
+      event.preventDefault(); // stop browser resetting formatting
+      insertAtCaret("\n");    // custom helper to insert newline
+    }
   });
 
-  // initialize empty content if needed
-  pre.textContent = pre.textContent || '';
-  pre.innerHTML = syntaxHighlightHTSL(pre.textContent);
+  pre.addEventListener("input", () => {
+    const caretOffset = getCaretCharacterOffsetWithin(pre);
+
+    // Grab plain text
+    const text = pre.innerText;
+
+    // Re-render with highlighting
+    pre.innerHTML = syntaxHighlightHTSL(text);
+
+    // Restore caret
+    setCursorAtOffset(pre, caretOffset);
+
+    // Update copy button
+    button.onclick = () => copyToClipboard(text);
+  });
 }
 
 function handleMarkdownEditor(editor) {
@@ -466,6 +493,9 @@ function handleMarkdownEditor(editor) {
       const text = pre.textContent;
       preview.innerHTML = markdownToHTML(text);
       fixMarkdownPreview(preview);
+    } else if (e.key === "Enter") {
+      e.preventDefault()
+      insertAtCaret('\n')
     }
   });
 }
