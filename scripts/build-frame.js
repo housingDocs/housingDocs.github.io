@@ -1,6 +1,6 @@
 
-const nav = (typeof window === 'undefined') ? 
-  exports.nav = {
+const nav = 
+{
     Home: {
         icon: "home",
         iconColor: "#6341E0",
@@ -12,78 +12,20 @@ const nav = (typeof window === 'undefined') ?
         icon: "hardware",
         iconColor: "#f5e942",
         points: [
-            { name: "Groups and Permissions", link: "/html/General_Housing/Groups_and_Permissions.html"},
-            { name: "Special Items", link: "/html/General_Housing/Special_Items.html" },
+            { name: "Housing Browser", link: "/html/General_Housing/Housing_Browser.html"},
             { name: "Item Editor", link: "/html/General_Housing/Item_Editor.html" },
             { name: "Formatting Codes", link: "/html/General_Housing/Formatting_Codes.html" },
-            { name: "Pro Tools", link: "/html/General_Housing/Pro_Tools.html" },
             { name: "Data Values", link: "/html/General_Housing/Data_Values.html" },
             { name: "Cookies", link: "/html/General_Housing/Cookies.html" }
         ]
     },
-    "House Settings": {
-        icon: "handyman",
-        iconColor: "#e41212",
+    "Housing Menu": {
+        icon: "star",
+        iconColor: "#47f3ffff",
         points: [
-            { name: "Plot Size", link: "/html/House_Settings/Plot_Size.html" },
-            { name: "Themes", link: "/html/House_Settings/Themes.html"}
-        ]
-    },
-    Systems: {
-        icon: "settings",
-        iconColor: "#fc6203",
-        points: [
-            { name: "Edit Actions", link: "/html/Systems/Edit_Actions.html" },
-            { name: "Regions", link: "/html/Systems/Regions.html" },
-            { name: "Event Actions", link: "/html/Systems/Event_Actions.html" },
-            { name: "Scoreboard Editor", link:"/html/Systems/Scoreboard_Editor.html" },
-            { name: "Custom Commands", link:"/html/Systems/Custom_Commands.html" }
-        ]
-    },
-    HTSL: {
-        icon: "code",
-        iconColor: "#67C520",
-        points: [
-            { name: "HTSL Introduction", link: "/html/HTSL/Introduction.html" },
-            { name: "Code Block Editor", link: "/html/HTSL/Code_Block_Editor.html"},
-            { name: "HTSL Forum", link:"/html/HTSL/Forum.html" }
-        ]
-    },
-    Contribute: {
-        icon: "ad_group",
-        iconColor: "#22DD22",
-        points: [
-            { name: "Contribute", link: "/html/Contribute/Contribute.html" },
-            { name: "Article Markdown", link: "/html/Contribute/Article_Markdown.html"},
-            { name: "Article Editor", link: "/html/Contribute/Article_Editor.html"}
-        ]
-    },
-    Other: {
-        icon: "coffee",
-        iconColor: "#f5e942",
-        points: [
-            { name: "About", link: "/html/Other/About.html" }
-        ]
-    }
-} : {
-    Home: {
-        icon: "home",
-        iconColor: "#6341E0",
-        points: [
-            { name: "Docs Introduction", link: "/html/Home/Introduction.html"},
-        ]
-    },
-    "General Housing": {
-        icon: "hardware",
-        iconColor: "#f5e942",
-        points: [
-            { name: "Groups and Permissions", link: "/html/General_Housing/Groups_and_Permissions.html"},
-            { name: "Special Items", link: "/html/General_Housing/Special_Items.html" },
-            { name: "Item Editor", link: "/html/General_Housing/Item_Editor.html" },
-            { name: "Formatting Codes", link: "/html/General_Housing/Formatting_Codes.html" },
-            { name: "Pro Tools", link: "/html/General_Housing/Pro_Tools.html" },
-            { name: "Data Values", link: "/html/General_Housing/Data_Values.html" },
-            { name: "Cookies", link: "/html/General_Housing/Cookies.html" }
+            { name: "Groups and Permissions", link: "/html/Housing_Menu/Groups_and_Permissions.html"},
+            { name: "Pro Tools", link: "/html/Housing_Menu/Pro_Tools.html" },
+            { name: "Special Items", link: "/html/Housing_Menu/Special_Items.html" }
         ]
     },
     "House Settings": {
@@ -134,8 +76,8 @@ const nav = (typeof window === 'undefined') ?
 
 
 if (typeof document !== 'undefined') {
-    // Create Navbar
-const sidebars = document.querySelectorAll('.sidebar-content')
+
+    const sidebars = document.querySelectorAll('.sidebar-content')
 
 let navHTML = '<input class="sidebar-search" placeholder="Search"></input>'
 
