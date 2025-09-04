@@ -34,6 +34,34 @@ pre {
     font-family: inherit;
 }
 
+@font-face {
+  font-family: minecraft;
+  src: url('../assets/minecraft-font/MinecraftRegular-Bmg3.otf') format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: minecraft;
+  src: url('../assets/minecraft-font/MinecraftBold-nMK1.otf') format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: minecraft;
+  src: url('../assets/minecraft-font/MinecraftItalic-R8Mo.otf') format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: minecraft;
+  src: url('../assets/minecraft-font/MinecraftBoldItalic-1y1e.otf') format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+
 .top {
     width: 100%;
     height: 7.5%;
@@ -488,4 +516,50 @@ pre {
     border-radius: 6px;
     font-size: calc(1em * (7/8));
     margin: 0;
+}
+
+.page-content-item-display {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #463085;
+    border-radius: 8px;
+    padding: 8px;
+    margin: 12px 0;
+}
+
+.page-content-item-display:hover {
+    cursor: pointer;
+}
+
+.page-content-item-display img {
+    width: 100%;
+    image-rendering: pixelated;
+}
+
+#tooltip {
+    position:fixed;
+    background: #120211f0;
+    padding: 7px 12px 12px 12px;
+    border-radius: 8px;
+    border: 2px solid #6f4bd1;
+    z-index: 100;
+    pointer-events: none;
+    font-size: 24px;
+}
+
+.tooltip-name {
+    color: white
+}
+
+.tooltip-lore {
+    color: #AAAAAA;
+    line-height: 1;
+}
+
+.tooltip-lore span {
+    line-height: 1 !important;
+}
+
+.page-content-item-display-content {
+    display: none;
 }

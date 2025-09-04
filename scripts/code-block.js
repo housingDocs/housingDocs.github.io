@@ -298,7 +298,17 @@ function markdownToHTML(markdown) {
   markdown = markdown.replaceAll('<code>', '<div class="page-content-code"><pre>');
   markdown = markdown.replaceAll('</code>', '</pre></div>');
 
-  // 9) Simple table syntax with pipe characters and cell merging
+  markdown = markdown.replace(/<display\s+texture="([^"]+)">(.*?)<\/display>/gs, (match, texture, content) => {
+    return `
+    <div class="page-content-item-display">
+      <img src="${texture}">
+      <div class="page-content-item-display-content">
+        ${content.trim()}
+      </div>
+    </div>`;
+  });
+
+  // 11) Simple table syntax with pipe characters and cell merging
   markdown = markdown.replace(/<table[^>]*>([\s\S]*?)<\/table>/g, (fullMatch, tableContent) => {
     const rows = tableContent.trim().split('\n').filter(row => row.trim())
     if (rows.length === 0) return '<div class="page-content-table"></div>'
@@ -383,7 +393,7 @@ function markdownToHTML(markdown) {
     return `<div class="page-content-text">${content}</div>`;
   });
 
-  // 10) Restore escape placeholders
+  // 12) Restore escape placeholders
   for (const key in escapeMap) {
     markdown = markdown.replaceAll(key, escapeMap[key]);
   }
@@ -505,6 +515,30 @@ function handleMarkdownEditor(editor) {
    --------------------------- */
 
 function fixMarkdownPreview(preview) {
+  const itemDisplays = document.querySelectorAll('.page-content-item-display')
+
+  itemDisplays.forEach((i) => {
+    console.log(i)
+    i.addEventListener("mouseenter", () => {
+        tooltip.innerHTML =
+        
+        makeToolTip(
+                i.querySelector('.page-content-item-display-content').textContent.trim()
+        )
+
+        tooltip.style.opacity = "1";
+    });
+
+    i.addEventListener("mousemove", (e) => {
+        tooltip.style.left = e.pageX + 10 + "px";
+        tooltip.style.top = e.pageY + 15 + "px";
+    });
+
+    i.addEventListener("mouseleave", () => {
+        tooltip.style.opacity = "0";
+    });
+  })
+
   // Enhance code blocks: syntax highlight HTSL inside <pre> if present
   preview.querySelectorAll('.page-content-code').forEach(codeField => {
     const pre = codeField.querySelector('pre');
@@ -556,6 +590,28 @@ function fixMarkdownPreview(preview) {
     const pre = btn.parentNode.querySelector('pre');
     if (pre) btn.onclick = () => copyToClipboard(pre.textContent);
   });
+
+  itemDisplays.forEach((i) => {
+    console.log(i)
+    i.addEventListener("mouseenter", () => {
+        tooltip.innerHTML =
+        
+        makeToolTip(
+                i.querySelector('.page-content-item-display-content').textContent.trim()
+        )
+
+        tooltip.style.opacity = "1";
+    });
+
+    i.addEventListener("mousemove", (e) => {
+        tooltip.style.left = e.pageX + 10 + "px";
+        tooltip.style.top = e.pageY + 15 + "px";
+    });
+
+    i.addEventListener("mouseleave", () => {
+        tooltip.style.opacity = "0";
+    });
+  })
 }
 
 /* ---------------------------

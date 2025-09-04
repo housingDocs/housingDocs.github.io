@@ -219,3 +219,125 @@ document.querySelectorAll('.page-content-table').forEach((table) => {
 })
 }
 
+// Item Displays
+const colorMap = {
+    "&0": "#000000", // Black
+    "&1": "#0000AA", // Dark Blue
+    "&2": "#00AA00", // Dark Green
+    "&3": "#00AAAA", // Dark Aqua
+    "&4": "#AA0000", // Dark Red
+    "&5": "#AA00AA", // Dark Purple
+    "&6": "#FFAA00", // Gold
+    "&7": "#AAAAAA", // Gray
+    "&8": "#555555", // Dark Gray
+    "&9": "#5555FF", // Blue
+    "&a": "#55FF55", // Green
+    "&b": "#55FFFF", // Aqua
+    "&c": "#FF5555", // Red
+    "&d": "#FF55FF", // Light Purple
+    "&e": "#FFFF55", // Yellow
+    "&f": "#FFFFFF"  // White
+}
+
+const formatMap = {
+    "&l": "font-weight: bold;",       // Bold
+    "&m": "text-decoration: line-through;", // Strikethrough
+    "&n": "text-decoration: underline;",    // Underline
+    "&o": "font-style: italic;"       // Italic
+}
+
+function parseMinecraftText(text) {
+    const regex = /(&[0-9a-fklmnor])/gi;
+    const parts = text.split(regex);
+
+    let activeStyles = [];
+    const result = [];
+
+    for (const part of parts) {
+        if (!part) continue;
+
+        if (part.match(regex)) {
+            const code = part.toLowerCase();
+
+            if (code === "&r") {
+                activeStyles = [];
+            } else if (/&[0-9a-f]/.test(code)) {
+                activeStyles = [code];
+            } else {
+                activeStyles.push(code);
+            }
+        } else {
+            result.push({ styles: activeStyles, text: part });
+        }
+    }
+
+    return result;
+}
+
+function buildStyledText(text) {
+    const data = parseMinecraftText(text)
+    let html = ''
+
+    for (const part of data) {
+        let span = '<span style="font-family: minecraft; '
+        for (const style of part.styles) {
+            if (colorMap[style]) {
+                span += `color: ${colorMap[style]};`
+            } else if (formatMap[style]) {
+                span += formatMap[style]
+            }
+        }
+
+        html += span + `">${part.text}</span>`
+    }
+
+    return html
+}
+
+function makeToolTip(text) {
+    let html = ''
+
+    const lines = text.split('\n')
+    const name = lines[0]
+    html += `<div class="tooltip-name">${buildStyledText(name)}</div>`
+
+    if (lines.length > 1) {
+        const lore = lines.slice(1)
+
+        for (const l of lore) {
+            html += `<div class="tooltip-lore">${buildStyledText(l)}</div>`
+        }
+    }
+
+    return html
+}
+
+const itemDisplays = document.querySelectorAll('.page-content-item-display')
+
+const tooltip = document.createElement('div')
+tooltip.setAttribute('id', 'tooltip')
+
+document.body.appendChild(tooltip)
+
+itemDisplays.forEach((i) => {
+    console.log(i)
+    i.addEventListener("mouseenter", () => {
+        tooltip.innerHTML =
+        
+        makeToolTip(
+                i.querySelector('.page-content-item-display-content').textContent.trim()
+        )
+
+        tooltip.style.opacity = "1";
+    });
+
+    i.addEventListener("mousemove", (e) => {
+        tooltip.style.left = e.pageX + 10 + "px";
+        tooltip.style.top = e.pageY + 15 + "px";
+    });
+
+    i.addEventListener("mouseleave", () => {
+        tooltip.style.opacity = "0";
+    });
+})
+
