@@ -276,7 +276,7 @@ function parseMinecraftText(text) {
 
 function buildStyledText(text) {
     const data = parseMinecraftText(text)
-    let html = ''
+    let html = '\u200B'
 
     for (const part of data) {
         let span = '<span style="font-family: minecraft; '
