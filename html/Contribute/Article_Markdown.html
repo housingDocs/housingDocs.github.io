@@ -53,13 +53,6 @@
                 <div class="page-content-superheader">Text Blocks</div>
                 <div class="page-content-header">Just normal text</div>
                 <div class="page-content-text">Beneath a sky painted in fading gold, whispers of forgotten stories danced through the tall grass, weaving memories into the breeze. Shadows stretched like fingers across the earth, and somewhere in the distance, a bell rang for no one, echoing through the stillness like a question never answered.</div>
-                <div class="page-content-header">An ordered List</div>
-                <div class="page-content-list">
-                    <div class="page-content-list-point">Drinking enough water boosts your energy and concentration.</div>
-                    <div class="page-content-list-point">Regular exercise improves mood and reduces stress.</div>
-                    <div class="page-content-list-point">Reading daily can expand your knowledge and vocabulary.</div>
-                    <div class="page-content-list-point">Getting enough sleep helps your body recover and stay healthy.</div>
-                </div>
                 <div class="page-content-header">A HTSL code block</div>
                 <div class="page-content-code"><pre>
 if and (stat kills > 10) {
@@ -73,11 +66,6 @@ chat "Kills aren't > 10"
 Beneath a sky painted in fading gold, whispers of forgotten stories danced through the tall grass, weaving memories into the breeze. Shadows stretched like fingers across the earth, and somewhere in the distance, a bell rang for no one, echoing through the stillness like a question never answered.
 §
 
-- Drinking enough water boosts your energy and concentration.
-- Regular exercise improves mood and reduces stress.
-- Reading daily can expand your knowledge and vocabulary.
-- Getting enough sleep helps your body recover and stay healthy.
-
 `
 if and (stat kills > 10) {
 chat "Kills > 10"
@@ -85,6 +73,48 @@ chat "Kills > 10"
 chat "Kills aren't > 10"
 }
 `</pre></div>
+<div class="page-content-superheader">Lists</div>
+<div class="page-content-header">List Structure</div>
+<div class="page-content-text">
+List points can be declared using <span class="markdown-monospace">undefined{flag} {content}</span>. The <span class="markdown-monospace">flag</span> describes what kind of counting the list points will use. Consecutive list points (every consecutive line that starts with <span class="markdown-monospace">undefined{flag} </span>) will be merged into a List.
+</div><div class="page-content-list"><div class="page-content-list-point" data-flag="">This is a list point</div><div class="page-content-list-point" data-flag="r">This is a list point with a special flag</div><div class="page-content-list-point" data-flag="r">Another list point</div><div class="page-content-list-point" data-flag="l">This one has a letter!</div></div>
+<div class="page-content-text">
+The <span class="markdown-monospace">flag</span> can be one of the following:
+</div>
+
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(4, auto);"><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left data-top>
+        Flag
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Action
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  data-top>
+        Limit
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        <span class="markdown-monospace">No Flag</span>
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Normal counting (1, 2, 3...)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        No Limit
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        <span class="markdown-monospace">r</span>
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Roman Numerals ( <span style="font-family: monospace">I II III IV</span> )
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Maximmum of 3999 points
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        <span class="markdown-monospace">l</span>
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Letters (a, b, c...)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Maximum of 26 points
+      </div></div>
+
+<div class="page-content-header">Lists in Markdown</div>
+<div class="page-content-code markdown"><pre>
+&#45; This is a list point
+&#45;r This is a list point with a special flag
+&#45;r Another list point
+&#45;l This one has a letter! 
+</pre></div>
 
                 <div class="page-content-header">Escaping Symbols</div>
                 <div class="page-content-text">Any symbol can be escaped using \ (backslash), which negates the effect of the symbol.</div>

@@ -76,30 +76,33 @@ const nav =
 };
 
 function intToRoman(num) {
-  const romanMap = [
-    { value: 1000, symbol: "M" },
-    { value: 900,  symbol: "CM" },
-    { value: 500,  symbol: "D" },
-    { value: 400,  symbol: "CD" },
-    { value: 100,  symbol: "C" },
-    { value: 90,   symbol: "XC" },
-    { value: 50,   symbol: "L" },
-    { value: 40,   symbol: "XL" },
-    { value: 10,   symbol: "X" },
-    { value: 9,    symbol: "IX" },
-    { value: 5,    symbol: "V" },
-    { value: 4,    symbol: "IV" },
-    { value: 1,    symbol: "I" },
-  ];
-
-  let result = "";
-  for (const { value, symbol } of romanMap) {
-    while (num >= value) {
-      result += symbol;
-      num -= value;
+    if (num > 3999) {
+        return "OUT OF RANGE"
     }
-  }
-  return result;
+    const romanMap = [
+        { value: 1000, symbol: "M" },
+        { value: 900,  symbol: "CM" },
+        { value: 500,  symbol: "D" },
+        { value: 400,  symbol: "CD" },
+        { value: 100,  symbol: "C" },
+        { value: 90,   symbol: "XC" },
+        { value: 50,   symbol: "L" },
+        { value: 40,   symbol: "XL" },
+        { value: 10,   symbol: "X" },
+        { value: 9,    symbol: "IX" },
+        { value: 5,    symbol: "V" },
+        { value: 4,    symbol: "IV" },
+        { value: 1,    symbol: "I" },
+    ];
+
+    let result = ""
+    for (const { value, symbol } of romanMap) {
+        while (num >= value) {
+            result += symbol
+            num -= value
+        }
+    }
+    return result
 }
 
 
@@ -202,7 +205,12 @@ document.querySelectorAll('.page-content-list').forEach((list) => {
     list.querySelectorAll('.page-content-list-point').forEach((point) => {
         switch (point.dataset.flag) {
             case 'r': {
-                point.innerHTML = `<div class="page-content-list-number">${intToRoman(i)}.</div><pre>${point.innerHTML}</pre>`;
+                point.innerHTML = `<div class="page-content-list-number"><span style="font-family: monospace; font-size: 14px; letter-spacing: -1px">${intToRoman(i)}</span>.</div><pre>${point.innerHTML}</pre>`;
+                break
+            }
+            case 'l': {
+                point.innerHTML = `<div class="page-content-list-number">${ i <= 26 ? String.fromCharCode(96 + i) : 'OUT OF RANGE' }.</div><pre>${point.innerHTML}</pre>`
+                break
             }
             default: {
                 point.innerHTML = `<div class="page-content-list-number">${i}.</div><pre>${point.innerHTML}</pre>`;

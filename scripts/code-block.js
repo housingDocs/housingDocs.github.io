@@ -134,7 +134,7 @@ function tokenizeMarkdown(code) {
       if (code.startsWith('# ', pos))   { tokens.push({ text: '#', type: 'syntax-markdown' }); pos += 1; continue; }
       if (code.startsWith('!! ', pos))  { tokens.push({ text: '!!', type: 'syntax-markdown' }); pos += 2; continue; }
       if (code.startsWith('! ', pos))   { tokens.push({ text: '!', type: 'syntax-markdown' }); pos += 1; continue; }
-      const match = code.slice(pos).match(/^-(\w?)\s/);
+      const match = code.slice(pos).match(/^(?:-|&#45;)(\w?)\s/);
       if (match) {
           const flag = match[1]; // "" if no letter, "r" if -r
           tokens.push({ text: `-${flag} `, type: 'syntax-markdown' });
@@ -274,6 +274,11 @@ function markdownToHTML(markdown) {
   markdown = markdown.replace(/^### (.+)$/gm, '<div class="page-content-subheader">$1</div>');
   markdown = markdown.replace(/^## (.+)$/gm, '<div class="page-content-header">$1</div>');
   markdown = markdown.replace(/^# (.+)$/gm, '<div class="page-content-superheader">$1</div>');
+  
+  markdown = markdown.replace(/\*\*(.+?)\*\*/g, (m, inner) => `<b>${escapeHtml(inner)}</b>`);
+  markdown = markdown.replace(/\*(.+?)\*/g, (m, inner) => `<i>${escapeHtml(inner)}</i>`);
+  markdown = markdown.replace(/`([^`]+)`/g, (m, inner) => `<div class="page-content-code"><pre>${escapeHtml(inner).replaceAll('-', '&#45;')}</pre></div>`);
+
 
   // 3) Lists: merge consecutive "- " lines into one list block
   markdown = markdown.replace(
@@ -297,10 +302,6 @@ function markdownToHTML(markdown) {
 
 
   // 4) Inline formatting: bold, italic, inline code
-  markdown = markdown.replace(/\*\*(.+?)\*\*/g, (m, inner) => `<b>${escapeHtml(inner)}</b>`);
-  markdown = markdown.replace(/\*(.+?)\*/g, (m, inner) => `<i>${escapeHtml(inner)}</i>`);
-  markdown = markdown.replace(/`([^`]+)`/g, (m, inner) => `<code>${escapeHtml(inner)}</code>`);
-
   const spanMap = [
     { markdown: 'm', class: 'markdown-monospace' }
   ];
@@ -312,10 +313,6 @@ function markdownToHTML(markdown) {
 
   // 6) Links
   markdown = markdown.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, text, href) => `<a href="${href}">${text}</a>`);
-
-  // 9) Code blocks (custom <code> ... </code> tag)
-  markdown = markdown.replaceAll('<code>', '<div class="page-content-code"><pre>');
-  markdown = markdown.replaceAll('</code>', '</pre></div>');
 
   markdown = markdown.replace(/<display\s+texture="([^"]+)">(.*?)<\/display>/gs, (match, texture, content) => {
     return `
@@ -610,6 +607,10 @@ function fixMarkdownPreview(preview) {
       switch (point.dataset.flag) {
         case 'r': {
             point.innerHTML = `<div class="page-content-list-number"><span style="font-family: monospace; font-size: 14px; letter-spacing: -1px">${intToRoman(i)}</span>.</div><pre>${point.innerHTML}</pre>`;
+            break
+        }
+        case 'l': {
+            point.innerHTML = `<div class="page-content-list-number">${ i <= 26 ? String.fromCharCode(96 + i) : 'OUT OF RANGE' }.</div><pre>${point.innerHTML}</pre>`
             break
         }
         default: {
