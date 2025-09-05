@@ -514,6 +514,8 @@ function handleMarkdownEditor(editor) {
    Preview fixer (post-processing)
    --------------------------- */
 
+
+
 function fixMarkdownPreview(preview) {
   const itemDisplays = document.querySelectorAll('.page-content-item-display')
 
@@ -531,11 +533,39 @@ function fixMarkdownPreview(preview) {
 
     i.addEventListener("mousemove", (e) => {
         tooltip.style.left = e.pageX + 10 + "px";
-        tooltip.style.top = e.pageY + 15 + "px";
+        tooltip.style.top = e.clientY - tooltip.dataset.scroll + "px"
     });
 
     i.addEventListener("mouseleave", () => {
         tooltip.style.opacity = "0";
+        tooltip.dataset.scroll = "0"
+    });
+
+    i.addEventListener("wheel", (e) => {
+      e.preventDefault();
+
+      let scroll = parseFloat(tooltip.dataset.scroll) || 0;
+      const maxScroll = tooltip.clientHeight; // adjust as needed
+
+      let delta = e.deltaY;
+
+      // Prevent scrolling past top/bottom
+      if ((scroll >= maxScroll && delta > 0) || (scroll <= 0 && delta < 0)) {
+        delta = 0;
+      }
+
+      scroll += delta;
+
+      if (scroll > tooltip.clientHeight) {
+        scroll = tooltip.clientHeight
+      } else if (scroll < 0) {
+        scroll = 0
+      }
+
+      tooltip.dataset.scroll = scroll;
+      tooltip.style.top = `${e.clientY - scroll}px`;
+
+      console.log(e.deltaY, tooltip.dataset.scroll, scroll);
     });
   })
 
@@ -591,27 +621,6 @@ function fixMarkdownPreview(preview) {
     if (pre) btn.onclick = () => copyToClipboard(pre.textContent);
   });
 
-  itemDisplays.forEach((i) => {
-    console.log(i)
-    i.addEventListener("mouseenter", () => {
-        tooltip.innerHTML =
-        
-        makeToolTip(
-                i.querySelector('.page-content-item-display-content').textContent.trim()
-        )
-
-        tooltip.style.opacity = "1";
-    });
-
-    i.addEventListener("mousemove", (e) => {
-        tooltip.style.left = e.pageX + 10 + "px";
-        tooltip.style.top = e.pageY + 15 + "px";
-    });
-
-    i.addEventListener("mouseleave", () => {
-        tooltip.style.opacity = "0";
-    });
-  })
 }
 
 /* ---------------------------
