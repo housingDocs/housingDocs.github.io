@@ -205,11 +205,19 @@ document.querySelectorAll('.page-content-list').forEach((list) => {
     list.querySelectorAll('.page-content-list-point').forEach((point) => {
         switch (point.dataset.flag) {
             case 'r': {
+                point.innerHTML = `<div class="page-content-list-number"><span style="font-family: monospace; font-size: 14px; letter-spacing: -1px">${intToRoman(i).toLowerCase()}</span>.</div><pre>${point.innerHTML}</pre>`;
+                break
+            }
+            case 'R': {
                 point.innerHTML = `<div class="page-content-list-number"><span style="font-family: monospace; font-size: 14px; letter-spacing: -1px">${intToRoman(i)}</span>.</div><pre>${point.innerHTML}</pre>`;
                 break
             }
-            case 'l': {
+            case 'a': {
                 point.innerHTML = `<div class="page-content-list-number">${ i <= 26 ? String.fromCharCode(96 + i) : 'OUT OF RANGE' }.</div><pre>${point.innerHTML}</pre>`
+                break
+            }
+            case 'A': {
+                point.innerHTML = `<div class="page-content-list-number">${ i <= 26 ? String.fromCharCode(64 + i) : 'OUT OF RANGE' }.</div><pre>${point.innerHTML}</pre>`
                 break
             }
             default: {

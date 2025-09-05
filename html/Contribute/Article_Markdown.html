@@ -76,13 +76,13 @@ chat "Kills aren't > 10"
 <div class="page-content-superheader">Lists</div>
 <div class="page-content-header">List Structure</div>
 <div class="page-content-text">
-List points can be declared using <span class="markdown-monospace">undefined{flag} {content}</span>. The <span class="markdown-monospace">flag</span> describes what kind of counting the list points will use. Consecutive list points (every consecutive line that starts with <span class="markdown-monospace">undefined{flag} </span>) will be merged into a List.
-</div><div class="page-content-list"><div class="page-content-list-point" data-flag="">This is a list point</div><div class="page-content-list-point" data-flag="r">This is a list point with a special flag</div><div class="page-content-list-point" data-flag="r">Another list point</div><div class="page-content-list-point" data-flag="l">This one has a letter!</div></div>
+List points can be declared using <span class="markdown-monospace">-{flag} {content}</span>. The <span class="markdown-monospace">flag</span> describes what kind of counting the list points will use. Consecutive list points (every consecutive line that starts with <span class="markdown-monospace">-{flag} </span>) will be merged into a List.
+</div><div class="page-content-list"><div class="page-content-list-point" data-flag="">This is a list point</div><div class="page-content-list-point" data-flag="r">This is a list point with a special flag</div><div class="page-content-list-point" data-flag="R">Another list point</div><div class="page-content-list-point" data-flag="a">This one has a letter!</div></div>
 <div class="page-content-text">
 The <span class="markdown-monospace">flag</span> can be one of the following:
 </div>
 
-<div class="page-content-table" style="display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(4, auto);"><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left data-top>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(6, auto);"><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left data-top>
         Flag
       </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
         Action
@@ -97,23 +97,31 @@ The <span class="markdown-monospace">flag</span> can be one of the following:
       </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
         <span class="markdown-monospace">r</span>
       </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
-        Roman Numerals ( <span style="font-family: monospace">I II III IV</span> )
-      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Lowercase Roman Numerals ( <span style="font-family: monospace">i ii iii iv</span> )
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 2;"  >
         Maximmum of 3999 points
       </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
-        <span class="markdown-monospace">l</span>
+        <span class="markdown-monospace">R</span>
       </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
-        Letters (a, b, c...)
-      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;"  >
+        Uppercase Roman Numberals ( <span style="font-family: monospace">I II III IV</span> )
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        <span class="markdown-monospace">a</span>
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Lowercase Letters (a, b, c...)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 2;"  >
         Maximum of 26 points
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        <span class="markdown-monospace">A</span>
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Uppercase Letters (A, B, C...)
       </div></div>
 
 <div class="page-content-header">Lists in Markdown</div>
 <div class="page-content-code markdown"><pre>
 &#45; This is a list point
 &#45;r This is a list point with a special flag
-&#45;r Another list point
-&#45;l This one has a letter! 
+&#45;R Another list point
+&#45;a This one has a letter! 
 </pre></div>
 
                 <div class="page-content-header">Escaping Symbols</div>
