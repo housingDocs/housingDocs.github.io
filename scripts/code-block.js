@@ -134,7 +134,13 @@ function tokenizeMarkdown(code) {
       if (code.startsWith('# ', pos))   { tokens.push({ text: '#', type: 'syntax-markdown' }); pos += 1; continue; }
       if (code.startsWith('!! ', pos))  { tokens.push({ text: '!!', type: 'syntax-markdown' }); pos += 2; continue; }
       if (code.startsWith('! ', pos))   { tokens.push({ text: '!', type: 'syntax-markdown' }); pos += 1; continue; }
-      if (code.startsWith('- ', pos))   { tokens.push({ text: '-', type: 'syntax-markdown' }); pos += 1; continue; }
+      const match = code.slice(pos).match(/^-(\w?)\s/);
+      if (match) {
+          const flag = match[1]; // "" if no letter, "r" if -r
+          tokens.push({ text: `-${flag} `, type: 'syntax-markdown' });
+          pos += 2 + (flag ? 1 : 0);
+          continue;
+      }
     }
 
     // 5) Table cells
@@ -270,12 +276,25 @@ function markdownToHTML(markdown) {
   markdown = markdown.replace(/^# (.+)$/gm, '<div class="page-content-superheader">$1</div>');
 
   // 3) Lists: merge consecutive "- " lines into one list block
-  markdown = markdown.replace(/(?:^|\n)(- .+(?:\n- .+)*)/g, (block) => {
-    const items = block.trim().split("\n").map(line =>
-      `<div class="page-content-list-point"><pre>${escapeHtml(line.replace(/^- /, ''))}</pre></div>`
-    ).join('');
-    return `<div class="page-content-list">${items}</div>`;
-  });
+  markdown = markdown.replace(
+    /(?:^|\n)((?:-([a-zA-Z]?) .+(?:\n-[a-zA-Z]? .+)*)+)/g,
+    (block) => {
+      const items = block.trim().split("\n").map(line => {
+        // Match each line safely
+        const lineMatch = line.match(/^-([a-zA-Z]?)\s(.+)/);
+        if (!lineMatch) return ''; // skip invalid lines
+
+        const lineFlag = lineMatch[1]; // optional letter
+        const text = lineMatch[2];
+
+        return `<div class="page-content-list-point" data-flag="${lineFlag}">${escapeHtml(text)}</div>`;
+      }).join('');
+
+      return `<div class="page-content-list">${items}</div>`;
+    }
+  );
+
+
 
   // 4) Inline formatting: bold, italic, inline code
   markdown = markdown.replace(/\*\*(.+?)\*\*/g, (m, inner) => `<b>${escapeHtml(inner)}</b>`);
@@ -588,7 +607,15 @@ function fixMarkdownPreview(preview) {
   preview.querySelectorAll('.page-content-list').forEach((list) => {
     let i = 1;
     list.querySelectorAll('.page-content-list-point').forEach((point) => {
-      point.innerHTML = `<div class="page-content-list-number">${i}.</div><pre>${unEscapeHtml(point.innerHTML)}</pre>`;
+      switch (point.dataset.flag) {
+        case 'r': {
+            point.innerHTML = `<div class="page-content-list-number"><span style="font-family: monospace; font-size: 14px; letter-spacing: -1px">${intToRoman(i)}</span>.</div><pre>${point.innerHTML}</pre>`;
+            break
+        }
+        default: {
+            point.innerHTML = `<div class="page-content-list-number">${i}.</div><pre>${point.innerHTML}</pre>`;
+        }
+      }
       i++;
     });
   });
