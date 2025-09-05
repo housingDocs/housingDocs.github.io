@@ -256,6 +256,12 @@ function markdownToHTML(markdown) {
     return key;
   });
 
+  // 7) Color
+  markdown = markdown.replace(
+    /<color\s+["']?(#[0-9a-fA-F]{3,6}|[a-zA-Z-]+)["']?>((.|\s*?)*?)<\/color>/gs,
+    '<span style="color: $1; font-size: inherit;">$2</span>'
+  );
+
   // 2) Titles & headings (line anchors, processed before lists)
   markdown = markdown.replace(/^!! (.+)$/gm, '<div class="page-subtitle">$1</div>');
   markdown = markdown.replace(/^! (.+)$/gm, '<div class="page-title">$1</div>');
@@ -287,12 +293,6 @@ function markdownToHTML(markdown) {
 
   // 6) Links
   markdown = markdown.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, text, href) => `<a href="${href}">${text}</a>`);
-
-  // 7) Color
-  markdown = markdown.replace(
-    /<color\s+(#[0-9a-fA-F]{3,6}|\w+)>(.*?)<\/color>/gs,
-    '<span style="color: $1; font-size: inherit;">$2</span>'
-  );
 
   // 9) Code blocks (custom <code> ... </code> tag)
   markdown = markdown.replaceAll('<code>', '<div class="page-content-code"><pre>');
@@ -483,7 +483,7 @@ function handleMarkdownEditor(editor) {
 
     // wire buttons
     copyMarkdownButton.onclick = () => copyToClipboard(text);
-    copyHTMLButton.onclick = () => copyToClipboard(markdownToHTML(text));
+    copyHTMLButton.onclick = () => copyToClipboard(unEscapeHtml(markdownToHTML(text)));
     createArticleButton.onclick = () => {
       preview.innerHTML = markdownToHTML(text)
       fixMarkdownPreview(preview);

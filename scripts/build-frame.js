@@ -41,10 +41,11 @@ const nav =
         iconColor: "#fc6203",
         points: [
             { name: "Edit Actions", link: "/html/Systems/Edit_Actions.html" },
+            { name: "Functions", link: "/html/Systems/Functions.html"},
+            { name: "Custom Commands", link:"/html/Systems/Custom_Commands.html" },
             { name: "Regions", link: "/html/Systems/Regions.html" },
             { name: "Event Actions", link: "/html/Systems/Event_Actions.html" },
-            { name: "Scoreboard Editor", link:"/html/Systems/Scoreboard_Editor.html" },
-            { name: "Custom Commands", link:"/html/Systems/Custom_Commands.html" }
+            { name: "Scoreboard Editor", link:"/html/Systems/Scoreboard_Editor.html" }
         ]
     },
     HTSL: {
