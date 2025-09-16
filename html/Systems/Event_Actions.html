@@ -29,15 +29,92 @@
 
 
             <div class="page bg-dark-purple">
-                <div class="page-content-item-display">
-                    <img src="https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/book.png">
-                    <div class="page-content-item-display-content">
-                        &9Housing Docs
-                        This is a built-in item display
-                        &fSupports &cS&6t&ey&al&9i&5n&cg
-                        (any styling except for obfuscated)
-                    </div>
-                </div>
+                <div class="page-title">Event Actions</div>
+<div class="page-subtitle">Many different methods of triggering actions using Event Actions</div>
+
+<div class="page-content-header">Introduction to Event Actions</div>
+<div class="page-content-text">This feature triggers <a href="/html/Systems/Edit_Actions.html">actions</a> when certain events (such as player joining/leaving) happen.<br>
+It can be accessed through:<br>
+<b>Housing Menu</b> (Ghast Tear/Nether Star) > <b>"Systems"</b> (Activator Rail) > <b>"Event Actions"</b> (Cobweb)</div>
+<div class="page-content-header">List of Events</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(19, auto);"><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left data-top>
+        Events
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  data-top>
+        Trigger
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Join
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player joins the Housing
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Quit
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player leaves the Housing
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Death
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player dies
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Kill
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player kills another player
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Respawn
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player respawns
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Group Change
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player's group changes
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        PvP State Change
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player's PvP state changes <span style="color:#555555;">(from able to PvP to not, and vice versa)</span>
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Fish Caught
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player catches something using a Fishing Rod while fishing
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Enter Portal
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player enters a Nether or End portal
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Damage
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player takes damage
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Block Break
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player tries to break a block <span style="color:#555555;">(only if the player has no Build permission)</span>
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Start Parkour
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player enters a Parkour with a Parkour Block
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Complete Parkour
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player finishes a Parkour with a Parkour Block
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Drop Item
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player drops an item
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Pick Up Item
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player picks up an item
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Change Held Item
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player changes their held item slot
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Toggle Sneak
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player holds or releases sneak
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Player Toggle Flight
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        When a player starts or stops flying
+      </div></div>
+
             </div>
 
 
@@ -49,12 +126,11 @@
                     </div>
                     <div class="sidebar-credit-card">
                         <div class="sidebar-credit-name">
-                            cookieCrood
+                            Castorice
                         </div>
                         <hr>
                         <div class="sidebar-credit-links">
-                            <a href="https://github.com/cookieCrood" target="_blank">GitHub <span class="material-symbols-outlined">open_in_new</span></a>
-                            <a href="https://discord.com/users/783404892039282709" target="_blank">Discord <span class="material-symbols-outlined">open_in_new</span></a>
+                            <a href="https://discord.com/users/1044215878687916042" target="_blank">Discord <span class="material-symbols-outlined">open_in_new</span></a>
                         </div>
                     </div>
                 </div>
