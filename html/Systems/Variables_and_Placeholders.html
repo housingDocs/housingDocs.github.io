@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Variables and Placeholders • Housing Docs</title>
+        <link rel="stylesheet" href="../../css/structure.css">
+        <link rel="stylesheet" href="../../css/colors.css">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    </head>
+
+    <body>
+
+        <div class="top bg-light-purple">
+
+        </div>
+
+
+
+        <div class="main">
+            <div class="sidebar">
+                <div class="sidebar-content bg-dark-purple">
+                    
+                </div>
+            </div>
+
+
+
+            <div class="page bg-dark-purple">
+                <div class="page-title">Variables and Placeholders</div>
+<div class="page-subtitle">Display stats with variables and placeholders</div>
+
+<div class="page-content-header">Introduction to Variables</div>
+<div class="page-content-text">
+Variables, are stats of a player (player stat), a team (team stat) or the house (global stat).<br>
+These three types of stats will be explained in detail later in this article.<br>
+<br>
+Placeholders are strings of text to use in order to display a statistic.
+These include, but are not limited to:<br>
+House stats <span style="color: gray; font-size: inherit;">(e.g. numbers of cookies or guests)</span>, time, and player info.
+</div>
+
+<div class="page-content-header">Stats/Variables</div>
+<div class="page-content-text">
+Variables may be incremented/decremented/multiplied/divided/set/unset<span style="color: gray; font-size: inherit;">*</span> using the action "Change Variable".<br>
+<span style="color: gray; font-size: inherit;">* Unsetting a stat removes it from the player. In older versions, that was done by setting the stat to 0.</span><br>
+Within said action, the developer may switch the type of stat to change with the "Holder" option:<br>
+<span style="color: lime; font-size: inherit;">Player</span>, <span style="color: lime; font-size: inherit;">Global</span>, or <span style="color: lime; font-size: inherit;">Team</span>.<br>
+<br>
+<span style="color: #8d99ff; font-size: inherit;"><b>></b></span> Player stats are separated between every player that has joined the house.<br>These stats will be wiped after a duration set by the house owner <span style="color: gray; font-size: inherit;">(14d max, 365d with Housing+)</span><br>
+<span style="color: gray; font-size: inherit;">Example:</span> Player health<br>
+<span style="color: gray; font-size: inherit;">Placeholder:</span> <span style="color: gold; font-size: inherit;">%var.player/</span><span style="color: yellow; font-size: inherit;">(key)</span><span style="color: gold; font-size: inherit;">%</span> or <span style="color: gold; font-size: inherit;">%stat.player/</span><span style="color: yellow; font-size: inherit;">(key)</span><span style="color: gold; font-size: inherit;">%</span><br>
+<span style="color: #8d99ff; font-size: inherit;"><b>></b></span> Team stats are separated for each team within the house instead of each player.<br>
+<span style="color: gray; font-size: inherit;">Example:</span> Team wins/losses<br>
+<span style="color: gray; font-size: inherit;">Placeholder:</span> <span style="color: gold; font-size: inherit;">%var.team/</span><span style="color: yellow; font-size: inherit;">(key)</span><span style="color: gold; font-size: inherit;">%</span> or <span style="color: gold; font-size: inherit;">%stat.team/</span><span style="color: yellow; font-size: inherit;">(key)</span><span style="color: gold; font-size: inherit;">%</span><br>
+<span style="color: #8d99ff; font-size: inherit;"><b>></b></span> Global stats behave similarly to team stats, except they are shared throughout the whole house.<br>
+<span style="color: gray; font-size: inherit;">Example:</span> Countdown timer<br>
+<span style="color: gray; font-size: inherit;">Placeholder:</span> <span style="color: gold; font-size: inherit;">%var.global/</span><span style="color: yellow; font-size: inherit;">(key)</span><span style="color: gold; font-size: inherit;">%</span> or <span style="color: gold; font-size: inherit;">%stat.global/</span><span style="color: yellow; font-size: inherit;">(key)</span><span style="color: gold; font-size: inherit;">%</span>
+</div>
+
+<div class="page-content-header">/variable Command</div>
+<div class="page-content-text">
+<span style="color: #8b99ff; font-size: inherit;">"/var" may also be used.</span><br>
+<span style="color: gold; font-size: inherit;">/variable [type] [action] [player] [key] (amount)</span><br>
+[type] >> player/global/team, referring to the type of stat<br>
+[action]<span style="color: gray; font-size: inherit;">*</span> >> <b>inc/dec/multi/div/set/unset</b>/clear/list, referring to what is being done with /var<br>
+[player] >> name of a player<br>
+[key] >> target stat key <span style="color: gray; font-size: inherit;">(e.g. kills)</span><br>
+(amount) >> only used when [action] is one of the bolded actions<br>
+<br>
+<span style="color: gray; font-size: inherit;">* Only basic actions are listed. For more variations or other actions, enter /var [type] in chat (and a space), then press tab.</span>
+</div>
+
+<div class="page-content-header">Placeholders</div>
+<div class="page-content-text">
+Placeholders can be used in texts such as chat messages sent by actions or an item's lore.<br>
+In these texts, the placeholder used is replaced with its corresponding stat.<br>
+<span style="color: #8d99ff; font-size: inherit;">Please note that placeholders cannot be sent manually into chat. It does not work as a placeholder, and Hypixel blocks the message for "advertising".</span><br>
+List of placeholders: <span style="color: gray; font-size: inherit;">(variables excluded)</span>
+<span style="color: gray; font-size: inherit;">Placeholders marked with "~" are commonly used.</span>
+</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(44, auto);"><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left data-top>
+        Placeholder
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  data-top>
+        Text/Stat
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %server.name%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        The server the house is currently hosting on (e.g. mini95CB)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        ~ %player.name%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Name of the player that sees the message/text (e.g. DemLog)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.ping%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Ping of the player that sees the message/text (e.g. 49ms)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.health%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 5;"  >
+        Basic stats of the player
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.maxhealth%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.hunger%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.experience%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.level%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.version%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        The version the player is playing on (e.g. 1.8.X)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.gamemode%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Gamemode of the player (e.g. CREATIVE)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.pos.x%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 3;"  >
+        Coordinates of the player (e.g. 11.91)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.pos.y%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.pos.z%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.pos.pitch%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 2;"  >
+        The direction the player is looking in (e.g. 35.5)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.pos.yaw%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.block.x%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 3;"  >
+        Block coordinate of the player (e.g. 11)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.block.y%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.block.z%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.group.name%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 4;"  >
+        Information of the player's group
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.group.tag%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.group.priority%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.group.color%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.team.name%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 3;"  >
+        Information of the player's team
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.team.tag%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.team.color%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.team.players/(team name)%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Amount of players in a team
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.parkour.ticks%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Amount of ticks since the start of the player's parkour
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %player.parkour.formatted%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Formatted time since the start of the player's parkour (mm:ss)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        ~ %house.name%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Name of the house
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        ~ %house.guests%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Amount of guests in the house
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        ~ %house.cookies%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Amount of cookies given to the house within the week
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %house.visitingrules%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Current visiting rule of the house (e.g. PARTY ONLY)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        ~ %house.players%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Amount of players in the house (the owner is counted)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        ~ %date.day/(timezone)%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 6;"  >
+        Current day/month/year/hour/minute/second in the set timezone
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        ~ %date.month/(timezone)%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        ~ %date.year/(timezone)%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        ~ %date.hour/(timezone)%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        ~ %date.minute/(timezone)%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        ~ %date.seconds/(timezone)%
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %date.unix%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Current time in Unix Timestamp (Read more about Unix <a href="https://en.wikipedia.org/wiki/Unix_time">here</a>)
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %date.unix.ms%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Current time in Unix Timestamp, including milliseconds
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %random.whole/(min) (max)%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Random integer within the set range
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        %random.decimal/(min) (max)%
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Random number within the set range (2 decimal places)
+      </div></div>
+            </div>
+
+
+
+            <div class="sidebar">
+                <div class="sidebar-content bg-dark-purple">
+                    <div class="sidebar-credit-header">
+                        Credits
+                    </div>
+                    <div class="sidebar-credit-card">
+                        <div class="sidebar-credit-name">
+                            Castorice
+                        </div>
+                        <hr>
+                        <div class="sidebar-credit-links">
+                            <a href="https://discord.com/users/1044215878687916042" target="_blank">Discord <span class="material-symbols-outlined">open_in_new</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </body>
+
+    <script src="../../scripts/code-block.js"></script>
+    <script src="../../scripts/build-frame.js"></script>
+
+</html>

@@ -41,6 +41,7 @@ const nav =
         iconColor: "#fc6203",
         points: [
             { name: "Edit Actions", link: "/html/Systems/Edit_Actions.html" },
+            { name: "Variables & Placeholders", link: "/html/Systems/Variables_and_Placeholders.html"},
             { name: "Functions", link: "/html/Systems/Functions.html"},
             { name: "Custom Commands", link:"/html/Systems/Custom_Commands.html" },
             { name: "Regions", link: "/html/Systems/Regions.html" },
