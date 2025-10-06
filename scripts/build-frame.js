@@ -1,3 +1,28 @@
+const creditData =
+{
+    cookieCrood: [
+        {
+            name: "Discord",
+            link: "https://discord.com/users/783404892039282709"
+        },
+        {
+            name: "GitHub",
+            link: "https://github.com/cookieCrood"
+        }
+    ],
+    NotDreppy: [
+        {
+            name: "Discord",
+            link: "https://discord.com/users/665564159966052385"
+        }
+    ],
+    Castorice: [
+        {
+            name: "Discord",
+            link: "https://discord.com/users/1044215878687916042"
+        }
+    ]
+}
 
 const nav = 
 {
@@ -74,7 +99,7 @@ const nav =
             { name: "About", link: "/html/Other/About.html" }
         ]
     }
-};
+}
 
 function intToRoman(num) {
     if (num > 3999) {
@@ -106,16 +131,15 @@ function intToRoman(num) {
     return result
 }
 
+const sidebars = document.querySelectorAll('.sidebar')
 
-if (typeof document !== 'undefined') {
-
-    const sidebars = document.querySelectorAll('.sidebar-content')
-
-let navHTML = '<input class="sidebar-search" placeholder="Search"></input>'
+let navHTML = '<div class="sidebar-content bg-dark-purple"><input class="sidebar-search" placeholder="Search"></input>'
 
 for (const group in nav) {
+    console.log(group)
     navHTML += 
-`<div class="sidebar-nav-group">
+`          
+<div class="sidebar-nav-group">
     <div class="sidebar-nav-header">
         <span class="material-symbols-outlined" style="color: ${nav[group].iconColor};">
             ${nav[group].icon}
@@ -136,11 +160,43 @@ for (const group in nav) {
 
 }
 
+navHTML += '</div>'
+
+let creditHTML = `
+<div class="sidebar-content bg-dark-purple">
+    <div class="sidebar-credit-header">
+        Credits
+    </div>`
+
+const credits = sidebars.item(1).textContent.trim().split(',').map((c) => c.trim())
+
+for (const credit of credits) {
+    creditHTML += `
+<div class="sidebar-credit-card">
+    <div class="sidebar-credit-name">
+        ${credit}
+    </div>
+    <hr>
+    <div class="sidebar-credit-links">
+        ${
+            creditData[credit]
+            ? creditData[credit].map((c) => `
+                <a href="${c.link} target="_blank">${c.name} <span class="material-symbols-outlined">open_in_new</span></a>
+            `)
+            : ''
+        }
+    </div>
+</div>`
+}
+
+creditHTML += `</div>`
+
 // Enable @media on mobile
 document.querySelector('head').innerHTML += `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
 
 // Fill top
 sidebars.item(0).innerHTML = navHTML
+sidebars.item(1).innerHTML = creditHTML
 document.querySelector('.top').innerHTML = 
 `<button class="dropdown">
     <span class="material-symbols-outlined">
@@ -160,6 +216,17 @@ document.querySelector('.top').innerHTML =
 const dropdown = document.querySelector('.dropdown')
 const sidebar = document.querySelector('.sidebar')
 const page = document.querySelector('.page')
+
+const scroll = document.querySelector('.sidebar-content')
+
+scroll.style.scrollBehavior = "auto"
+scroll.scrollTo(0, parseFloat(sessionStorage.getItem('nav_scroll') ? sessionStorage.getItem('nav_scroll') : "0"))
+scroll.style.scrollBehavior = "smooth"
+
+scroll.addEventListener('scroll', (e) => {
+    console.log(scroll.scrollTop)
+    sessionStorage.setItem('nav_scroll', scroll.scrollTop)
+})
 
 dropdown.onclick = () => {
     if (dropdown.dataset.active == 'true') {
@@ -269,7 +336,6 @@ document.querySelectorAll('.page-content-table').forEach((table) => {
         column.innerHTML = newHTML
     })
 })
-}
 
 // Item Displays
 const colorMap = {
@@ -378,7 +444,7 @@ itemDisplays.forEach((i) => {
         tooltip.innerHTML =
         
         makeToolTip(
-                i.querySelector('.page-content-item-display-content').textContent.trim()
+            i.querySelector('.page-content-item-display-content').textContent.trim()
         )
 
         tooltip.style.opacity = "1";

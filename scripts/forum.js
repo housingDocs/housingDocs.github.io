@@ -53,14 +53,14 @@ function clearRows() {
 function fixName() {
   document.querySelectorAll('.forums-snippet-top-name').forEach(name => {
     if (checkOverflow(name)) {
-      let i = 1
+      let j = 1
       const wholeContent = name.textContent
       name.textContent = ''
       console.log(wholeContent)
 
       while (!checkOverflow(name)) {
         name.textContent = wholeContent.slice(0, i)
-        i += 1
+        j += 1
       }
     }
   });
