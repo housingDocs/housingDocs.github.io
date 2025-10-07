@@ -68,6 +68,7 @@ const nav =
             { name: "Edit Actions", link: "/html/Systems/Edit_Actions.html" },
             { name: "Variables & Placeholders", link: "/html/Systems/Variables_and_Placeholders.html"},
             { name: "Functions", link: "/html/Systems/Functions.html"},
+            { name: "Custom Menus", link: "/html/Systems/Custom_Menus.html" },
             { name: "Custom Commands", link:"/html/Systems/Custom_Commands.html" },
             { name: "Regions", link: "/html/Systems/Regions.html" },
             { name: "Event Actions", link: "/html/Systems/Event_Actions.html" },
