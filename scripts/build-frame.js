@@ -288,6 +288,10 @@ document.querySelectorAll('.page-content-list').forEach((list) => {
                 point.innerHTML = `<div class="page-content-list-number">${ i <= 26 ? String.fromCharCode(64 + i) : 'OUT OF RANGE' }.</div><pre>${point.innerHTML}</pre>`
                 break
             }
+            case 'd': {
+                point.innerHTML = `<div class="page-content-list-number">• </div><pre>${point.innerHTML}</pre>`
+                break
+            }
             default: {
                 point.innerHTML = `<div class="page-content-list-number">${i}.</div><pre>${point.innerHTML}</pre>`;
             }
