@@ -292,7 +292,7 @@ function markdownToHTML(markdown) {
         const lineFlag = lineMatch[1]; // optional letter
         const text = lineMatch[2];
 
-        return `<div class="page-content-list-point" data-flag="${lineFlag}">${escapeHtml(text)}</div>`;
+        return `<div class="page-content-list-point" data-flag="${lineFlag}">${text}</div>`;
       }).join('');
 
       return `<div class="page-content-list">${items}</div>`;
