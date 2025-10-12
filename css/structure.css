@@ -533,7 +533,7 @@ pre {
 
 .page-content-item-display img {
     width: 100%;
-    image-rendering: pixelated;
+    
 }
 
 #tooltip {
@@ -562,4 +562,35 @@ pre {
 
 .page-content-item-display-content {
     display: none;
+}
+
+.article-preview {
+    color: red;
+}
+
+.page-content-menu {
+    display: grid;
+    border: 6px solid #c6c6c6;
+    border-radius: 4px;
+}
+
+.page-content-menu-slot {
+    height: 64px;
+    background-image: url('../assets/menu-slot-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.page-content-menu-slot-img {
+    width: 64px;
+    height: 64px;
+    padding: 8px;
+    image-rendering: pixelated;
+    cursor: pointer;
+}
+
+.page-content-menu-slot-img[src = ""] {
+    cursor: auto;
+    visibility: hidden;
 }

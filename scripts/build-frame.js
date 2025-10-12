@@ -137,7 +137,6 @@ const sidebars = document.querySelectorAll('.sidebar')
 let navHTML = '<div class="sidebar-content bg-dark-purple"><input class="sidebar-search" placeholder="Search"></input>'
 
 for (const group in nav) {
-    console.log(group)
     navHTML += 
 `          
 <div class="sidebar-nav-group">
@@ -225,7 +224,6 @@ scroll.scrollTo(0, parseFloat(sessionStorage.getItem('nav_scroll') ? sessionStor
 scroll.style.scrollBehavior = "smooth"
 
 scroll.addEventListener('scroll', (e) => {
-    console.log(scroll.scrollTop)
     sessionStorage.setItem('nav_scroll', scroll.scrollTop)
 })
 
@@ -255,7 +253,6 @@ searchBar.addEventListener('input', () => {
     document.querySelectorAll('.sidebar-nav-group').forEach((group) => {
         let display = false
         group.querySelectorAll('.sidebar-nav-point').forEach((point) => {
-            console.log(point.style.display)
             if (point.style.display == 'block') {
                 display = true
             }
@@ -418,6 +415,7 @@ function buildStyledText(text) {
 }
 
 function makeToolTip(text) {
+    if (!text) return
     let html = ''
 
     const lines = text.split('\n')
@@ -444,28 +442,35 @@ tooltip.dataset.scroll = "0"
 document.body.appendChild(tooltip)
 
 itemDisplays.forEach((i) => {
-    console.log(i)
-    i.addEventListener("mouseenter", () => {
-        tooltip.innerHTML =
-        
-        makeToolTip(
-            i.querySelector('.page-content-item-display-content').textContent.trim()
-        )
+    handleItemDisplay(i)
+})
 
-        tooltip.style.opacity = "1";
+document.querySelectorAll('.page-content-menu-slot').forEach((s) => {
+    handleItemDisplay(s)
+})
+
+function handleItemDisplay(display) {
+    display.addEventListener("mouseenter", () => {
+        const content = display.querySelector('.page-content-item-display-content').textContent.trim()
+        if (content !== "") {
+            tooltip.innerHTML = makeToolTip(content)
+            tooltip.style.opacity = "1"
+        } else {
+            tooltip.style.opacity = "0"
+        }
     });
 
-    i.addEventListener("mousemove", (e) => {
+    display.addEventListener("mousemove", (e) => {
         tooltip.style.left = e.pageX + 10 + "px";
         tooltip.style.top = e.clientY - tooltip.dataset.scroll + "px"
     });
 
-    i.addEventListener("mouseleave", () => {
+    display.addEventListener("mouseleave", () => {
         tooltip.style.opacity = "0";
         tooltip.dataset.scroll = "0"
     });
 
-    i.addEventListener("wheel", (e) => {
+    display.addEventListener("wheel", (e) => {
         e.preventDefault();
 
         let scroll = parseFloat(tooltip.dataset.scroll) || 0;
@@ -489,6 +494,5 @@ itemDisplays.forEach((i) => {
         tooltip.dataset.scroll = scroll;
         tooltip.style.top = `${e.clientY - scroll}px`;
 
-        console.log(e.deltaY, tooltip.dataset.scroll, scroll);
     });
-})
+}

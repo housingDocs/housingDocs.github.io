@@ -93,6 +93,7 @@ function tokenizeMarkdown(code) {
   const isLineStart = (i) => i === 0 || code[i - 1] === '\n';
   const specials = new Set(['!', '#', '-', '*', '`']);
   let inTable = false;
+  let inMenu = false;
 
   while (pos < code.length) {
     // 1) Table start/end
@@ -109,7 +110,23 @@ function tokenizeMarkdown(code) {
       continue;
     }
 
-    // 2) Escaped special
+    // 2) Menu start/end detection
+    if (code.startsWith('&lt;menu', pos)) {
+      const end = code.indexOf('&gt;', pos);
+      const text = code.slice(pos, end + 4);
+      tokens.push({ text, type: 'syntax-markdown' });
+      inMenu = true;
+      pos = end + 4;
+      continue;
+    }
+    if (code.startsWith('&lt;/menu&gt;', pos)) {
+      tokens.push({ text: '&lt;/menu&gt;', type: 'syntax-markdown' });
+      inMenu = false;
+      pos += 14;
+      continue;
+    }
+
+    // 3) Escaped special
     if (code[pos] === '\\' && pos + 1 < code.length && specials.has(code[pos + 1])) {
       tokens.push({ text: '\\', type: 'syntax-escape' });
       tokens.push({ text: code[pos + 1], type: 'plain' });
@@ -117,8 +134,8 @@ function tokenizeMarkdown(code) {
       continue;
     }
 
-    // 3) XML-like tags (not inside table)
-    if (!inTable && code.startsWith('&lt;', pos)) {
+    // 4) XML-like tags (not inside table or menu)
+    if (!inTable && !inMenu && code.startsWith('&lt;', pos)) {
       const end = code.indexOf('&gt;', pos + 4);
       if (end !== -1) {
         tokens.push({ text: code.slice(pos, end + 4), type: 'syntax-markdown' });
@@ -127,7 +144,7 @@ function tokenizeMarkdown(code) {
       }
     }
 
-    // 4) Line-start markers
+    // 5) Line-start markdown markers
     if (isLineStart(pos)) {
       if (code.startsWith('### ', pos)) { tokens.push({ text: '###', type: 'syntax-markdown' }); pos += 3; continue; }
       if (code.startsWith('## ', pos))  { tokens.push({ text: '##', type: 'syntax-markdown' }); pos += 2; continue; }
@@ -136,14 +153,14 @@ function tokenizeMarkdown(code) {
       if (code.startsWith('! ', pos))   { tokens.push({ text: '!', type: 'syntax-markdown' }); pos += 1; continue; }
       const match = code.slice(pos).match(/^(?:-|&#45;)(\w?)\s/);
       if (match) {
-          const flag = match[1]; // "" if no letter, "r" if -r
-          tokens.push({ text: `-${flag} `, type: 'syntax-markdown' });
-          pos += 2 + (flag ? 1 : 0);
-          continue;
+        const flag = match[1];
+        tokens.push({ text: `-${flag} `, type: 'syntax-markdown' });
+        pos += 2 + (flag ? 1 : 0);
+        continue;
       }
     }
 
-    // 5) Table cells
+    // 6) Table cells
     if (inTable && code[pos] === '|') {
       tokens.push({ text: '|', type: 'syntax-markdown' });
       pos++;
@@ -151,27 +168,74 @@ function tokenizeMarkdown(code) {
     }
 
     if (inTable && code[pos] == '{') {
-      const end  = code.indexOf('}', pos + 1)
+      const end = code.indexOf('}', pos + 1);
       if (end !== -1) {
-        tokens.push({ text: code.slice(pos, end + 1), type: 'syntax-markdown' })
-        pos = end + 1
-        continue
+        tokens.push({ text: code.slice(pos, end + 1), type: 'syntax-markdown' });
+        pos = end + 1;
+        continue;
       }
     }
 
-    // 6) Inline markers
+    // === CUSTOM DSL HIGHLIGHTING (only inside <menu>...</menu>) ===
+    if (inMenu) {
+      // Texture declaration: name:https://...
+      // Highlight only the name and the first colon
+      const texMatch = code.slice(pos).match(/^([a-zA-Z0-9_-]+):([^\s]+)/);
+      if (texMatch) {
+        tokens.push({ text: texMatch[1], type: 'syntax-markdown' }); // texture name
+        tokens.push({ text: ':', type: 'syntax-markdown' }); // colon
+        tokens.push({ text: texMatch[2], type: 'plain' }); // URL
+        pos += texMatch[0].length;
+        continue;
+      }
+
+      // @default
+      if (code.startsWith('@default', pos)) {
+        tokens.push({ text: '@default', type: 'syntax-markdown' });
+        pos += 8;
+        continue;
+      }
+
+      // @(...) — highlight the whole part
+      if (code[pos] === '@' && code[pos + 1] === '(') {
+        const end = code.indexOf(')', pos + 2);
+        if (end !== -1) {
+          tokens.push({ text: code.slice(pos, end + 1), type: 'syntax-markdown' });
+          pos = end + 1;
+          continue;
+        }
+      }
+
+      // highlight braces for slot blocks
+      if (code[pos] === '{' || code[pos] === '}') {
+        tokens.push({ text: code[pos], type: 'syntax-markdown' });
+        pos++;
+        continue;
+      }
+
+      // highlight parentheses around texture references
+      if (code[pos] === '(' || code[pos] === ')') {
+        tokens.push({ text: code[pos], type: 'syntax-markdown' });
+        pos++;
+        continue;
+      }
+    }
+    // === END MENU CUSTOM HIGHLIGHTING ===
+
+    // 7) Inline markdown markers
     if (code.startsWith('**', pos)) { tokens.push({ text: '**', type: 'syntax-markdown' }); pos += 2; continue; }
     if (code[pos] === '*')          { tokens.push({ text: '*', type: 'syntax-markdown' }); pos += 1; continue; }
     if (code[pos] === '`')          { tokens.push({ text: '`', type: 'syntax-markdown' }); pos += 1; continue; }
     if (code[pos] === '§')          { tokens.push({ text: '§', type: 'syntax-markdown' }); pos += 1; continue; }
 
-    // 7) Default char
+    // 8) Default char
     tokens.push({ text: code[pos], type: 'plain' });
     pos++;
   }
 
   return tokens;
 }
+
 
 function syntaxHighlightMarkdown(code) {
   const escaped = escapeHtml(code); // escape HTML first
@@ -301,7 +365,7 @@ function markdownToHTML(markdown) {
 
 
 
-  // 4) Inline formatting: bold, italic, inline code
+  // Inline formatting: bold, italic, inline code
   const spanMap = [
     { markdown: 'm', class: 'markdown-monospace' }
   ];
@@ -311,7 +375,7 @@ function markdownToHTML(markdown) {
     markdown = markdown.replaceAll(`</${el.markdown}>`, '</span>');
   }
 
-  // 6) Links
+  // Links
   markdown = markdown.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (m, text, href) => `<a href="${href}">${text}</a>`);
 
   markdown = markdown.replace(/<display\s+texture="([^"]+)">(.*?)<\/display>/gs, (match, texture, content) => {
@@ -324,7 +388,56 @@ function markdownToHTML(markdown) {
     </div>`;
   });
 
-  // 11) Simple table syntax with pipe characters and cell merging
+  // Menus
+  markdown = markdown.replace(/<menu\s+(\d+)x(\d+)>\s*(.*?)\s*<\/menu>/gs, (m, width, height, content) => {
+    const textureDecls = [...content.matchAll(/^\s*([^:]+?)\s*:\s*(.+?)\s*$/gm)].map(x => [x[1], x[2]])
+    const textureMap = Object.fromEntries(textureDecls)
+    textureMap["_"] = "_"
+
+    const slotDecls = [...content.matchAll(/@(default|\([^)]+\))\s*\(([^)]*)\)\s*\{([\s\S]*?)\}/g)];
+    const slotMap = {}
+
+    for (const slot of slotDecls) {
+      slotMap[slot[1]] = {
+        texture: slot[2],
+        content: slot[3]
+      }
+    }
+
+    console.log(textureMap, slotMap)
+
+    let slots = ''
+
+    console.log(slotMap)
+
+    for (let x = 0; x < width; x++) {
+      for (let y = 0; y < height; y++) {
+        const location = `(${y}|${x})`
+        const slot = slotMap[location]
+
+        let texture
+        let content
+        if (slot) {
+          texture = textureMap[slot.texture]
+          content = slot.content
+        } else {
+          texture = textureMap[slotMap.default.texture]
+          content = slotMap.default.content
+        }
+        
+        slots += `<div class="page-content-menu-slot">
+          ${texture ?  `<img class="page-content-menu-slot-img" src="https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/${texture}.png">` : ""}
+          <div class="page-content-item-display-content">${content}</div>
+        </div>`
+      }
+    }
+
+    return `<div class="page-content-menu" style="width: ${width * 64 + 12}px; height: ${height * 64 + 12}px; grid-template-columns: repeat(${width}, 1fr); grid-template-rows: repeat(${height}, auto)">
+      ${slots}
+    </div>`
+  })
+
+  // Tables
   markdown = markdown.replace(/<table[^>]*>([\s\S]*?)<\/table>/g, (fullMatch, tableContent) => {
     const rows = tableContent.trim().split('\n').filter(row => row.trim())
     if (rows.length === 0) return '<div class="page-content-table"></div>'
@@ -435,11 +548,8 @@ function handleEditor(editor) {
   const pre = editor.querySelector('pre');
   const button = editor.querySelector('.page-content-code-copy-button');
 
-  console.log(pre)
-
   pre.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
-      console.log('a')
       event.preventDefault(); // stop browser resetting formatting
       insertAtCaret("\n");    // custom helper to insert newline
     }
@@ -534,55 +644,12 @@ function handleMarkdownEditor(editor) {
 
 function fixMarkdownPreview(preview) {
   const itemDisplays = document.querySelectorAll('.page-content-item-display')
+  document.querySelectorAll('.page-content-menu-slot').forEach((s) => {
+      handleItemDisplay(s)
+  })
 
   itemDisplays.forEach((i) => {
-    console.log(i)
-    i.addEventListener("mouseenter", () => {
-        tooltip.innerHTML =
-        
-        makeToolTip(
-                i.querySelector('.page-content-item-display-content').textContent.trim()
-        )
-
-        tooltip.style.opacity = "1";
-    });
-
-    i.addEventListener("mousemove", (e) => {
-        tooltip.style.left = e.pageX + 10 + "px";
-        tooltip.style.top = e.clientY - tooltip.dataset.scroll + "px"
-    });
-
-    i.addEventListener("mouseleave", () => {
-        tooltip.style.opacity = "0";
-        tooltip.dataset.scroll = "0"
-    });
-
-    i.addEventListener("wheel", (e) => {
-      e.preventDefault();
-
-      let scroll = parseFloat(tooltip.dataset.scroll) || 0;
-      const maxScroll = tooltip.clientHeight; // adjust as needed
-
-      let delta = e.deltaY;
-
-      // Prevent scrolling past top/bottom
-      if ((scroll >= maxScroll && delta > 0) || (scroll <= 0 && delta < 0)) {
-        delta = 0;
-      }
-
-      scroll += delta;
-
-      if (scroll > tooltip.clientHeight) {
-        scroll = tooltip.clientHeight
-      } else if (scroll < 0) {
-        scroll = 0
-      }
-
-      tooltip.dataset.scroll = scroll;
-      tooltip.style.top = `${e.clientY - scroll}px`;
-
-      console.log(e.deltaY, tooltip.dataset.scroll, scroll);
-    });
+    handleItemDisplay(i)
   })
 
   // Enhance code blocks: syntax highlight HTSL inside <pre> if present
