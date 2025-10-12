@@ -572,6 +572,7 @@ pre {
     display: grid;
     border: 6px solid #c6c6c6;
     border-radius: 4px;
+    margin-bottom: 16px;
 }
 
 .page-content-menu-slot {

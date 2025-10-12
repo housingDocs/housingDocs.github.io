@@ -31,6 +31,7 @@ const nav =
         iconColor: "#6341E0",
         points: [
             { name: "Docs Introduction", link: "/html/Home/Introduction.html"},
+            { name: "What is Housing", link: "/html/Home/What_is_Housing.html"}
         ]
     },
     "General Housing": {
@@ -311,7 +312,7 @@ document.querySelectorAll('.page-content-superheader').forEach((superHeader) => 
 })
 
 if (i != 1) {
-    sidebars.item(1).innerHTML += 
+    sidebars.item(1).querySelector('.sidebar-content').innerHTML += 
     `<div class="sidebar-subnav">
         <div class="sidebar-subnav-title" style="text-wrap: nowrap;">
             Content on this Page

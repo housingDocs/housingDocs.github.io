@@ -122,7 +122,7 @@ function tokenizeMarkdown(code) {
     if (code.startsWith('&lt;/menu&gt;', pos)) {
       tokens.push({ text: '&lt;/menu&gt;', type: 'syntax-markdown' });
       inMenu = false;
-      pos += 14;
+      pos += 13;
       continue;
     }
 

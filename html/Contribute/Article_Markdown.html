@@ -214,6 +214,67 @@ This is &b&lcool
 This is cool
 &amp;cS&amp;6t&amp;ey&amp;al&amp;9i&amp;5n&amp;cg
 &lt;/display&gt;</pre></div>
+<div class="page-content-header">Menus</div>
+<div class="page-content-text">
+Menus are a collection of Item Displays of variable size. They allow to easily create interactive interfaces.
+</div>
+<div class="page-content-menu" style="width: 204px; height: 204px; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, auto)">
+      <div class="page-content-menu-slot">
+          <img class="page-content-menu-slot-img" src="https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/red_dye.png">
+          <div class="page-content-item-display-content">&cred</div>
+        </div><div class="page-content-menu-slot">
+          <img class="page-content-menu-slot-img" src="https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/black_dye.png">
+          <div class="page-content-item-display-content">&8black</div>
+        </div><div class="page-content-menu-slot">
+          <img class="page-content-menu-slot-img" src="https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/black_dye.png">
+          <div class="page-content-item-display-content">&8black</div>
+        </div><div class="page-content-menu-slot">
+          <img class="page-content-menu-slot-img" src="https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/black_dye.png">
+          <div class="page-content-item-display-content">&8black</div>
+        </div><div class="page-content-menu-slot">
+          <img class="page-content-menu-slot-img" src="https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/orange_dye.png">
+          <div class="page-content-item-display-content">&6orang</div>
+        </div><div class="page-content-menu-slot">
+          <img class="page-content-menu-slot-img" src="https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/black_dye.png">
+          <div class="page-content-item-display-content">&8black</div>
+        </div><div class="page-content-menu-slot">
+          <img class="page-content-menu-slot-img" src="https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/black_dye.png">
+          <div class="page-content-item-display-content">&8black</div>
+        </div><div class="page-content-menu-slot">
+          <img class="page-content-menu-slot-img" src="https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/lime_dye.png">
+          <div class="page-content-item-display-content">&alime</div>
+        </div><div class="page-content-menu-slot">
+          <img class="page-content-menu-slot-img" src="https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/yellow_dye.png">
+          <div class="page-content-item-display-content">&eyellow</div>
+        </div>
+    </div>
+
+<div class="page-content-text">
+In markdown menus have 3 sections:
+<br><br>
+The Head <span class="markdown-monospace">&lt;menu 3x3&gt;</span> with the size declaration.<br>
+The Texture Declarations <span class="markdown-monospace">name:location</span> (Note: The location can only be a minecraft item's <a href="https://mcasset.cloud/1.21.8/assets/minecraft/textures/item">ID name</a> in the 1.21.8 version)<br><br>
+And the Slot assignments which contain a <span class="markdown-monospace">@location</span> (<span class="markdown-monospace">@default</span> to adress every Slot that doesn't have defined data, and <span class="markdown-monospace">@(x|y)</span> to adress a Slot at specific coordinates starting from 0, so the top-left Slot is <span class="markdown-monospace">(0|0)</span>), a <span class="markdown-monospace">(texture)</span> (one of the declared textures) and <span class="markdown-monospace">{ styled hover content }</span> (same styling as found in Item Displays). Finally the menu is closed using <span class="markdown-monospace"></menu></span>
+
+</div>
+
+<div class="page-content-code"><pre>
+&lt;menu 3x3&gt;
+red:red_dye
+orange:orange_dye
+yellow:yellow_dye
+lime:lime_dye
+black:black_dye
+
+@default (black) {&8black}
+
+@(0|0) (red) {&cred}
+@(1|1) (orange) {&6orang}
+@(2|2) (yellow) {&eyellow}
+@(1|2) (lime) {&alime}
+
+&lt;/menu&gt;
+</pre></div>
                 <div class="page-content-superheader">HTML Elements</div>
                 <div class="page-content-text">In addition to custom hDocs elements, the default HTML elements can be used too.<br><br>
                 List of common HTML text styling elements:</div>
