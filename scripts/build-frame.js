@@ -1,3 +1,5 @@
+fetch("https://hdocsbot.onrender.com/visit")
+
 const creditData =
 {
     cookieCrood: [
