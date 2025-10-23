@@ -52,6 +52,7 @@ const nav =
         iconColor: "#47f3ffff",
         points: [
             { name: "Groups and Permissions", link: "/html/Housing_Menu/Groups_and_Permissions.html"},
+            { name: "Teams", link: "/html/Housing_Menu/Teams.html" },
             { name: "Pro Tools", link: "/html/Housing_Menu/Pro_Tools.html" },
             { name: "Special Items", link: "/html/Housing_Menu/Special_Items.html" }
         ]
