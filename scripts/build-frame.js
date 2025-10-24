@@ -54,7 +54,8 @@ const nav =
             { name: "Groups and Permissions", link: "/html/Housing_Menu/Groups_and_Permissions.html"},
             { name: "Teams", link: "/html/Housing_Menu/Teams.html" },
             { name: "Pro Tools", link: "/html/Housing_Menu/Pro_Tools.html" },
-            { name: "Special Items", link: "/html/Housing_Menu/Special_Items.html" }
+            { name: "Special Items", link: "/html/Housing_Menu/Special_Items.html" },
+            { name: "Jukebox", link: "/html/Housing_Menu/Jukebox.html" }
         ]
     },
     "House Settings": {
