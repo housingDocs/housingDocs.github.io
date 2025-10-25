@@ -32,8 +32,9 @@ const nav =
         icon: "home",
         iconColor: "#6341E0",
         points: [
-            { name: "Docs Introduction", link: "/html/Home/Introduction.html"},
-            { name: "What is Housing", link: "/html/Home/What_is_Housing.html"}
+            { name: "Docs Introduction", link: "/html/Home/Introduction.html" },
+            { name: "What is Housing", link: "/html/Home/What_is_Housing.html" },
+            { name: "Housing Genres", link: "/html/Home/Housing_Genres.html" }
         ]
     },
     "General Housing": {
