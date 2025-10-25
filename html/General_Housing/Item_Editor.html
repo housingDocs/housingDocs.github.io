@@ -33,12 +33,15 @@
 <div class="page-subtitle">Customize an item's appearance and behaviour using the Item Editor</div>
 
 <div class="page-content-header">Introduction to the Item Editor</div>
-<div class="page-content-text">The Item Editor allows you to (nearly) fully customize an item's description and behaviour.<br>
-To access it, simply run "/item" or "/edititem".<br>
-When the command is executed, the Item Editor will open for the item currently held, and it is displayed on the second row of the menu.</div>
+<div class="page-content-text">
+<p>The Item Editor allows you to (nearly) fully customize an item's description and behaviour.<br>
+To access it, simply run <span style="color: yellow; font-size: inherit;">/item</span> or <span style="color: yellow; font-size: inherit;">/edititem</span>.<br>
+When the command is executed, the Item Editor will open for the item currently held, and it is displayed on the second row of the menu.<br><br>
+
+If you are <span style="color: red; font-size: inherit;"><b>NOT</b></span> the house owner, your group must have <span style="color: lime; font-size: inherit;"><b>Item Editor</b></span> permission enabled to use Item Editor. See <a href="https://housingdocs.github.io/html/Housing_Menu/Groups_and_Permissions.html">Groups and Permissions</a> for more details.
 
 <div class="page-content-header">Usage of the Item Editor</div>
-<div class="page-content-text">There are currently <b>6</b> editable item aspects:</div>
+There are currently <b>6</b> editable item aspects:<p>
 <div class="page-content-table" style="display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(7, auto);"><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left data-top>
         Button
       </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
@@ -46,28 +49,38 @@ When the command is executed, the Item Editor will open for the item currently h
       </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
         Rename Item
       </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
-        As the name suggests, it allows you to change the name of the selected item (Formatting Codes can be applied)
+        Allows you to change the name of the selected item (<a href="/html/General_Housing/Formatting_Codes.html">Formatting Codes</a> can be applied)
       </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
         Edit Lore
       </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
-        Change the description of the selected item (Formatting Codes can be applied)
+        Changes the description of the selected item (<a href="/html/General_Housing/Formatting_Codes.html">Formatting Codes</a> can be applied)
       </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
         Edit Enchantments
       </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
-        Apply or remove any enchantments onto the selected item (levels <span class="markdown-monospace">I~X</span>)
+        Apply or remove any <span style="color: gray; font-size: inherit;">Minecraft 1.8</span> enchantments onto the selected item (Levels <span class="markdown-monospace">I~X</span>)
       </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
-        Edit Actions
+        <a href="/html/Systems/Edit_Actions.html">Edit Actions</a>
       </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
-        Customize what the selected item does when a player right clicks while holding it
+        Customize what the selected item does when a player interacts with the item while holding it
       </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
         Edit Flags
       </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
-        Toggle whether [ enchantments / modifiers (e.g. +7 Attack Damage) / "Unbreakable" / additional ] are shown in the description of the selected item
+        Toggle whether Item Information [e.g. Enchantments / Modifiers (e.g. +7 Attack Damage) / "Unbreakable" ] are shown in the description of the selected item
       </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
         Unbreakable
       </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
         Toggle whether the item's durability can drop
       </div></div>
+
+<style>
+
+.page-content-table-cell:not([data-top]) {
+    font-family: monospace;
+}
+
+</style>
+
+</div>
 </div>
 
 
