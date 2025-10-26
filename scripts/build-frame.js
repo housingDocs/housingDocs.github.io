@@ -45,7 +45,8 @@ const nav =
             { name: "Item Editor", link: "/html/General_Housing/Item_Editor.html" },
             { name: "Formatting Codes", link: "/html/General_Housing/Formatting_Codes.html" },
             { name: "Data Values", link: "/html/General_Housing/Data_Values.html" },
-            { name: "Cookies", link: "/html/General_Housing/Cookies.html" }
+            { name: "Cookies", link: "/html/General_Housing/Cookies.html" },
+            { name: "Housing+", link: "/html/General_Housing/Housing+.html" }
         ]
     },
     "Housing Menu": {
@@ -53,7 +54,6 @@ const nav =
         iconColor: "#47f3ffff",
         points: [
             { name: "Groups and Permissions", link: "/html/Housing_Menu/Groups_and_Permissions.html"},
-            { name: "Teams", link: "/html/Housing_Menu/Teams.html" },
             { name: "Pro Tools", link: "/html/Housing_Menu/Pro_Tools.html" },
             { name: "Block IDs", link: "/html/Housing_Menu/Block_IDs.html" },
             { name: "Special Items", link: "/html/Housing_Menu/Special_Items.html" },
@@ -79,7 +79,8 @@ const nav =
             { name: "Custom Commands", link:"/html/Systems/Custom_Commands.html" },
             { name: "Regions", link: "/html/Systems/Regions.html" },
             { name: "Event Actions", link: "/html/Systems/Event_Actions.html" },
-            { name: "Scoreboard Editor", link:"/html/Systems/Scoreboard_Editor.html" }
+            { name: "Scoreboard Editor", link:"/html/Systems/Scoreboard_Editor.html" },
+            { name: "Teams", link: "/html/Systems/Teams.html" }
         ]
     },
     HTSL: {
