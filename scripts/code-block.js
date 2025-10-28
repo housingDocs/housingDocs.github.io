@@ -412,7 +412,7 @@ function markdownToHTML(markdown) {
         }
         
         slots += `<div class="page-content-menu-slot">
-          ${texture ?  `<img class="page-content-menu-slot-img" src="https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/${texture}.png">` : ""}
+          ${texture ?  `<img class="page-content-menu-slot-img" src="${texture}">` : ""}
           <div class="page-content-item-display-content">${content}</div>
         </div>`
       }

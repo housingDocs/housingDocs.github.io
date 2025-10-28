@@ -1,0 +1,21 @@
+
+
+.light-purple {
+    color: #6341e0;
+}
+
+.dark-purple {
+    color: #170e2f;
+}
+
+.red {
+    color: rgb(225, 71, 71);
+}
+
+.bg-light-purple {
+    background-color: #6341e0;
+}
+
+.bg-dark-purple {
+    background-color: #170e2f;
+}
