@@ -716,12 +716,6 @@ function fixMarkdownPreview(preview) {
 
 }
 
-/* ---------------------------
-   Initialization
-   --------------------------- */
-
-log('Start tokenization');
-
 const codeFields = document.querySelectorAll('.page-content-code');
 
 for (const codeField of codeFields) {

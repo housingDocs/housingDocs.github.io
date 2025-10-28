@@ -595,3 +595,15 @@ pre {
     cursor: auto;
     visibility: hidden;
 }
+
+.rate-button {
+    color: #af99ff;
+    background-color: #463085;
+    padding: 8px;
+    max-width: fit-content;
+    height: fit-content;
+}
+
+.rate-menu {
+    display: none;
+}
