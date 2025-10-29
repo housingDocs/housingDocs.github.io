@@ -57,6 +57,7 @@ const nav =
             { name: "Pro Tools", link: "/html/Housing_Menu/Pro_Tools.html" },
             { name: "Block IDs", link: "/html/Housing_Menu/Block_IDs.html" },
             { name: "Special Items", link: "/html/Housing_Menu/Special_Items.html" },
+            { name: "NPCs", link: "/html/Housing_Menu/NPCs.html" },
             { name: "Jukebox", link: "/html/Housing_Menu/Jukebox.html" }
         ]
     },
@@ -79,7 +80,8 @@ const nav =
             { name: "Custom Commands", link:"/html/Systems/Custom_Commands.html" },
             { name: "Regions", link: "/html/Systems/Regions.html" },
             { name: "Event Actions", link: "/html/Systems/Event_Actions.html" },
-            { name: "Scoreboard Editor", link:"/html/Systems/Scoreboard_Editor.html" },
+            { name: "Scoreboard Editor", link: "/html/Systems/Scoreboard_Editor.html" },
+            { name: "Layouts", link: "/html/Systems/Layouts.html" },
             { name: "Teams", link: "/html/Systems/Teams.html" }
         ]
     },
@@ -142,7 +144,7 @@ function intToRoman(num) {
 
 const sidebars = document.querySelectorAll('.sidebar')
 
-let navHTML = '<div class="sidebar-content bg-dark-purple"><input class="sidebar-search" placeholder="Search"></input>'
+let navHTML = '<div class="sidebar-content "><input class="sidebar-search" placeholder="Search"></input>'
 
 for (const group in nav) {
     navHTML += 
@@ -171,7 +173,7 @@ for (const group in nav) {
 navHTML += '</div>'
 
 let creditHTML = `
-<div class="sidebar-content bg-dark-purple">
+<div class="sidebar-content ">
     <div class="sidebar-credit-header">
         Credits
     </div>`
@@ -199,10 +201,12 @@ for (const credit of credits) {
 
 creditHTML += `</div>`
 
-// Enable @media on mobile
+const savedTheme = localStorage.getItem("theme") || "purple"
+const html = document.querySelector("html")
+html.classList.add(savedTheme)
+
 document.querySelector('head').innerHTML += `<meta name="viewport" content="width=device-width, initial-scale=1.0">`
 
-// Fill top
 sidebars.item(0).innerHTML = navHTML
 sidebars.item(1).innerHTML = creditHTML
 document.querySelector('.top').innerHTML = 
@@ -219,11 +223,37 @@ document.querySelector('.top').innerHTML =
 </div>
 <a href="https://discord.gg/qRvcDc3vz5"><div class="discord">
     <img src="../../assets/discord.png">
-</div></a>`
+</div></a>
+<div class="theme" data-theme="${savedTheme}">
+    <span class="material-symbols-outlined">
+        light_mode
+    </span>
+</div>
+`
+
+
+const themeButton = document.querySelector('.theme')
+themeButton.addEventListener('click', (e) => {
+    const isDark = themeButton.dataset.theme === "dark"
+
+    if (isDark) {
+        themeButton.dataset.theme = "purple"
+        localStorage.setItem("theme", "purple")
+
+        html.classList.remove("dark")
+        html.classList.add("purple")
+    } else {
+        themeButton.dataset.theme = "dark"
+        localStorage.setItem("theme", "dark")
+
+        html.classList.remove("purple")
+        html.classList.add("dark")
+    }
+})
 
 const dropdown = document.querySelector('.dropdown')
 const sidebar = document.querySelector('.sidebar')
-const page = document.querySelector('.page')
+const page= document.querySelector('.page')
 
 const scroll = document.querySelector('.sidebar-content')
 
@@ -504,3 +534,7 @@ function handleItemDisplay(display) {
 
     });
 }
+
+
+
+

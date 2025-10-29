@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>NPCs • Housing Docs</title>
+        <link rel="stylesheet" href="../../css/structure.css">
+        <link rel="stylesheet" href="../../css/themes.css">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+
+    <body>
+
+        <div class="top ">
+
+        </div>
+
+
+
+        <div class="main">
+            <div class="sidebar">
+
+            </div>
+
+
+
+            <div class="page">
+              <div class="page-title">NPCs</div>
+<div class="page-subtitle">Create interactive mobs or characters with NPCs</div>
+
+<div class="page-content-header">Introduction to NPCs</div>
+<div class="page-content-text"><span style="color: lime; font-size: inherit;">NPCs (Non-player characters)</span> are a custom Housing item used to create mob-like characters anywhere in the house similar to the NPCs in lobbies used to select games.<br>
+They do not have any AI, but players are able to customize the skin of the NPC, items it has equipped, its name, left-click actions, right-click actions, and more settings depending on its entity type.<br>
+The NPC item is found under the Items tab in the Housing Menu.<br>
+<span style="color: gold; font-size: inherit;">Housing+</span> players can place 200 NPCs in a single world, while those without it can only place 80. (For more information on Housing+, check out <a href="https://housingdocs.github.io/html/General_Housing/Housing+.html">this page</a>.)<br><br>
+
+Upon spawning, it would display as a player with a Steve skin with one of the following default names:<br>
+<span class="markdown-monospace">Amarra</span>, <span class="markdown-monospace">Aryn</span>, <span class="markdown-monospace">Ayden</span>, <span class="markdown-monospace">Baldrick</span>, <span class="markdown-monospace">Cyne</span>, <span class="markdown-monospace">Dene</span>, <span class="markdown-monospace">Donald</span>, <span class="markdown-monospace">Harry</span>, <span class="markdown-monospace">Jaq</span>, <span class="markdown-monospace">Jerry</span>, <span class="markdown-monospace">Kenneth</span>, <span class="markdown-monospace">Larry</span>, <span class="markdown-monospace">Matt</span>, <span class="markdown-monospace">Tane</span>
+
+</div>
+
+<div class="page-content-header">Universal Settings for all Entity Types</div>
+
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(7, 1fr); grid-template-rows: repeat(6, auto);"><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Rename NPC
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the nametag of the NPC.
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Any string with a maximum of 32 characters
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Left Click Actions
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Edit the actions that run when a player uses left click on the NPC.
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Any actions, refer to <a href="https://housingdocs.github.io/html/Systems/Edit_Actions.html">Edit Actions</a>
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Right Click Actions
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Edit the actions that run when a player uses right click on the NPC.
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        Any actions, refer to <a href="https://housingdocs.github.io/html/Systems/Edit_Actions.html">Edit Actions</a>
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Look at Players
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Toggle whether the NPC looks at the nearest player.
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        On / Off
+      </div><div class="page-content-table-cell" style="grid-column: span 1; grid-row: span 1;" data-left >
+        Hide Name Tag
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Toggle whethere the nametag of the NPC should be hidden.
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;"  >
+        On / Off
+      </div></div>
+
+<div class="page-content-text">
+Additionally, in <b>Left Click Actions</b> menu, there is an addtional setting to bind it to Right Click Actions, which makes the NPC executes the same actions as long as the player clicks on the NPC.
+</div>
+
+<div class="page-content-header">Mob Settings</div>
+<div class="page-content-text">
+The NPC can be changed into a different variety of mobs, including:<br>
+<span class="markdown-monospace">Player</span>, <span class="markdown-monospace">Pig</span>, <span class="markdown-monospace">Sheep</span>, <span class="markdown-monospace">Cow</span>, <span class="markdown-monospace">Mooshroom</span>, <span class="markdown-monospace">Chicken</span>, <span class="markdown-monospace">Squid</span>, <span class="markdown-monospace">Wolf</span>, <span class="markdown-monospace">Ocelot</span>, <span class="markdown-monospace">Iron Golem</span>, <span class="markdown-monospace">Rabbit</span>, <span class="markdown-monospace">Villager</span>, <span class="markdown-monospace">Creeper</span>, <span class="markdown-monospace">Zombie</span>, <span class="markdown-monospace">Skeleton</span>, <span class="markdown-monospace">Blaze</span>, <span class="markdown-monospace">Spider</span>, <span class="markdown-monospace">Cave Spider</span>, <span class="markdown-monospace">Slime</span>, <span class="markdown-monospace">Ghast</span>, <span class="markdown-monospace">Zombie Pigman</span>, <span class="markdown-monospace">Enderman</span>, <span class="markdown-monospace">Silverfish</span>, <span class="markdown-monospace">Magma Cube</span>, <span class="markdown-monospace">Witch</span>, <span class="markdown-monospace">Endermite</span>, <span class="markdown-monospace">Snow Golem</span>, <span class="markdown-monospace">Armor Stand</span>
+<br><br>
+
+Below are the available settings (besides universal settings) grouped by mob type.
+</div>
+
+<div class="page-content-subheader">Player</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(3, auto);"><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Change Skin
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the skin of the NPC.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        1 out of 866 skin presets
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Change Equipment
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the items the NPC is equipping.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Helmet / Chestplate / Leggings / Boots / Hand
+      </div></div>
+
+<div class="page-content-subheader">Pig</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(3, auto);"><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Age
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the age of the mob.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Adult / Baby
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Saddled
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Toggles whether the pig has a saddle equipped.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Enabled / Disabled
+      </div></div>
+
+<div class="page-content-subheader">Sheep</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(4, auto);"><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Age
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the age of the mob.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Adult / Baby
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Wool Color
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the color of the wool of the sheep.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        1 out of 16 colors
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Sheared
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Toggles whether the the sheep has its wool sheared.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Enabled / Disabled
+      </div></div>
+
+<div class="page-content-subheader">Cow / Mooshroom / Chicken / Squid</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(2, auto);"><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Age
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the age of the mob.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Adult / Baby
+      </div></div>
+
+<div class="page-content-subheader">Wolf</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(4, auto);"><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Age
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the age of the mob.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Adult / Baby
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Sitting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Toggles whether the wolf is sitting or standing.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Enabled / Disabled
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Collar Color
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the color of the collar of the wolf.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        No collar / 1 out of 16 colors
+      </div></div>
+
+<div class="page-content-subheader">Ocelot</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(4, auto);"><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Age
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the age of the mob.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Adult / Baby
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Sitting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Toggles whether the ocelot is sitting or standing.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Enabled / Disabled
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Ocelot Type
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the appearance of the ocelot.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Black Cat / Red Cat / Siamese Cat / Wild Ocelot
+      </div></div>
+
+<div class="page-content-subheader">Rabbit</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(3, auto);"><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Age
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the age of the mob.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Adult / Baby
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Rabbit Type
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the appearance of the rabbit.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Gold / White / Salt and Pepper / Brown / Black / Black and White
+      </div></div>
+
+<div class="page-content-subheader">Villager</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(15, 1fr); grid-template-rows: repeat(3, auto);"><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 6; grid-row: span 1;"  data-top>
+        Remarks
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Age
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the age of the mob.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Adult / Baby
+      </div><div class="page-content-table-cell" style="grid-column: span 6; grid-row: span 1;"  >
+        
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Profession
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the occupation of the villager.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Farmer / Librarian / Priest / Blacksmith / Butcher
+      </div><div class="page-content-table-cell" style="grid-column: span 6; grid-row: span 1;"  >
+        This option is disabled when the villager's age is "Baby".
+      </div></div>
+
+<div class="page-content-subheader">Creeper</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(2, auto);"><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Charged
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Toggles whether the creeper is charged by lightning.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Enabled / Disabled
+      </div></div>
+
+<div class="page-content-subheader">Zombie</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(4, auto);"><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Change Equipment
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the items the NPC is equipping.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Helmet / Chestplate / Leggings / Boots / Hand
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Age
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the age of the mob.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Adult / Baby
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Zombie Villager
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Toggles whether the zombie is a regular zombie or a zombie villager.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Enabled / Disabled
+      </div></div>
+
+<div class="page-content-subheader">Skeleton</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(3, auto);"><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Change Equipment
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the items the NPC is equipping.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Helmet / Chestplate / Leggings / Boots / Hand
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Wither Skeleton
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Toggles whether the skeleton is a regular skeleton or a wither skeleton.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Enabled / Disabled
+      </div></div>
+
+<div class="page-content-subheader">Slime / Magma Cube</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(2, auto);"><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Size
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the size of the slime. Each incremental size increases the side of the slime by 0.5 blocks.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        1 / 2 / 3 / 4 / 5
+      </div></div>
+
+<div class="page-content-subheader">Zombie Pigman</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(3, auto);"><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Change Equipment
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the items the NPC is equipping.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Helmet / Chestplate / Leggings / Boots / Hand
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Age
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the age of the mob.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Adult / Baby
+      </div></div>
+
+<div class="page-content-subheader">Armor Stand</div>
+<div class="page-content-table" style="display: grid; grid-template-columns: repeat(9, 1fr); grid-template-rows: repeat(6, auto);"><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left data-top>
+        Setting
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  data-top>
+        Description
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  data-top>
+        Possible Values
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Change Equipment
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Changes the items the NPC is equipping.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Helmet / Chestplate / Leggings / Boots / Hand
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Small
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Toggles the size of the armor stand.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Enabled / Disabled
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Base Plate
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Toggles the visibility of the base plate (the slab below the armor stand).
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Enabled / Disabled
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Arms
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Toggles the visibility of arms.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Enabled / Disabled
+      </div><div class="page-content-table-cell" style="grid-column: span 2; grid-row: span 1;" data-left >
+        Visible
+      </div><div class="page-content-table-cell" style="grid-column: span 4; grid-row: span 1;"  >
+        Toggles the visibility of the armor stand.
+      </div><div class="page-content-table-cell" style="grid-column: span 3; grid-row: span 1;"  >
+        Enabled / Disabled
+      </div></div>
+
+<div class="page-content-subheader">Iron Golem / Blaze / Spider / Cave Spider / Ghast / Enderman / Silverfish / Witch / Endermite / Snow Golem</div>
+<div class="page-content-text">
+These mobs do not have any custom settings besides the universal settings.
+</div>
+
+<style>
+
+.page-content-table-cell:not([data-top]) {
+    font-family: monospace;
+}
+
+</style>
+
+            </div>
+
+
+
+            <div class="sidebar">
+                NotDreppy
+            </div>
+        </div>
+        
+
+    </body>
+
+    <script src="../../scripts/code-block.js"></script>
+    <script src="../../scripts/build-frame.js"></script>
+
+</html>

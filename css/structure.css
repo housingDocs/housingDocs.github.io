@@ -1,6 +1,4 @@
-:root {
-    
-}
+
 
 html, body {
     height: 100%;
@@ -10,7 +8,6 @@ html, body {
 body {
     margin: 0;
     font-family: "Segoe UI", "Roboto", "Helvetica Neue", "Noto Sans", "Liberation Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    background-color: #170e2f;
 }
 
 a, a:visited {
@@ -38,38 +35,46 @@ pre {
     font-family: inherit;
 }
 
-@font-face {
-  font-family: minecraft;
-  src: url('../assets/minecraft-font/MinecraftRegular-Bmg3.otf') format("opentype");
-  font-weight: normal;
-  font-style: normal;
+.material-symbols-outlined {
+    font-variation-settings: 
+        "opsz" 24,
+        "wght" 400,
+        "FILL" 0,
+        "GRAD" 0
+    ;
 }
 
 @font-face {
-  font-family: minecraft;
-  src: url('../assets/minecraft-font/MinecraftBold-nMK1.otf') format("opentype");
-  font-weight: bold;
-  font-style: normal;
+    font-family: minecraft;
+    src: url('../assets/minecraft-font/MinecraftRegular-Bmg3.otf') format("opentype");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: minecraft;
-  src: url('../assets/minecraft-font/MinecraftItalic-R8Mo.otf') format("opentype");
-  font-weight: normal;
-  font-style: italic;
+    font-family: minecraft;
+    src: url('../assets/minecraft-font/MinecraftBold-nMK1.otf') format("opentype");
+    font-weight: bold;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: minecraft;
-  src: url('../assets/minecraft-font/MinecraftBoldItalic-1y1e.otf') format("opentype");
-  font-weight: bold;
-  font-style: italic;
+    font-family: minecraft;
+    src: url('../assets/minecraft-font/MinecraftItalic-R8Mo.otf') format("opentype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: minecraft;
+    src: url('../assets/minecraft-font/MinecraftBoldItalic-1y1e.otf') format("opentype");
+    font-weight: bold;
+    font-style: italic;
 }
 
 .top {
     width: 100%;
     height: 7.5%;
-    color: white;
     padding: 8px 12%;
     position: relative;
     display: flex;
@@ -81,7 +86,6 @@ pre {
     margin-right: 16px;
     margin-top: 6px;
     display: none;
-    color: white;
 }
 
 .dropdown span {
@@ -105,6 +109,13 @@ pre {
     font-size: 30px;
     position: relative;
     top: 3px;
+
+    font-variation-settings: 
+        "opsz" 24,
+        "wght" 400,
+        "FILL" 1,
+        "GRAD" 0
+    ;
 }
 
 .discord {
@@ -123,6 +134,34 @@ pre {
     height: auto;
 }
 
+.theme {
+    flex: auto;
+    position: absolute;
+    top: 24px;
+    right: 2%;
+    transform: scale(1.5);
+    user-select: none;
+    cursor: pointer;
+}
+
+.theme[data-theme="dark"] span {
+    font-variation-settings: 
+        "opsz" 24,
+        "wght" 400,
+        "FILL" 0,
+        "GRAD" 0
+    ;
+}
+
+.theme[data-theme="purple"] span {
+    font-variation-settings: 
+        "opsz" 24,
+        "wght" 400,
+        "FILL" 1,
+        "GRAD" 0
+    ;   
+}
+
 .main {
     width: 100%;
     height: 92.5%;
@@ -133,7 +172,6 @@ pre {
     height: 100%;
     width: 20%;
     float: left;
-    background-color: #463085;
 }
 
 .sidebar:first-of-type {
@@ -176,23 +214,16 @@ pre {
     padding: 20px 16px 40px 16px;
     overflow: auto;
     scrollbar-width: auto;
-    scrollbar-color: #af99ff #463085; 
 }
 
 .sidebar-search {
     width: 100%;
     height: 40px;
-    background-color: #170b28;
     margin-bottom: 16px;
-    border: 2px solid #463085;
+    border: 2px solid;
     border-radius: 6px;
-    color: #af99ff;
     padding: 8px;
     font-size: 16px;
-}
-
-.sidebar-search::placeholder {
-    color: #463085;
 }
 
 .sidebar-search:focus {
@@ -202,7 +233,6 @@ pre {
 .sidebar-nav-group {
     width: 100%;
     height: auto;
-    color: white;
     margin-bottom: 40px;
 }
 
@@ -230,38 +260,30 @@ pre {
     left: 26px;
 }
 
-.sidebar-nav-point-active {
-    background-color: #463085;
-}
-
 .sidebar-nav-point:hover {
-    background-color: #463085;
     cursor: pointer;
 }
 
 .sidebar-credit-header {
-    color: white;
     font-size: 32px;
     font-weight: 500;
     margin-bottom: 8px;
 }
 
 .sidebar-credit-card {
-    border: 3px solid #463085;
+    border: 3px solid;
     border-radius: 8px;
     margin-bottom: 12px;
 }
 
 .sidebar-credit-card hr {
     border: 0;
-    border-top: 3px solid #463085;
-    background-color: #463085;
+    border-top: 3px solid;
     width: 100%;
     margin: 0;
 }
 
 .sidebar-credit-name {
-    color: white;
     font-size: 22px;
     margin: 6px 9px;
 }
@@ -272,10 +294,6 @@ pre {
     font-weight: 500;
 }
 
-.sidebar-credit-links a {
-    color: #af99ff;
-}
-
 .sidebar-credit-links a span {
     position: relative;
     top: 3px;
@@ -283,9 +301,8 @@ pre {
 }
 
 .sidebar-subnav {
-    color: white;
     font-size: 22px;
-    border: 3px solid #463085;
+    border: 3px solid;
     border-radius: 8px;
     padding: 6px 9px;
     font-weight: 400;
@@ -293,14 +310,12 @@ pre {
 }
 
 .sidebar-subnav-links {
-    color: #af99ff;
     font-size: 19px;
     font-weight: 500;
     margin: 4px 0;
 }
 
 .sidebar-subnav-links span {
-    color: #6f4bd1;
     font-weight: 400;
     margin-right: 4px;
     margin-left: 8px;
@@ -313,29 +328,17 @@ pre {
     padding: 40px;
     overflow: auto;
     scrollbar-width: auto;
-    scrollbar-color: #af99ff #463085; 
 }
 
 .page::-webkit-scrollbar-track {
-  background: #463085;
-  border-radius: 10px;
+    border-radius: 10px;
 }
 
 .page::-webkit-scrollbar-thumb {
-  background: #af99ff;
-  border-radius: 10px;
-}
-
-.page::-webkit-scrollbar-thumb:hover {
-  background: #af99ff;
-}
-
-.page a, .page a:visited {
-    color: rgb(130, 111, 255);
+    border-radius: 10px;
 }
 
 .page-title {
-    color: white;
     width: 100%;
     font-size: 48px;
     font-weight: 500;
@@ -343,7 +346,6 @@ pre {
 }
 
 .page-subtitle {
-    color: white;
     width: 100%;
     font-size: 24px;
     font-weight: 400;
@@ -351,7 +353,6 @@ pre {
 }
 
 .page-content-superheader {
-    color: white;
     width: 100%;
     font-size: 36px;
     font-weight: 500;
@@ -359,7 +360,6 @@ pre {
 }
 
 .page-content-header {
-    color: white;
     width: 100%;
     font-size: 32px;
     font-weight: 500;
@@ -367,7 +367,6 @@ pre {
 }
 
 .page-content-subheader {
-    color: white;
     width: 100%;
     font-size: 28px;
     font-weight: 500;
@@ -375,7 +374,6 @@ pre {
 }
 
 .page-content-text {
-    color: white;
     width: 100%;
     font-size: 18px;
     font-weight: 400;
@@ -383,12 +381,10 @@ pre {
 }
 
 .page-content-code {
-    color: white;
     width: 100%;
     position: relative;
-    border: 2px solid #463085;
+    border: 2px solid;
     border-radius: 8px;
-    background-color: #170b28;
     font-family: monospace;
     font-size: 16px;
     margin: 16px 0;
@@ -396,12 +392,10 @@ pre {
 
 .page-content-code button {
     position: absolute;
-    color: #af99ff;
 }
 
 .page-content-code-icon {
     margin: 8px 16px;
-    color: #af99ff;
     font-weight: 800;
     text-transform: uppercase;
 }
@@ -412,13 +406,8 @@ pre {
     transition: 0.2s;
 }
 
-.page-content-code-copy-button:hover {
-    color: #463085;
-}
-
 .page-content-code-copy-button-hover {
     display: none;
-    background-color: white;
     border-radius: 4px;
     font-weight: 600;
     padding: 8px;
@@ -433,7 +422,7 @@ pre {
 
 .page-content-code hr {
     border: 0;
-    border-top: 2px solid #463085;
+    border-top: 2px solid;
 }
 
 .page-content-code pre {
@@ -467,31 +456,27 @@ pre {
 }
 
 .page-content-list-point {
-    color: white;
     display: flex;
     font-size: 20px;
 }
 
 .page-content-list-number {
-    color: #af99ff;
     margin-right: 10px;
     margin-right: 10px;
     font-family: inherit;
 }
 
 .page-content-table {
-    color: white;
     font-size: 18px;
-    border: 2px solid #463085;
-    background-color: #170b28;
+    border: 2px solid;
     border-radius: 8px;
     margin: 16px 0;
     overflow: hidden;
 }
 
 .page-content-table-cell {
-    border-left: 2px solid #463085;
-    border-top: 2px solid #463085;
+    border-left: 2px solid;
+    border-top: 2px solid;
     padding: 16px;
     font-weight: 500;
     min-height: 60px;
@@ -503,18 +488,14 @@ pre {
 }
 
 .page-content-table-cell[data-top] {
-    background-color: #1e0f42;
     font-weight: 600;
     font-size: 20px;
     text-align: center;
-    color: #af99ff;
     border-top: none;
 }
 
 .markdown-monospace {
     display: inline-block;
-    background-color: #1e1e2e;
-    color: #cba6f7;
     font-family: monospace;
     padding: 2px 4px;
     border-radius: 6px;
@@ -525,7 +506,7 @@ pre {
 .page-content-item-display {
     width: 64px;
     height: 64px;
-    border: 2px solid #463085;
+    border: 2px solid;
     border-radius: 8px;
     padding: 8px;
     margin: 12px 0;
@@ -537,26 +518,21 @@ pre {
 
 .page-content-item-display img {
     width: 100%;
+    image-rendering: pixelated;
     
 }
 
 #tooltip {
     position:fixed;
-    background: #120211f0;
     padding: 7px 12px 12px 12px;
     border-radius: 8px;
-    border: 2px solid #6f4bd1;
+    border: 2px solid;
     z-index: 100;
     pointer-events: none;
     font-size: 24px;
 }
 
-.tooltip-name {
-    color: white
-}
-
 .tooltip-lore {
-    color: #AAAAAA;
     line-height: 1;
 }
 
@@ -598,16 +574,4 @@ pre {
 .page-content-menu-slot-img[src = ""] {
     cursor: auto;
     visibility: hidden;
-}
-
-.rate-button {
-    color: #af99ff;
-    background-color: #463085;
-    padding: 8px;
-    max-width: fit-content;
-    height: fit-content;
-}
-
-.rate-menu {
-    display: none;
 }
