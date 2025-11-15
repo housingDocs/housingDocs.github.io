@@ -254,18 +254,18 @@ Menus are a collection of Item Displays of variable size. They allow to easily c
 In markdown menus have 3 sections:
 <br><br>
 The Head <span class="markdown-monospace">&lt;menu 3x3&gt;</span> with the size declaration.<br>
-The Texture Declarations <span class="markdown-monospace">name:location</span> (Note: The location can only be a minecraft item's <a href="https://mcasset.cloud/1.21.8/assets/minecraft/textures/item">ID name</a> in the 1.21.8 version)<br><br>
-And the Slot assignments which contain a <span class="markdown-monospace">@location</span> (<span class="markdown-monospace">@default</span> to adress every Slot that doesn't have defined data, and <span class="markdown-monospace">@(x|y)</span> to adress a Slot at specific coordinates starting from 0, so the top-left Slot is <span class="markdown-monospace">(0|0)</span>), a <span class="markdown-monospace">(texture)</span> (one of the declared textures) and <span class="markdown-monospace">{ styled hover content }</span> (same styling as found in Item Displays). Finally the menu is closed using <span class="markdown-monospace"></menu></span>
+The Texture Declarations <span class="markdown-monospace">name:source</span> (Note: The source must be a link to a renderable image)<br><br>
+And the Slot assignments which contain a <span class="markdown-monospace">@location</span> (<span class="markdown-monospace">@default</span> to adress every Slot that doesn't have defined data, and <span class="markdown-monospace">@(x|y)</span> to adress a Slot at specific coordinates starting from 0, so the top-left Slot is <span class="markdown-monospace">(0|0)</span>), a <span class="markdown-monospace">(texture)</span> (one of the declared textures) and <span class="markdown-monospace">{ styled hover content }</span> (same styling as found in Item Displays). Finally the menu is closed using <span class="markdown-monospace">&lt;/menu&gt;</span>
 
 </div>
 
 <div class="page-content-code markdown"><pre>
 &lt;menu 3x3&gt;
-red:red_dye
-orange:orange_dye
-yellow:yellow_dye
-lime:lime_dye
-black:black_dye
+red:https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/red_dye.png
+orange:https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/orange_dye.png
+yellow:https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/yellow_dye.png
+lime:https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/lime_dye.png
+black:https://assets.mcasset.cloud/1.21.8/assets/minecraft/textures/item/black_dye.png
 
 @default (black) {&8black}
 
